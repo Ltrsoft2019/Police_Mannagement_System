@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="411dp"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_margin="20dp"
+            android:text=" History "
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/assign_complaint"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/assigned_complaint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Assigned Complaint"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fir_investigation"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_fir_investifation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="FIR /n Investifation"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/complaint_investigation"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_complaint_investigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="complaint \n investigation"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/unidentify_body"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="130dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_unidentify_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="unidentify_body"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/unidentify_object"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="130dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_unidentify_object"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="unidentify \n object "
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Proclaimed_Offender"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="130dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_Proclaimed_Offender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text=" Proclaimed \n Offender"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/news"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="210dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=" News "
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/notification"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="210dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="Notification"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/event"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="210dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text=" Event "
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/warrent"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="290dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_warrent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Warrent"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/criminal"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="290dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_criminal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="Criminal"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cyber_crime"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="290dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_cyber_crime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="Cyber \n Crime"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/missing_person"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="370dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_missing_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Missing Person"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/notice_gazzets"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="370dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_notice_gazzets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="  Notices \n Gazettes"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/leaves"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="370dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_leaves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text=" Leaves"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Duty"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="450dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/DutySchedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Duty"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/welfare"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="450dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_welfare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="Welfare"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/e_services"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="450dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_e_services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="E-Services"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/petroling"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="530dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_petroling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Petroling"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/grivance"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="530dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_grivance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="Grivance"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.Police_Mannagement_System" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->

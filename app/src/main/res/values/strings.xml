@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Police_Mannagement_System</string>
+    <string name="dysp_under_the_acp">DySP Under The ACP</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="todo">TODO</string>
+    <string name="total_male_n_dysp_n_75">Total Male \n DySP \n 75</string>
+    <string name="todo1">TODO</string>
+    <string name="total_female_n_dysp_n_25_t">Total Female \n DySP \n 25 t</string>
+    <string name="todo2">TODO</string>
+    <string name="dysp_under_the_acp1">DySP Under The ACP</string>
+    <string name="total_male_n_pi_n_75">Total Male \n PI \n 75</string>
+    <string name="total_female_n_pi_n_25">Total Female \n PI \n 25</string>
+    <string name="dysp_under_the_acp2">DySP Under The ACP</string>
+    <string name="total_registerd_n_complaint">Total Registerd \n Complaint</string>
+    <string name="total_solved_n_complaint">Total Solved \n Complaint</string>
+    <string name="total_fir">Total FIR</string>
+    <string name="total_ongoing_n_investigation">Total Ongoing \n Investigation</string>
+    <string name="dysp_under_the_acp4">DySP Under The ACP</string>
+    <string name="responce_time">Responce Time</string>
+    <string name="clearance_time">Clearance Time</string>
+    <string name="responce_averahe_n_n_40_days">Responce Averahe \n\n 40 days</string>
+    <string name="case_clearance_n_average_n_20_days">Case Clearance \n Average \n 20 days</string>
+    <string name="responce_average_n_n_police_wise">Responce Average \n\n (Police Wise)</string>
+    <string name="case_clearnce_n_average_n_police_wise">Case Clearnce \n Average \n (Police Wise)</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
 </resources>

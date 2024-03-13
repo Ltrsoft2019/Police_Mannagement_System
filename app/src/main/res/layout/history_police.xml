@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="411dp"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_margin="20dp"
+            android:text=" Add "
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/assign_complaint"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="80dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/assigned_complaint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Assigned Complaint"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fir"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_gravity="top|center"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_fir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="FIR"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/warrent"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="140dp"
+            android:layout_marginEnd="80dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp"
+            tools:ignore="TextSizeCheck">
+
+            <TextView
+                android:id="@+id/total_wareent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Warrent"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/criminal"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_gravity="top|center"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="140dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp"
+            tools:ignore="TextSizeCheck">
+
+            <TextView
+                android:id="@+id/total_criminal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="criminal"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cyber_crime"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="232dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_cyber_crime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="Cyber Crime"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/missinng_person"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_gravity="top|center"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="232dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/add_missinng_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="Add Missing Person"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Proclamed_Offender"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_gravity="top|center"
+            android:layout_marginEnd="80dp"
+            android:layout_marginTop="322dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="20dp">
+
+            <TextView
+                android:id="@+id/total_Proclamed_Offender_EOW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Proclamed Offender EOW"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
