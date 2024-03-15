@@ -6,7 +6,7 @@
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:foregroundGravity="center"
         android:scrollbars="none"
@@ -35,7 +35,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="20dp"
                     app:cardCornerRadius="10dp"
@@ -56,7 +56,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <ImageView
+                    <org.eazegraph.lib.charts.PieChart
                         android:id="@+id/donutchart"
                         android:layout_width="250dp"
                         android:layout_height="250dp"
@@ -199,7 +199,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <ImageView
+                    <org.eazegraph.lib.charts.PieChart
                         android:layout_width="250dp"
                         android:layout_height="250dp"
                         android:layout_gravity="center|top"
@@ -382,7 +382,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <ImageView
+                    <org.eazegraph.lib.charts.BarChart
                         android:layout_width="300dp"
                         android:layout_height="220dp"
                         android:layout_gravity="center|top"
@@ -538,7 +538,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <ImageView
+                    <org.eazegraph.lib.charts.BarChart
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_gravity="center|top"

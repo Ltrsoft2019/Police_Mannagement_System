@@ -59,7 +59,7 @@ public class navigationfragment extends Fragment {
         imgr = v1.findViewById(R.id.imgrev);
         editimg = v1.findViewById(R.id.etedit);
 
-        if (position==1) {
+        if (position==0) {
             AcpanalyticalDashboardFragment acp = new AcpanalyticalDashboardFragment();
             getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
         }
