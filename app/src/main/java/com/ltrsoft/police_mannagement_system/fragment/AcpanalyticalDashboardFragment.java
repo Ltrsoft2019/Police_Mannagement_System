@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.police_mannagement_system.R;
-import com.ltrsoft.police_mannagement_system.navigation.DeviceUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -62,11 +61,11 @@ public class AcpanalyticalDashboardFragment extends Fragment {
         if (currentLayoutIndex >= NUM_LAYOUTS) {
             currentLayoutIndex = 0;
         }
-        int screenWidth = DeviceUtils.getScreenWidth(getContext());
-        int screenHeight = DeviceUtils.getScreenHeight(getContext());
+//        int screenWidth = DeviceUtils.getScreenWidth(getContext());
+//        int screenHeight = DeviceUtils.getScreenHeight(getContext());
 
         System.out.println("index= "+ horizontalScrollView.getWidth());
-        int scrollTo = currentLayoutIndex *  screenWidth;
+        int scrollTo = currentLayoutIndex *  2200;
         horizontalScrollView.smoothScrollTo(scrollTo, 0);
     }
 
