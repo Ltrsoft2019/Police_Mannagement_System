@@ -17,11 +17,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
+import com.ltrsoft.police_mannagement_system.Fragment.AcpanalyticalDashboardFragment;
+import com.ltrsoft.police_mannagement_system.Fragment.Common_police_fragment;
+import com.ltrsoft.police_mannagement_system.Fragment.DySPanalyticaldashboard;
+import com.ltrsoft.police_mannagement_system.Fragment.PIanalyticaldashboard;
 import com.ltrsoft.police_mannagement_system.R;
-//import com.ltrsoft.police_mannagement_system.fragment.AcpanalyticalDashboardFragment;
-import com.ltrsoft.police_mannagement_system.fragment.Common_police_fragment;
-import com.ltrsoft.police_mannagement_system.fragment.DySPanalyticaldashboard;
-import com.ltrsoft.police_mannagement_system.fragment.PIanalyticaldashboard;
+
 import com.ltrsoft.police_mannagement_system.fragment.PSIanalyticaldashboard;
 
 public class navigationfragment extends Fragment {
@@ -61,8 +62,8 @@ public class navigationfragment extends Fragment {
         editimg = v1.findViewById(R.id.etedit);
 
         if (position==0) {
-//            AcpanalyticalDashboardFragment acp = new AcpanalyticalDashboardFragment();
-//            getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
+            AcpanalyticalDashboardFragment acp = new AcpanalyticalDashboardFragment();
+            getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
         }
         if (position==2) {
             DySPanalyticaldashboard acp = new DySPanalyticaldashboard();

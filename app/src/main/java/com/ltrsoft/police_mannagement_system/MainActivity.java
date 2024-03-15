@@ -14,7 +14,8 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.ltrsoft.police_mannagement_system.Fragment.AcpanalyticalDashboardFragment;
- import com.ltrsoft.police_mannagement_system.navigation.navigationfragment;
+import com.ltrsoft.police_mannagement_system.Fragment.DistrictAnalysis;
+import com.ltrsoft.police_mannagement_system.navigation.navigationfragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -22,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_design);
+        setContentView(R.layout.activity_main);
 //        setContentView(R.layout.demo);
 
 //        navigationfragment navigationfragment=new navigationfragment();
-//        AcpanalyticalDashboardFragment acpanalyticalDashboardFragment=new AcpanalyticalDashboardFragment();
-//        getSupportFragmentManager().beginTransaction().add(R.id.main_container,acpanalyticalDashboardFragment).commit();
+        AcpanalyticalDashboardFragment acpanalyticalDashboardFragment=new AcpanalyticalDashboardFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.main_container,new DistrictAnalysis()).commit();
 
 
     }
