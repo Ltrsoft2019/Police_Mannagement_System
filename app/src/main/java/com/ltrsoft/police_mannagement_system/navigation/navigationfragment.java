@@ -60,8 +60,8 @@ public class navigationfragment extends Fragment {
         editimg = v1.findViewById(R.id.etedit);
 
         if (position==0) {
-            AcpanalyticalDashboardFragment acp = new AcpanalyticalDashboardFragment();
-            getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
+//            AcpanalyticalDashboardFragment acp = new AcpanalyticalDashboardFragment();
+//            getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
         }
         if (position==2) {
             DySPanalyticaldashboard acp = new DySPanalyticaldashboard();
