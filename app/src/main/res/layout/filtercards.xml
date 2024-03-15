@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:id="@+id/complaints"
+            android:id="@+id/year_month"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/quickcomplaints"
+            android:id="@+id/fir_stage"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"
-                android:background="" />
+                 />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:id="@+id/unidentified_body"
+            android:id="@+id/response"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/unidentified_obj"
+            android:id="@+id/firtype"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:id="@+id/cyber_complaints"
+            android:id="@+id/complaint_mode"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -166,7 +166,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/add_grievence"
+            android:id="@+id/comp_type"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -198,19 +198,13 @@
          android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:id="@+id/add_missing_person"
+            android:id="@+id/act_section"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:background="@drawable/card_background"
             android:elevation="1dp"
             android:layout_margin="8dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <!--                android:background="@drawable/hacker" />-->
 
                 <TextView
                     android:gravity="center"
@@ -221,11 +215,38 @@
                     android:text="Act Section"
                     android:textColor="#66000000"
                     android:textStyle="bold" />
-            </LinearLayout>
+
 
 
         </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/dummy"
+            android:layout_width="0dp"
+            android:visibility="invisible"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_background"
+            android:elevation="1dp"
+            android:layout_margin="8dp">
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"/>
+            <!--                android:background="@drawable/hacker" />-->
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="50dp"
+                android:text="Complaint Type"
+                android:textColor="#66000000"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>
