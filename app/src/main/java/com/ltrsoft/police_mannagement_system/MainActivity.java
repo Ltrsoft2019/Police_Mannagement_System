@@ -12,10 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.ltrsoft.police_mannagement_system.fragment.AcpanalyticalDashboardFragment;
+//import com.ltrsoft.police_mannagement_system.fragment.AcpanalyticalDashboardFragment;
 import com.ltrsoft.police_mannagement_system.navigation.navigationfragment;
-
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
