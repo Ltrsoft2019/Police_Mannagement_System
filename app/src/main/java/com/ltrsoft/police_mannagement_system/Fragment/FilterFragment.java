@@ -30,7 +30,7 @@ public class FilterFragment extends Fragment {
         yearMonthCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new FilterFragment()).addToBackStack(null).commit();
+              getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new Filter_year_month() ).addToBackStack(null).commit();
 
             }
         });

@@ -3,8 +3,6 @@ package com.ltrsoft.police_mannagement_system.Model;
 
 public class District {
     String id, name, totalcase, totalpolice;
-
-
     public District(String id, String name, String totalcase, String totalpolice) {
         this.id = id;
         this.name = name;

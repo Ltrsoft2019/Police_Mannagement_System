@@ -1,4 +1,4 @@
-package com.ltrsoft.police_mannagement_system.model;
+package com.ltrsoft.police_mannagement_system.Model;
 
 public class policemodel {
 }
