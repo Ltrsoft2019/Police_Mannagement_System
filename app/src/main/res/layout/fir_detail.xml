@@ -8,8 +8,7 @@
     tools:context=".Fragment.analysis.FirDetail">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent">
 
 
 
@@ -17,6 +16,7 @@
             android:id="@+id/barchartcard"
             android:layout_width="match_parent"
             android:layout_height="350dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
@@ -193,6 +193,121 @@
 
             </LinearLayout>
 
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_card"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/cardviewpiechart">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:text=" FIR No"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/FIRNo"/>
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:text="Internal IO"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Internal_IO"/>
+
+                <TextView
+                 android:layout_marginTop="20dp"
+                 android:layout_width="wrap_content"
+                 android:text="Unit Name"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/unit_name"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:text="Offence From Date"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Offence_From_Date"/>
+                <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:text=" Offence To Date"
+                android:layout_height="wrap_content"
+                android:id="@+id/Offence_To_Date"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:text="FIR Type"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/FIR_Type"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:text="FIR Stage"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/FIR_Stage"/>
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:text="Complaint Mode"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Complaint_Mode"/>
+                <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:text="CrimeGroup Name"
+                android:layout_height="wrap_content"
+                android:id="@+id/CrimeGroup_Name"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:text="Crime Head"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/CrimeHead"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:text="ActSection"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ActSection"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:text="IOName"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/IOName"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:text=" Place of Offence"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Place_of_Offence"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:text=" Beat_Name"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Beat_Name"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:text=" Village_Area_Name"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Village_Area_Name"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:text=" Unit ID"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Unit_ID"/>
+
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
