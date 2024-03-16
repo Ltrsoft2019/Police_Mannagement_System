@@ -24,10 +24,6 @@ public class FirDetail extends Fragment {
         view = inflater.inflate(R.layout.fir_detail, container, false);
         pieChart = view.findViewById(R.id.detail_pie);
         barChart = view.findViewById(R.id.detail_fir_barchart);
-
-
-
-
         return view;
     }
 }

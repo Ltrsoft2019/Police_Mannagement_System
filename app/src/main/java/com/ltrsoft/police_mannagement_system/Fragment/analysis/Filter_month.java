@@ -76,7 +76,6 @@ public class Filter_month extends Fragment {
         BarModel barModel12 = new BarModel("Dec", 35f, Color.parseColor("#AA66CC"));
 
         barChart.addBar(barModel1);
-
         barChart.addBar(barModel2);
         barChart.addBar(barModel3);
         barChart.addBar(barModel4);

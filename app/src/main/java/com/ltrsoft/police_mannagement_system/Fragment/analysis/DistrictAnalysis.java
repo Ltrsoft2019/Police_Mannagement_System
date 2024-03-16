@@ -111,15 +111,4 @@ public class DistrictAnalysis extends Fragment {
         return entries;
     }
 }
-// List<BarModel>barModels = new ArrayList<>();
-//        barModels.add(new BarModel("",56f,Color.parseColor("#3366FF")));
-//        barModels.add(new BarModel("",56f,Color.parseColor("#3366FF")));
-//        barModels.add(new BarModel("",56f,Color.parseColor("#3366FF")));
-//        barModels.add(new BarModel("",56f,Color.parseColor("#3366FF")));
-//        barModels.add(new BarModel("",56f,Color.parseColor("#3366FF")));
-//        setBar(barModels);private void setBar(List<BarModel> barModels) {
-//
-//        for (BarModel b:barModels) {
-//
-//        }
-//    }
+
