@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.ltrsoft.police_mannagement_system.Fragment.AcpanalyticalDashboardFragment;
 import com.ltrsoft.police_mannagement_system.Fragment.analysis.DistrictAnalysis;
+import com.ltrsoft.police_mannagement_system.navigation.navigationfragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        setContentView(R.layout.demo);
 
-//        navigationfragment navigationfragment=new navigationfragment();
-        AcpanalyticalDashboardFragment acpanalyticalDashboardFragment=new AcpanalyticalDashboardFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.main_container,new DistrictAnalysis()).commit();
+        navigationfragment navigationfragment=new navigationfragment();
+//        AcpanalyticalDashboardFragment acpanalyticalDashboardFragment=new AcpanalyticalDashboardFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.main_container,navigationfragment).commit();
 
 
     }

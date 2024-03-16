@@ -65,7 +65,6 @@ public class Filter_year_month extends Fragment {
         BarModel barModel7 = new BarModel("2022", 100f, Color.parseColor("#AA66CC"));
         BarModel barModel8 = new BarModel("2023", 25f, Color.parseColor("#AA66CC"));
         BarModel barModel9 = new BarModel("2024", 105f, Color.parseColor("#AA66CC"));
-
         barChart.addBar(barModel1);
 
         barChart.addBar(barModel2);

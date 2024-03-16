@@ -42,7 +42,7 @@ public class YearAdapter extends RecyclerView.Adapter<YearAdapter.ViewHolder>
             public void onClick(View view) {
                 Context  context=view.getContext();
                 AppCompatActivity activity= (AppCompatActivity) context;
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new Filter_month() ).addToBackStack(null).commit();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,new Filter_month() ).addToBackStack(null).commit();
 
             }
         });

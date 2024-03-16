@@ -21,7 +21,7 @@ public class FirAnalysis extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view= inflater.inflate(R.layout.fir_analysis_fragment, container, false);
+        view= inflater.inflate(R.layout.fir_detail, container, false);
         Toast.makeText(getContext(), "on fir analysis", Toast.LENGTH_SHORT).show();
         return view;
     }

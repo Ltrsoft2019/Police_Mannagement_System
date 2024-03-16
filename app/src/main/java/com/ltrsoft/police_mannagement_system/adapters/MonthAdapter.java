@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,8 +42,9 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthAdapter.ViewHolder>{
             @Override
             public void onClick(View view) {
                 Context context=view.getContext();
+                Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show();
                 AppCompatActivity activity= (AppCompatActivity) context;
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new FirFragment());
+                activity.getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.fraglayot,new FirFragment()).commit();
             }
         });
 

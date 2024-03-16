@@ -30,7 +30,7 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         District district = list.get(position);
-        holder.t1.append("  "+district.getName());
+        holder.t1.append("  "+district.getDistrict_name());
         holder.t2.append("\n"+district.getTotalcase());
         holder.t3.append("\n"+district.getTotalpolice());
     }

@@ -2,28 +2,29 @@ package com.ltrsoft.police_mannagement_system.Model;
 
 
 public class District {
-    String id, name, totalcase, totalpolice;
+    String district_id, district_name, totalcase, totalpolice;
     public District(String id, String name, String totalcase, String totalpolice) {
-        this.id = id;
-        this.name = name;
+        this.district_id = id;
+        this.district_name = name;
         this.totalcase = totalcase;
         this.totalpolice = totalpolice;
     }
 
-    public String getId() {
-        return id;
+
+    public String getDistrict_id() {
+        return district_id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setDistrict_id(String district_id) {
+        this.district_id = district_id;
     }
 
-    public String getName() {
-        return name;
+    public String getDistrict_name() {
+        return district_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDistrict_name(String district_name) {
+        this.district_name = district_name;
     }
 
     public String getTotalcase() {

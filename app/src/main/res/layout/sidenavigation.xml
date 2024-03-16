@@ -62,10 +62,10 @@
             android:layout_marginTop="0dp" >
             <androidx.cardview.widget.CardView
                 android:id="@+id/feature"
-                android:layout_width="40dp"
+                android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="390dp"
-                android:layout_marginBottom="450dp"
+                android:layout_marginBottom="400dp"
                 android:backgroundTint="#F8DE75"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="20dp"
@@ -75,7 +75,8 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="match_parent"
+                    android:id="@+id/float_drawer"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:src="@drawable/down_arrow" />
@@ -85,6 +86,7 @@
                 android:id="@+id/feature_list"
                 android:layout_width="70dp"
                 android:layout_height="200dp"
+                android:visibility="gone"
                 app:cardElevation="20dp"
                 app:cardCornerRadius="10dp"
                 android:layout_marginStart="320dp"

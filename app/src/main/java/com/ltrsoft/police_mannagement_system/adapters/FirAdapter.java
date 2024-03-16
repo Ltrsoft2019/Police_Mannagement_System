@@ -34,14 +34,14 @@ public class FirAdapter extends RecyclerView.Adapter<FirAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         FirModel model = models.get(position);
-    holder.id.setText(model.getFir_id());
-    holder.name.setText(model.getFir_name());
+    holder.id.setText(model.getId());
+    holder.name.setText(model.getIOName());
     holder.card.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Context context=v.getContext();
             AppCompatActivity activity= (AppCompatActivity) context;
-            activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new FirAnalysis());
+            activity.getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,new FirAnalysis()).commit();
         }
     });
 

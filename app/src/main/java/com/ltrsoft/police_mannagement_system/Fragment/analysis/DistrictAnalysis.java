@@ -47,7 +47,7 @@ public class DistrictAnalysis extends Fragment {
        chart.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-              getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new FilterFragment()).addToBackStack(null).commit();
+              getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,new FilterFragment()).addToBackStack(null).commit();
 
            }
        });
@@ -55,7 +55,7 @@ public class DistrictAnalysis extends Fragment {
         lineChart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new FilterFragment()).addToBackStack(null).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,new FilterFragment()).addToBackStack(null).commit();
 
             }
         });
