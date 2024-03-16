@@ -41,7 +41,7 @@ public class FirAdapter extends RecyclerView.Adapter<FirAdapter.ViewHolder>{
         public void onClick(View v) {
             Context context=v.getContext();
             AppCompatActivity activity= (AppCompatActivity) context;
-            activity.getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,new FirAnalysis()).commit();
+            activity.getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,new FirAnalysis()).addToBackStack(null).commit();
         }
     });
 
