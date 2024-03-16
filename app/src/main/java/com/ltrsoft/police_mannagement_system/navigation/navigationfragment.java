@@ -18,11 +18,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
-import com.ltrsoft.police_mannagement_system.Fragment.AcpanalyticalDashboardFragment;
 import com.ltrsoft.police_mannagement_system.Fragment.Common_police_fragment;
 import com.ltrsoft.police_mannagement_system.Fragment.DySPanalyticaldashboard;
 import com.ltrsoft.police_mannagement_system.Fragment.PIanalyticaldashboard;
-import com.ltrsoft.police_mannagement_system.Fragment.analysis.DistrictAnalysis;
+import com.ltrsoft.police_mannagement_system.Fragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.R;
 
 
@@ -80,7 +79,7 @@ public class navigationfragment extends Fragment {
         editimg = v1.findViewById(R.id.etedit);
 
         if (position==0) {
-            DistrictAnalysis acp = new DistrictAnalysis();
+            MainAnalysis acp = new MainAnalysis();
             getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
         }
         if (position==2) {

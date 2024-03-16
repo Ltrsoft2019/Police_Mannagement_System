@@ -5,8 +5,6 @@ androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.ltrsoft.police_mannagement_system.Fragment.AcpanalyticalDashboardFragment;
-import com.ltrsoft.police_mannagement_system.Fragment.analysis.DistrictAnalysis;
 import com.ltrsoft.police_mannagement_system.navigation.navigationfragment;
 
 

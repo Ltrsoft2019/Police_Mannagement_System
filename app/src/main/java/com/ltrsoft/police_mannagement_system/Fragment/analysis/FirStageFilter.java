@@ -24,8 +24,8 @@ public class FirStageFilter extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.firstage, container, false);
-        pieChart = view.findViewById(R.id.fir_stage_pie);
-        firstages = view.findViewById(R.id.stages_list);
+        //pieChart = view.findViewById(R.id.fir_stage_pie);
+        //firstages = view.findViewById(R.id.stages_list);
         fir_list = view.findViewById(R.id.year_recycler);
 
 
