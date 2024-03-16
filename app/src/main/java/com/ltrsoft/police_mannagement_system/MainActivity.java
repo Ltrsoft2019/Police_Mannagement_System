@@ -2,20 +2,11 @@ package com.ltrsoft.police_mannagement_system;
 
 import
 androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.Toast;
 
 import com.ltrsoft.police_mannagement_system.Fragment.AcpanalyticalDashboardFragment;
-import com.ltrsoft.police_mannagement_system.Fragment.DistrictAnalysis;
-import com.ltrsoft.police_mannagement_system.navigation.navigationfragment;
+import com.ltrsoft.police_mannagement_system.Fragment.analysis.DistrictAnalysis;
 
 
 public class MainActivity extends AppCompatActivity {

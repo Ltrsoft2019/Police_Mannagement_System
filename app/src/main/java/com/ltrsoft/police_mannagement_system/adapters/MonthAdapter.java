@@ -11,7 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ltrsoft.police_mannagement_system.Fragment.Filter_month;
+import com.ltrsoft.police_mannagement_system.Fragment.analysis.Filter_month;
+import com.ltrsoft.police_mannagement_system.Fragment.analysis.FirFragment;
 import com.ltrsoft.police_mannagement_system.Model.Monthmodel;
 import com.ltrsoft.police_mannagement_system.R;
 
@@ -41,7 +42,7 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthAdapter.ViewHolder>{
             public void onClick(View view) {
                 Context context=view.getContext();
                 AppCompatActivity activity= (AppCompatActivity) context;
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new Filter_month());
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new FirFragment());
             }
         });
 
@@ -49,7 +50,7 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

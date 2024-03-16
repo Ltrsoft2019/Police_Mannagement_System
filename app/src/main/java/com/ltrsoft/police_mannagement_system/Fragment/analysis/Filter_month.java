@@ -1,10 +1,11 @@
-package com.ltrsoft.police_mannagement_system.Fragment;
+package com.ltrsoft.police_mannagement_system.Fragment.analysis;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,16 +25,16 @@ import org.eazegraph.lib.models.BarModel;
 import java.util.ArrayList;
 
 public class Filter_month extends Fragment {
-    public Filter_month() {
-    }
+    public Filter_month() {}
     BarChart barChart;
     private RecyclerView recyclerView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.year, container, false);
-        barChart = view.findViewById(R.id.barchart);
-        recyclerView=view.findViewById(R.id.year_recycler);
+        View view = inflater.inflate(R.layout.month, container, false);
+        Toast.makeText(getContext(), "on month", Toast.LENGTH_SHORT).show();
+        barChart = view.findViewById(R.id.monthbar);
+        recyclerView=view.findViewById(R.id.month_recycler);
         setBar();
         setrecycler();
 

@@ -1,11 +1,10 @@
-package com.ltrsoft.police_mannagement_system.Fragment;
+package com.ltrsoft.police_mannagement_system.Fragment.analysis;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +22,6 @@ import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.adapters.DistrictAdapter;
 
 import org.eazegraph.lib.charts.PieChart;
-import org.eazegraph.lib.models.BarModel;
 import org.eazegraph.lib.models.PieModel;
 
 import java.util.ArrayList;

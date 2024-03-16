@@ -19,7 +19,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <org.eazegraph.lib.charts.BarChart
-
                 android:id="@+id/barchart"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
@@ -39,9 +38,12 @@
         android:text="Years"
         android:id="@+id/yeartext"
         android:gravity="center"/>
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/year_recycler"
-        android:layout_below="@+id/yeartext"/>
+        android:layout_width="match_parent"
+        android:layout_height="331dp"
+        android:layout_below="@+id/yeartext"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp" />
 </RelativeLayout>
