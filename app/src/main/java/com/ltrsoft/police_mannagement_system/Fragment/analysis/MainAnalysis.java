@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +36,7 @@ public class MainAnalysis extends Fragment {
     public PieChart chart;
     private LineChart lineChart;
     private LinearLayout layout;
+    TextView textView;
     private RecyclerView recyclerView;
     ArrayList<PiechartModelclass>list;
 
@@ -45,6 +47,7 @@ public class MainAnalysis extends Fragment {
          chart = view.findViewById(R.id.piechart);
          lineChart = view.findViewById(R.id.linechart);
          layout=view.findViewById(R.id.piechartitem);
+         textView=view.findViewById(R.id.Total_cases);
         recyclerView = view.findViewById(R.id.district_recycler);
        // setPie(100,12,50);
         list=new ArrayList<>();
@@ -54,6 +57,7 @@ public class MainAnalysis extends Fragment {
         list.add(new PiechartModelclass("Hinious",100,"#FFA726"));
         list.add(new PiechartModelclass("Hinious",100,"#EF5350"));
         list.add(new PiechartModelclass("Hinious",100,"#66BB6A"));
+        textView.append(" 600");
         Piechartgraph piechartgraph=new Piechartgraph(list,layout);
         piechartgraph.setpie(chart);
       // piechartgraph.setcardlist(list);
