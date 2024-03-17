@@ -53,15 +53,15 @@ public class Filter_year_month extends Fragment {
         Toast.makeText(getContext(), "on year", Toast.LENGTH_SHORT).show();
         recyclerView=view.findViewById(R.id.year_recycler);
         setBar();
-        list=new ArrayList<>();
-        list.add(new BargraphModelclass("jan",7f,"#3366FF"));
-        list.add(new BargraphModelclass("jan",10f,"#3366FF"));
-        list.add(new BargraphModelclass("jan",11f,"#3366FF"));
-        list.add(new BargraphModelclass("jan",11f,"#3366FF"));
-        list.add(new BargraphModelclass("jan",11f,"#3366FF"));
-        list.add(new BargraphModelclass("jan",6f,"#3366FF"));
-        list.add(new BargraphModelclass("jan",5f,"#3366FF"));
-        Bargraphchart bargraphchart=new Bargraphchart(list);
+//        list=new ArrayList<>();
+//        list.add(new BargraphModelclass("jan",7f,"#3366FF"));
+//        list.add(new BargraphModelclass("jan",10f,"#3366FF"));
+//        list.add(new BargraphModelclass("jan",11f,"#3366FF"));
+//        list.add(new BargraphModelclass("jan",11f,"#3366FF"));
+//        list.add(new BargraphModelclass("jan",11f,"#3366FF"));
+//        list.add(new BargraphModelclass("jan",6f,"#3366FF"));
+//        list.add(new BargraphModelclass("jan",5f,"#3366FF"));
+//        Bargraphchart bargraphchart=new Bargraphchart(list);
        // bargraphchart.setbargraph(barChart);
 
         setrecycler();
@@ -69,30 +69,29 @@ public class Filter_year_month extends Fragment {
     }
 
     private void setrecycler() {
-        ArrayList<YearModel>models = new ArrayList<>();
-        models.add(new YearModel("2016","12344"));
-        models.add(new YearModel("2017","1234654"));
-        models.add(new YearModel("2018","1265344"));
-        models.add(new YearModel("2019","12345544"));
-        models.add(new YearModel("2020","1234544"));
-        models.add(new YearModel("2021","1234794"));
-        models.add(new YearModel("2022","12344"));
-        models.add(new YearModel("2023","12344"));
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
-        YearAdapter adapter = new YearAdapter(models);
-        recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(adapter);
-    }
+//        ArrayList<YearModel>models = new ArrayList<>();
+//        models.add(new YearModel("2016","12344"));
+//        models.add(new YearModel("2017","1234654"));
+//        models.add(new YearModel("2018","1265344"));
+//        models.add(new YearModel("2019","12345544"));
+//        models.add(new YearModel("2020","1234544"));
+//        models.add(new YearModel("2021","1234794"));
+//        models.add(new YearModel("2022","12344"));
+//        models.add(new YearModel("2023","12344"));
+//        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+//        YearAdapter adapter = new YearAdapter(models);
+//        recyclerView.setLayoutManager(manager);
+//        recyclerView.setAdapter(adapter);
+   }
 
     private void setBar() {
 
 
 
-            // initializing variable for bar chart.
 
             // creating a new bar data set.
             barDataSet1 = new BarDataSet(getBarEntriesOne(), "First Set");
-            barDataSet1.setColor(Color.parseColor("# FFF424"));
+            barDataSet1.setColor(Color.parseColor("#FFF424"));
             barDataSet2 = new BarDataSet(getBarEntriesTwo(), "Second Set");
             barDataSet2.setColor(Color.parseColor("#00B2E2"));
         barDataSet3= new BarDataSet(getBarEntriesOne(), "First Set");
@@ -159,7 +158,7 @@ public class Filter_year_month extends Fragment {
 
             // adding new entry to our array list with bar
             // entry and passing x and y axis value to it.
-            barEntries.add(new BarEntry(1f, 4));
+            barEntries.add(new BarEntry(1, 4));
             barEntries.add(new BarEntry(2f, 6));
             barEntries.add(new BarEntry(3f, 8));
             barEntries.add(new BarEntry(4f, 2));
