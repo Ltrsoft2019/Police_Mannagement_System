@@ -2,10 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/actsection_spinner"/>
+    
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
