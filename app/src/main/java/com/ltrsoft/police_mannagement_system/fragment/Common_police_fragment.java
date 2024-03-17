@@ -1,4 +1,4 @@
-package com.ltrsoft.police_mannagement_system.Fragment;
+package com.ltrsoft.police_mannagement_system.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
