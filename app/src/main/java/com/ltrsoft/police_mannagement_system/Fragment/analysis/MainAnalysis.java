@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,7 +19,9 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.ltrsoft.police_mannagement_system.Model.District;
+import com.ltrsoft.police_mannagement_system.Model.PiechartModelclass;
 import com.ltrsoft.police_mannagement_system.R;
+import com.ltrsoft.police_mannagement_system.Uigraph.Piechartgraph;
 import com.ltrsoft.police_mannagement_system.adapters.DistrictAdapter;
 
 import org.eazegraph.lib.charts.PieChart;
@@ -31,7 +34,9 @@ public class MainAnalysis extends Fragment {
     View view;
     public PieChart chart;
     private LineChart lineChart;
+    private LinearLayout layout;
     private RecyclerView recyclerView;
+    ArrayList<PiechartModelclass>list;
 
     @Nullable
     @Override
@@ -39,8 +44,19 @@ public class MainAnalysis extends Fragment {
          view=inflater.inflate(R.layout.main_design,container,false);
          chart = view.findViewById(R.id.piechart);
          lineChart = view.findViewById(R.id.linechart);
+         layout=view.findViewById(R.id.piechartitem);
         recyclerView = view.findViewById(R.id.district_recycler);
-        setPie(100,12,50);
+       // setPie(100,12,50);
+        list=new ArrayList<>();
+        list.add(new PiechartModelclass("Hinious",100,"#FFA726"));
+        list.add(new PiechartModelclass("Hinious",100,"#EF5350"));
+        list.add(new PiechartModelclass("Hinious",100,"#66BB6A"));
+        list.add(new PiechartModelclass("Hinious",100,"#FFA726"));
+        list.add(new PiechartModelclass("Hinious",100,"#EF5350"));
+        list.add(new PiechartModelclass("Hinious",100,"#66BB6A"));
+        Piechartgraph piechartgraph=new Piechartgraph(list,layout);
+        piechartgraph.setpie(chart);
+      // piechartgraph.setcardlist(list);
        setLine(getEntries());
        setRecycler();
 
@@ -59,7 +75,7 @@ public class MainAnalysis extends Fragment {
 
             }
         });
-        return view;
+         return view;
     }
 
     private void setRecycler() {
