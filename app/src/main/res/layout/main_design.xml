@@ -14,7 +14,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewpiechart"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="320dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
@@ -27,7 +27,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
+            android:orientation="vertical"
+
             android:weightSum="2">
 
             <!--Pie chart to display the data-->
@@ -36,7 +37,7 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/piechart"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="250dp"
                 android:padding="6dp"
                  android:layout_marginTop="15dp"
                 android:layout_marginLeft="15dp"
@@ -44,85 +45,14 @@
 
                 />
 
-            <!-- to display pie chart details -->
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="0.8"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:orientation="vertical"-->
-<!--                android:gravity="center_vertical"-->
-<!--                >-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="20dp"-->
-<!--                    android:layout_gravity="center_vertical">-->
-
-<!--                    &lt;!&ndash;View to display the yellow color icon&ndash;&gt;-->
-<!--                    <View-->
-<!--                        android:layout_width="15dp"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:background="#FFA726"/>-->
-
-<!--                    &lt;!&ndash;Text view to display R &ndash;&gt;-->
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="Heinous"-->
-<!--                        android:paddingLeft="10dp"/>-->
-
-<!--                </LinearLayout>-->
-
-<!--                &lt;!&ndash;Linear layout to display Python&ndash;&gt;-->
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="20dp"-->
-<!--                    android:layout_gravity="center_vertical"-->
-<!--                    android:layout_marginTop="5dp">-->
-
-<!--                    &lt;!&ndash;View to display the green color icon&ndash;&gt;-->
-<!--                    <View-->
-<!--                        android:layout_width="15dp"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:background="#29B6F6"/>-->
-
-<!--                    &lt;!&ndash;Text view to display python text &ndash;&gt;-->
-<!--                    <TextView-->
-<!--                        android:layout_width="45dp"-->
-<!--                        android:layout_height="25dp"-->
-<!--                        android:paddingLeft="10dp"-->
-<!--                        android:text="Non Heinous" />-->
-
-<!--                </LinearLayout>-->
-
-<!--                &lt;!&ndash;Linear layout to display C++&ndash;&gt;-->
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center_vertical"-->
-<!--                    android:layout_marginTop="5dp">-->
-
-<!--                    &lt;!&ndash;View to display the red color icon&ndash;&gt;-->
-<!--                    <View-->
-<!--                        android:layout_width="15dp"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:background="#EF5350"/>-->
-
-<!--                    &lt;!&ndash;Text view to display C++ text &ndash;&gt;-->
-<!--                    <TextView-->
-<!--                        android:id="@+id/total_complaints"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="Total Complaints:"-->
-<!--                        android:paddingLeft="10dp"/>-->
-
-<!--                </LinearLayout>-->
-
-<!--                &lt;!&ndash;Linear layout to display Java&ndash;&gt;-->
-
-
-<!--            </LinearLayout>-->
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:textAlignment="center"
+               android:textSize="16dp"
+               android:paddingTop="10dp"
+               android:text="Total Cases : "
+               android:id="@+id/Total_cases"/>
 
         </LinearLayout>
 

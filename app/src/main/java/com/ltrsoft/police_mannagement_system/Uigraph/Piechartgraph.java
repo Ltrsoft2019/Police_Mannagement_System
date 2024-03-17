@@ -2,6 +2,7 @@ package com.ltrsoft.police_mannagement_system.Uigraph;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -75,30 +76,48 @@ public class Piechartgraph {
                        ViewGroup.LayoutParams.WRAP_CONTENT
                ));
                linearLayout2.setOrientation(LinearLayout.HORIZONTAL);
+               layoutParams.setMargins(40,  10, 30, 10);
 
                View  view=new View(context);
                LinearLayout.LayoutParams viewlayout=new LinearLayout.LayoutParams(
                         0,
-                       ViewGroup.LayoutParams.WRAP_CONTENT,
+                       (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30
+                               , context.getResources().getDisplayMetrics()), // Adjust width as needed
                        1
                );
 
                int color=Color.parseColor(modellist.getColorcode());
                view. setBackgroundColor(color);
+              viewlayout.setMargins(5,5,130,5);
                   view.setPadding(10,10,0,0);
                  view.setLayoutParams(viewlayout);
                 TextView textView=new TextView(context);
                LinearLayout.LayoutParams textviewparam=new LinearLayout.LayoutParams(
                        0,
-                       ViewGroup.LayoutParams.WRAP_CONTENT,
+                       (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 35, context.getResources().getDisplayMetrics()),
                        1
                );
 
-                textView.setText(modellist.getLabel());
+                textView.setText(modellist.getLabel()+" : ");
+               textviewparam.setMargins(5,10,130,0);
+               textView.setPadding(0,10,0,0);
                 textView.setLayoutParams(textviewparam);
-               linearLayout2.addView(view);
+               TextView textView2=new TextView(context);
+               LinearLayout.LayoutParams textviewparam2=new LinearLayout.LayoutParams(
+                       0,
+                       (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 35, context.getResources().getDisplayMetrics()),
+                       1
+               );
+
+               textView2.setText(String.valueOf(modellist.getValue()));
+               textviewparam2.setMargins(5,10,50,0);
+               textView2.setPadding(0,10,0,0);
+               textView2.setLayoutParams(textviewparam2);
+                linearLayout2.addView(view);
                linearLayout2.addView(textView);
-                linearLayout1.addView(linearLayout2);
+               linearLayout2.addView(textView2);
+
+               linearLayout1.addView(linearLayout2);
            }
          cardView.addView(linearLayout1);
          layout.addView(cardView);
