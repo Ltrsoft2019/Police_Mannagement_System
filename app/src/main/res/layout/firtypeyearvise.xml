@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewpiechart"
         android:layout_width="match_parent"
@@ -132,9 +134,17 @@
         android:text="Years"
         android:id="@+id/yeartext"
         android:gravity="center"/>
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/yeartext"
+        android:layout_width="match_parent"
+        android:id="@+id/fir_types"
+        android:layout_height="wrap_content"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/year_recycler"
-        android:layout_below="@+id/yeartext"/>
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/fir_types"/>
 </RelativeLayout>
+</ScrollView>

@@ -1,9 +1,9 @@
 package com.ltrsoft.police_mannagement_system.Model;
 
-public class ActSection {
+public class ActSections {
     private String actsection_id,actsection_name;
 
-    public ActSection(String actsection_id, String actsection_name) {
+    public ActSections(String actsection_id, String actsection_name) {
         this.actsection_id = actsection_id;
         this.actsection_name = actsection_name;
     }
