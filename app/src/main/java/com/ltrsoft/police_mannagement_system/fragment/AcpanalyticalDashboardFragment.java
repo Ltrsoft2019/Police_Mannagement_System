@@ -1,4 +1,4 @@
-package com.ltrsoft.police_mannagement_system.Fragment;
+package com.ltrsoft.police_mannagement_system.fragment;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -61,11 +61,8 @@ public class AcpanalyticalDashboardFragment extends Fragment {
         if (currentLayoutIndex >= NUM_LAYOUTS) {
             currentLayoutIndex = 0;
         }
-//        int screenWidth = DeviceUtils.getScreenWidth(getContext());
-//        int screenHeight = DeviceUtils.getScreenHeight(getContext());
-
-        System.out.println("index= "+ horizontalScrollView.getWidth());
-        int scrollTo = currentLayoutIndex *  2200;
+System.out.println("index= "+ horizontalScrollView.getWidth());
+        int scrollTo = currentLayoutIndex * horizontalScrollView.getWidth();
         horizontalScrollView.smoothScrollTo(scrollTo, 0);
     }
 

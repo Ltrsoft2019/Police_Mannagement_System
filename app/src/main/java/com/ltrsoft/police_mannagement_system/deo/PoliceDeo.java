@@ -1,4 +1,4 @@
-package com.ltrsoft.police_mannagement_system.Deo;
+package com.ltrsoft.police_mannagement_system.deo;
 
 public class PoliceDeo {
 }
