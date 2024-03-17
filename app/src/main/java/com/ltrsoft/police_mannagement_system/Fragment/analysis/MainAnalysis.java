@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainAnalysis extends Fragment {
-    View view;
+     View view;
     public PieChart chart;
     private LineChart lineChart;
     private LinearLayout layout;

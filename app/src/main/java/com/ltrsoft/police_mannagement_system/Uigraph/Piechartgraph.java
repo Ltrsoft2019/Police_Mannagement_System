@@ -84,8 +84,8 @@ public class Piechartgraph {
                );
 
                int color=Color.parseColor(modellist.getColorcode());
-                view.setBackgroundColor(color);
-                 view.setPadding(10,10,0,0);
+               view. setBackgroundColor(color);
+                  view.setPadding(10,10,0,0);
                  view.setLayoutParams(viewlayout);
                 TextView textView=new TextView(context);
                LinearLayout.LayoutParams textviewparam=new LinearLayout.LayoutParams(

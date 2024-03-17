@@ -1,13 +1,14 @@
 package com.ltrsoft.police_mannagement_system.Model;
 
 public class PiechartModelclass {
-    String label;Integer value;
-    String colorcode;
+    String label;
+    Integer value;
+    String Colorcode;
 
     public PiechartModelclass(String label, Integer value, String colorcode) {
         this.label = label;
         this.value = value;
-        this.colorcode = colorcode;
+        Colorcode = colorcode;
     }
 
     public String getLabel() {
@@ -27,10 +28,10 @@ public class PiechartModelclass {
     }
 
     public String getColorcode() {
-        return colorcode;
+        return Colorcode;
     }
 
     public void setColorcode(String colorcode) {
-        this.colorcode = colorcode;
+        Colorcode = colorcode;
     }
 }
