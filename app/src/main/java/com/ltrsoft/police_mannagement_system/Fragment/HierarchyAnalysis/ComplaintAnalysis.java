@@ -54,7 +54,7 @@ public class ComplaintAnalysis extends Fragment {
     }
     private ArrayList<BarEntry> getBarEntriesOne() {
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(1, 4));
+        entries.add(new BarEntry(1f, 4));
         entries.add(new BarEntry(2f, 6));
         entries.add(new BarEntry(3f, 8));
         entries.add(new BarEntry(4f, 2));
@@ -72,54 +72,52 @@ public class ComplaintAnalysis extends Fragment {
 
     private ArrayList<BarEntry> getBarEntriesTwo() {
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(1, 4));
-        entries.add(new BarEntry(2f, 6));
-        entries.add(new BarEntry(3f, 8));
-        entries.add(new BarEntry(4f, 2));
-        entries.add(new BarEntry(5f, 4));
+        entries.add(new BarEntry(2f, 16));
+        entries.add(new BarEntry(3f, 18));
+        entries.add(new BarEntry(4f, 12));
+        entries.add(new BarEntry(5f, 14));
 
-        entries.add(new BarEntry(6f, 1));
-        entries.add(new BarEntry(6f, 1));
-        entries.add(new BarEntry(8f, 1));
-        entries.add(new BarEntry(11f, 1));
+        entries.add(new BarEntry(6f, 10));
+        entries.add(new BarEntry(6f, 13));
+        entries.add(new BarEntry(8f, 15));
+        entries.add(new BarEntry(11f, 17));
         entries.add(new BarEntry(12f, 1));
-        entries.add(new BarEntry(14f, 1));
+        entries.add(new BarEntry(14f, 16
+        ));
         entries.add(new BarEntry(15f, 1));
          return entries;
     }
 
     private ArrayList<BarEntry> getBarEntriesThree() {
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(1, 4));
-        entries.add(new BarEntry(2f, 6));
-        entries.add(new BarEntry(3f, 8));
-        entries.add(new BarEntry(4f, 2));
+        entries.add(new BarEntry(2f, 5));
+        entries.add(new BarEntry(3f, 11));
+        entries.add(new BarEntry(4f, 12));
         entries.add(new BarEntry(5f, 4));
 
-        entries.add(new BarEntry(6f, 1));
-        entries.add(new BarEntry(6f, 1));
-        entries.add(new BarEntry(8f, 1));
-        entries.add(new BarEntry(11f, 1));
-        entries.add(new BarEntry(12f, 1));
-        entries.add(new BarEntry(14f, 1));
+        entries.add(new BarEntry(6f, 11));
+        entries.add(new BarEntry(6f, 11));
+        entries.add(new BarEntry(8f, 18));
+        entries.add(new BarEntry(11f, 19));
+        entries.add(new BarEntry(12f, 10));
+        entries.add(new BarEntry(14f, 10));
         entries.add(new BarEntry(15f, 1));
          return entries;
     }
     private ArrayList<BarEntry> getBarEntriesfour() {
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(1f, 4));
-        entries.add(new BarEntry(12f, 6));
-        entries.add(new BarEntry(13f, 8));
-        entries.add(new BarEntry(14f, 2));
-        entries.add(new BarEntry(12f, 4));
+        entries.add(new BarEntry(2f, 7));
+        entries.add(new BarEntry(3f, 8));
+        entries.add(new BarEntry(4f, 2));
+        entries.add(new BarEntry(5f, 4));
 
-        entries.add(new BarEntry(9f, 1));
-        entries.add(new BarEntry(6f, 1));
-        entries.add(new BarEntry(8f, 1));
-        entries.add(new BarEntry(1f, 1));
-        entries.add(new BarEntry(2f, 1));
-        entries.add(new BarEntry(4f, 1));
-        entries.add(new BarEntry(5f, 1));
+        entries.add(new BarEntry(6f, 4));
+        entries.add(new BarEntry(6f, 14));
+        entries.add(new BarEntry(8f, 15));
+        entries.add(new BarEntry(11f, 8));
+        entries.add(new BarEntry(12f, 7));
+        entries.add(new BarEntry(14f, 11));
+        entries.add(new BarEntry(15f, 10));
         return entries;
     }
 }

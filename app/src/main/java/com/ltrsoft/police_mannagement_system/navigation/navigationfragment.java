@@ -18,7 +18,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
-
 import com.ltrsoft.police_mannagement_system.Fragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.R;
 
@@ -81,20 +80,20 @@ public class navigationfragment extends Fragment {
             getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
         }
         if (position==2) {
-//            DySPanalyticaldashboard acp = new DySPanalyticaldashboard();
-//            getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
+           // DySPanalyticaldashboard acp = new DySPanalyticaldashboard();
+           // getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
         }
         if (position==3) {
-//            PIanalyticaldashboard acp = new PIanalyticaldashboard();
-//            getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
+           // PIanalyticaldashboard acp = new PIanalyticaldashboard();
+            //getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
         }
         if (position==4) {
 //           com.ltrsoft.police_mannagement_system.fragment.PSIanalyticaldashboard acp = new com.ltrsoft.police_mannagement_system.fragment.PSIanalyticaldashboard();
 //            getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
         }
         if (position==5) {
-//            Common_police_fragment acp = new Common_police_fragment();
-//            getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
+           // Common_police_fragment acp = new Common_police_fragment();
+           // getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
         }
 
         return view;
