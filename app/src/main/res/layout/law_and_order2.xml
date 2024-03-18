@@ -35,9 +35,7 @@
           <androidx.cardview.widget.CardView
               android:layout_width="0dp"
               android:layout_weight="1"
-              android:cardCornerRadius="8dp"
-              android:cardElevation="4dp"
-              android:layout_height="50dp">
+               android:layout_height="50dp">
               <TextView
                   android:layout_gravity="center"
                   android:layout_width="wrap_content"
@@ -49,9 +47,7 @@
           <androidx.cardview.widget.CardView
               android:layout_width="0dp"
               android:layout_height="50dp"
-              android:cardCornerRadius="8dp"
-              android:cardElevation="4dp"
-              android:layout_weight="1">
+               android:layout_weight="1">
 
               <TextView
                   android:layout_gravity="center"
@@ -72,9 +68,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:cardCornerRadius="8dp"
-                android:cardElevation="4dp"
-                android:layout_height="50dp">
+                  android:layout_height="50dp">
                 <TextView
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
@@ -86,9 +80,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:cardCornerRadius="8dp"
-                android:cardElevation="4dp"
-                android:layout_weight="1">
+                 android:layout_weight="1">
 
                 <TextView
                     android:layout_gravity="center"
@@ -108,9 +100,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:cardCornerRadius="8dp"
-                android:cardElevation="4dp"
-                android:layout_height="50dp">
+                 android:layout_height="50dp">
                 <TextView
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
@@ -121,9 +111,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:cardCornerRadius="8dp"
-                android:cardElevation="4dp"
-                android:layout_height="50dp"
+                 android:layout_height="50dp"
                 android:layout_weight="1">
 
                 <TextView

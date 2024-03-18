@@ -130,9 +130,9 @@ public class Filter_year_month extends Fragment {
             barChart.setVisibleXRangeMaximum(3);
 
 
-            float barSpace = 0.1f;
+            float barSpace = 0f;
 
-            float groupSpace = 0.5f;
+            float groupSpace = 0.4f;
 
 
             data.setBarWidth(0.15f);
