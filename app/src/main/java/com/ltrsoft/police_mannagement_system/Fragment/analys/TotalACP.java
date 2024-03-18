@@ -13,11 +13,11 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.ltrsoft.police_mannagement_system.Deo.DAO;
-import com.ltrsoft.police_mannagement_system.Deo.URLS;
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.PolicePosition;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.adapters.PoliceAdapter;
+import com.ltrsoft.police_mannagement_system.deo.URLS;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -5,6 +5,7 @@ androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.ltrsoft.police_mannagement_system.Fragment.analys.DyspFragment;
 import com.ltrsoft.police_mannagement_system.navigation.navigationfragment;
 
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         navigationfragment navigationfragment=new navigationfragment();
 //        AcpanalyticalDashboardFragment acpanalyticalDashboardFragment=new AcpanalyticalDashboardFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.main_container,navigationfragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.main_container, new DyspFragment()).commit();
 
 
     }
