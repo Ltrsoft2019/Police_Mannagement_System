@@ -13,13 +13,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.gson.Gson;
-import com.ltrsoft.police_mannagement_system.Deo.DAO;
-import com.ltrsoft.police_mannagement_system.Deo.URLS;
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.PiechartModelclass;
 import com.ltrsoft.police_mannagement_system.Model.PolicePosition;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.Uigraph.Piechartgraph;
+import com.ltrsoft.police_mannagement_system.deo.DAO;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.json.JSONArray;
@@ -35,6 +34,7 @@ public class ACPFragmnet extends Fragment {
     private PieChart chart;
     private TextView total;
     LinearLayout layout;
+    private static final String URL = "https://rj.ltr-soft.com/dataset_api/police/dysp_list.php";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class ACPFragmnet extends Fragment {
         DAO dao = new DAO(getContext());
         HashMap<String,String>map = new HashMap<>();
         map.put("kgid",KGID);
-        dao.getData(map, URLS.GET_DYSP_BY_ACP, new NewCallBack() {
+        dao.getData(map, URL, new NewCallBack() {
             @Override
             public void onError(String error) {
                 Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();

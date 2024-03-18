@@ -12,12 +12,11 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.ltrsoft.police_mannagement_system.Deo.DAO;
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.PolicePosition;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.adapters.PoliceAdapter;
-import com.ltrsoft.police_mannagement_system.deo.URLS;
+import com.ltrsoft.police_mannagement_system.deo.DAO;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +27,8 @@ import java.util.HashMap;
 public class TotalACP extends Fragment {
     public TotalACP() {}
     private RecyclerView recyclerView;
+    public  String GET_ACP_LIST = "https://rj.ltr-soft.com/dataset_api/police/police_by_position.php";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class TotalACP extends Fragment {
         DAO dao = new DAO(getContext());
         HashMap<String,String> map = new HashMap<>();
         map.put("position","ACP");
-        dao.getData(map, URLS.GET_ACP_LIST, new NewCallBack() {
+        dao.getData(map,GET_ACP_LIST , new NewCallBack() {
             @Override
             public void onError(String error) {
                 Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();

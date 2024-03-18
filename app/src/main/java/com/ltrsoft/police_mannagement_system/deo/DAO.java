@@ -1,4 +1,4 @@
-package com.ltrsoft.police_mannagement_system.Deo;
+package com.ltrsoft.police_mannagement_system.deo;
 
 import android.content.Context;
 
@@ -81,7 +81,7 @@ public class DAO<T> {
         queue.add(request);
     }
     public void insertOrUpdate(Object o, NewCallBack callBack, String url){
-        hashMap = ObjToMap.convertObjectToHashMap(o, new ErrorListener() {
+        hashMap = com.ltrsoft.police_mannagement_system.Deo.ObjToMap.convertObjectToHashMap(o, new ErrorListener() {
             @Override
             public void Error(String error) {
                callBack.onError(error.toString());

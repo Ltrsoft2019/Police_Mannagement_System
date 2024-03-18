@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.PolicePosition;
 import com.ltrsoft.police_mannagement_system.R;
-import com.ltrsoft.police_mannagement_system.deo.URLS;
+import com.ltrsoft.police_mannagement_system.deo.DAO;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.json.JSONArray;
@@ -27,20 +27,18 @@ import java.util.HashMap;
 public class DyspFragment extends Fragment {
     private PieChart chart;
     private TextView male,female;
+    public  String GET_PI="https://rj.ltr-soft.com/dataset_api/police/police_data.php";
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.acp_layout, container, false);
         chart = view.findViewById(R.id.acp_piechart);
-        male = view.findViewById(R.id.male_txt);
-        female = view.findViewById(R.id.female_txt);
         Bundle bundle=getArguments();
-        //String KGID="1635859";
-                //bundle.getString("KGID");
-        //Toast.makeText(getContext(), "KGID="+KGID, Toast.LENGTH_SHORT).show();
-        com.ltrsoft.police_mannagement_system.Deo.DAO dao = new com.ltrsoft.police_mannagement_system.Deo.DAO(getContext());
+        DAO dao = new DAO(getContext());
+
         HashMap<String,String> map = new HashMap<>();
         map.put("kgid","1827332");
         map.put("position","PI");
-        dao.getData(map, URLS.GET_PI, new NewCallBack() {
+        dao.getData(map,GET_PI , new NewCallBack() {
             @Override
             public void onError(String error) {
                 Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();
@@ -56,11 +54,11 @@ public class DyspFragment extends Fragment {
                     for (int i = 0; i < districtsArray.length(); i++) {
                         JSONObject districtObject = districtsArray.getJSONObject(i);
                         String districtName = districtObject.getString("district_name");
-                        // You can access other fields if needed
+
                         JSONArray dySpArray = districtObject.getJSONArray("dy_sp");
                         Toast.makeText(getContext(), ""+dySpArray, Toast.LENGTH_SHORT).show();
                        System.out.println("Response "+dySpArray);
-                        // Process dy_sp array if needed
+
                     }
 
                 } catch (JSONException e) {
