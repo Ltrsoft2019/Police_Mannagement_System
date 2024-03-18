@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +30,7 @@ public class ResponseFilter extends Fragment {
     private RecyclerView fir;
     private LineChart chart;
     private Spinner years;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,17 +39,17 @@ public class ResponseFilter extends Fragment {
         chart = view.findViewById(R.id.linechart);
         years = view.findViewById(R.id.response_spinner);
         setLine(getEntries());
+    
 
-
-        ArrayList<FirModel>list=new ArrayList<>();
-        list.add(new FirModel("1","wer","rwer","rwer"));
-        list.add(new FirModel("1","wer","rwer","rwer"));
-        list.add(new FirModel("1","wer","rwer","rwer"));
-        list.add(new FirModel("1","wer","rwer","rwer"));
-        list.add(new FirModel("1","wer","rwer","rwer"));
-        list.add(new FirModel("1","wer","rwer","rwer"));
-        list.add(new FirModel("1","wer","rwer","rwer"));
-        list.add(new FirModel("1","wer","rwer","rwer"));
+        ArrayList<FirModel> list = new ArrayList<>();
+        list.add(new FirModel("1", "wer", "rwer", "rwer"));
+        list.add(new FirModel("1", "wer", "rwer", "rwer"));
+        list.add(new FirModel("1", "wer", "rwer", "rwer"));
+        list.add(new FirModel("1", "wer", "rwer", "rwer"));
+        list.add(new FirModel("1", "wer", "rwer", "rwer"));
+        list.add(new FirModel("1", "wer", "rwer", "rwer"));
+        list.add(new FirModel("1", "wer", "rwer", "rwer"));
+        list.add(new FirModel("1", "wer", "rwer", "rwer"));
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         FirAdapter firAdapter = new FirAdapter(list);
@@ -58,8 +60,8 @@ public class ResponseFilter extends Fragment {
         return view;
     }
 
-    public List<Entry> getEntries (){
-        List<Entry>entries=new ArrayList<>();
+    public List<Entry> getEntries() {
+        List<Entry> entries = new ArrayList<>();
         entries.add(new Entry(0f, 30f));
         entries.add(new Entry(1f, 20f));
         entries.add(new Entry(2f, 40f));
@@ -68,6 +70,7 @@ public class ResponseFilter extends Fragment {
         entries.add(new Entry(5f, 90f));
         return entries;
     }
+
     private void setLine(List<Entry> entries) {
         LineDataSet dataSet = new LineDataSet(entries, "Label");
         LineData lineData = new LineData(dataSet);
