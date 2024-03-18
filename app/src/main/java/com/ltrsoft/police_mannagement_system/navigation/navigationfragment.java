@@ -18,7 +18,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
-import com.ltrsoft.police_mannagement_system.Fragment.analysis.MainAnalysis;
+import com.ltrsoft.police_mannagement_system.Fragment.analys.*;
 import com.ltrsoft.police_mannagement_system.R;
 
 
@@ -34,9 +34,7 @@ public class navigationfragment extends Fragment {
     private CardView feature_list;
     int position=0;
     private boolean flag=true;
-    public navigationfragment() {
-
-    }
+    public navigationfragment() {}
 
     @Nullable
     @Override
@@ -53,8 +51,6 @@ public class navigationfragment extends Fragment {
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
-//    header section
-
         float_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,34 +62,14 @@ public class navigationfragment extends Fragment {
                     feature_list.setVisibility(View.GONE);
                     flag=true;
                 }
-//                feature_list.setVisibility(View.VISIBLE);
-
             }
         });
         v1 = nav.getHeaderView(0);
         name = v1.findViewById(R.id.pname);
         imgr = v1.findViewById(R.id.imgrev);
         editimg = v1.findViewById(R.id.etedit);
-
         if (position==0) {
-            MainAnalysis acp = new MainAnalysis();
-            getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
-        }
-        if (position==2) {
-           // DySPanalyticaldashboard acp = new DySPanalyticaldashboard();
-           // getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
-        }
-        if (position==3) {
-           // PIanalyticaldashboard acp = new PIanalyticaldashboard();
-            //getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
-        }
-        if (position==4) {
-//           com.ltrsoft.police_mannagement_system.fragment.PSIanalyticaldashboard acp = new com.ltrsoft.police_mannagement_system.fragment.PSIanalyticaldashboard();
-//            getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
-        }
-        if (position==5) {
-           // Common_police_fragment acp = new Common_police_fragment();
-           // getFragmentManager().beginTransaction().add(R.id.fraglayot, acp).commit();
+            getFragmentManager().beginTransaction().add(R.id.fraglayot, new TotalACP()).commit();
         }
 
         return view;
