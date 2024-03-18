@@ -41,10 +41,11 @@
                     android:layout_weight="1"
                     android:layout_height="20dp"/>
                 <TextView
+                    android:id="@+id/male_txt"
                     android:layout_margin="8dp"
                     android:layout_width="0dp"
                     android:layout_weight="4"
-                    android:text="Toatal Male Dy.Sp\n1023"
+                    android:text="Toatal Male Dy.Sp"
                     android:layout_height="wrap_content"/>
                 <View
                     android:background="#013A46E7"
@@ -53,10 +54,11 @@
                     android:layout_weight="1"
                     android:layout_height="20dp"/>
                 <TextView
+                    android:id="@+id/female_txt"
                     android:layout_margin="8dp"
                     android:layout_width="0dp"
                     android:layout_weight="4"
-                    android:text="Toatal Female Dy.Sp\n10"
+                    android:text="Toatal Female Dy.Sp"
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
