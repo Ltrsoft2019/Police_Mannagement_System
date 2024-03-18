@@ -1,12 +1,14 @@
 package com.ltrsoft.police_mannagement_system.Model;
 
 public class PolicePosition {
-    private String KGID,IOName,Internal_IO;
+    private String KGID,IOName,Internal_IO,districts;
 
-    public PolicePosition(String kgid, String IOName, String internal_IO) {
-       this.KGID=kgid;
+
+    public PolicePosition(String KGID, String IOName, String internal_IO, String districts) {
+        this.KGID = KGID;
         this.IOName = IOName;
-        this.Internal_IO = internal_IO;
+        Internal_IO = internal_IO;
+        this.districts = districts;
     }
 
     public String getKGID() {
@@ -31,5 +33,13 @@ public class PolicePosition {
 
     public void setInternal_IO(String internal_IO) {
         Internal_IO = internal_IO;
+    }
+
+    public String getDistricts() {
+        return districts;
+    }
+
+    public void setDistricts(String districts) {
+        this.districts = districts;
     }
 }

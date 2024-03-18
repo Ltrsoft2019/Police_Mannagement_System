@@ -46,13 +46,16 @@ public class PoliceAdapter extends RecyclerView.Adapter<PoliceAdapter.MyHolder> 
                // System.out.println("KGID "+position1.getKGID());
                 Context context= v.getContext();
                 AppCompatActivity activity= (AppCompatActivity) context;
+
                 ACPFragmnet acpFragmnet=new ACPFragmnet();
                 Bundle bundle=new Bundle();
                 bundle.putString("KGID",position1.getKGID());
-                acpFragmnet.setArguments(bundle);
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,acpFragmnet).addToBackStack(null).commit();
-                //Toast.makeText(v.getContext(), "h "+position1.getKGID(), Toast.LENGTH_SHORT).show();
 
+                acpFragmnet.setArguments(bundle);
+                activity.getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container,acpFragmnet)
+                        .addToBackStack(null)
+                        .commit();
             }
         });
     }

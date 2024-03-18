@@ -27,39 +27,49 @@
                 android:id="@+id/acp_piechart"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+
+                android:id="@+id/total"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                 />
 
             <LinearLayout
                 android:padding="5dp"
-                android:layout_marginTop="20dp"
+                android:id="@+id/linearlayout"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <View
-                    android:background="#013A46E7"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="5dp"
-                    android:layout_weight="1"
-                    android:layout_height="20dp"/>
-                <TextView
-                    android:id="@+id/male_txt"
-                    android:layout_margin="8dp"
-                    android:layout_width="0dp"
-                    android:layout_weight="4"
-                    android:text="Toatal Male Dy.Sp"
-                    android:layout_height="wrap_content"/>
-                <View
-                    android:background="#013A46E7"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="5dp"
-                    android:layout_weight="1"
-                    android:layout_height="20dp"/>
-                <TextView
-                    android:id="@+id/female_txt"
-                    android:layout_margin="8dp"
-                    android:layout_width="0dp"
-                    android:layout_weight="4"
-                    android:text="Toatal Female Dy.Sp"
-                    android:layout_height="wrap_content"/>
+<!--                <View-->
+<!--                    android:background="#013A46E7"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_width="5dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_height="20dp"/>-->
+<!--                <TextView-->
+<!--                    android:id="@+id/male_txt"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_weight="4"-->
+<!--                    android:text="Toatal Male Dy.Sp"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <View-->
+<!--                    android:background="#013A46E7"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_width="5dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_height="20dp"/>-->
+<!--                <TextView-->
+<!--                    android:id="@+id/female_txt"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_weight="4"-->
+<!--                    android:text="Toatal Female Dy.Sp"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
             </LinearLayout>
 
