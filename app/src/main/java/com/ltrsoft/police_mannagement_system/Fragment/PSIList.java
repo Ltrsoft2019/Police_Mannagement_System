@@ -8,11 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
@@ -21,7 +19,6 @@ import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.adapters.PoliceAdapter;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
 
-import org.eazegraph.lib.charts.PieChart;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,9 +26,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class PIList extends Fragment {
+public class PSIList extends Fragment {
+
+    public PSIList() {
+    }
     RecyclerView recyclerView;
     private   String URL = "https://rj.ltr-soft.com/dataset_api/police/police_of_my_unit.php";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class PIList extends Fragment {
         Bundle bundle=getArguments();
         ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
         if (actionBar!=null){
-            actionBar.setTitle("PI List");
+            actionBar.setTitle("PSI List");
         }
         String KGID=bundle.getString("KGID");
         Toast.makeText(getContext(), "KGID="+KGID, Toast.LENGTH_SHORT).show();
@@ -47,7 +48,7 @@ public class PIList extends Fragment {
         DAO dao = new DAO(getContext());
         HashMap<String,String> map = new HashMap<>();
         map.put("KGID",KGID);
-        map.put("position","PI");
+        map.put("position","PSI");
 
         dao.getData(map, URL, new NewCallBack() {
             @Override
@@ -66,14 +67,14 @@ public class PIList extends Fragment {
                         JSONObject oneDistrict = districts.getJSONObject(i);
                         JSONObject disdetail = oneDistrict.getJSONObject("unit_Name");
 
-                        String disname = "latur";
-                        JSONArray dysps = oneDistrict.getJSONArray("PI");
+                        String unit_name = disdetail.getString("UnitName");
+                        JSONArray dysps = oneDistrict.getJSONArray("PSI");
                         for (int j = 0; j <dysps.length() ; j++) {
                             JSONObject oneDysp = dysps.getJSONObject(j);
                             police.add(new PolicePosition(oneDysp.getString("KGID"),
                                     oneDysp.getString("IOName"),
                                     "",
-                                    disname,"",""));
+                                    "","",unit_name));
 //                            Log.d("iteration", String.valueOf(j));
                         }
                     }
