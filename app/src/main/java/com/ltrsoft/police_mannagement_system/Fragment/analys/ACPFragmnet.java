@@ -49,7 +49,7 @@ public class ACPFragmnet extends Fragment {
         Toast.makeText(getContext(), "KGID="+KGID, Toast.LENGTH_SHORT).show();
         DAO dao = new DAO(getContext());
         HashMap<String,String>map = new HashMap<>();
-        map.put("kgid",KGID);
+        map.put("KGIDx",KGID);
         dao.getData(map, URL, new NewCallBack() {
             @Override
             public void onError(String error) {
@@ -68,7 +68,10 @@ public class ACPFragmnet extends Fragment {
                       for (int j = 0; j < jsonArray1.length(); j++) {
                         JSONObject jsonObject2 = jsonArray1.getJSONObject(i);
                         policePositions.add(new PolicePosition(jsonObject2.getString("IOName"),
-                                jsonObject2.getString("KGID"),"",jsonObject1.getString("district_name")));
+                                jsonObject2.getString("KGID"),"",
+                                jsonObject1.getString("district_name")
+                                ,jsonObject1.getString("Unit_ID")
+                                ,jsonObject1.getString("UnitName")));
                            total.setText("Total Dysp = "+policePositions.size());
                       }
                   }
@@ -76,6 +79,7 @@ public class ACPFragmnet extends Fragment {
                   setPieChart(policePositions);
               }
               catch (JSONException e){
+                  System.out.println("JSON Error "+e.toString());
                   Toast.makeText(getContext(), "JSON ERROR "+e.toString(), Toast.LENGTH_SHORT).show();
               }
 

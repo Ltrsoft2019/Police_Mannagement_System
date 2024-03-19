@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ltrsoft.police_mannagement_system.Fragment.analys.ACPFragmnet;
@@ -22,9 +23,10 @@ import java.util.List;
 
 public class PoliceAdapter extends RecyclerView.Adapter<PoliceAdapter.MyHolder> {
     private ArrayList<PolicePosition>policePositions;
-
-    public PoliceAdapter(ArrayList<PolicePosition> policePositions) {
+    private Fragment fragment;
+    public PoliceAdapter(ArrayList<PolicePosition> policePositions, Fragment fragment) {
         this.policePositions = policePositions;
+        this.fragment=fragment;
     }
 
     @NonNull
@@ -51,9 +53,9 @@ public class PoliceAdapter extends RecyclerView.Adapter<PoliceAdapter.MyHolder> 
                 Bundle bundle=new Bundle();
                 bundle.putString("KGID",position1.getKGID());
 
-                acpFragmnet.setArguments(bundle);
+                fragment.setArguments(bundle);
                 activity.getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main_container,acpFragmnet)
+                        .replace(R.id.main_container,fragment)
                         .addToBackStack(null)
                         .commit();
             }

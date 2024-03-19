@@ -57,7 +57,7 @@ public class TotalACP extends Fragment {
                         policePositions.add(policePosition);
                     }
 
-                    PoliceAdapter adapter = new PoliceAdapter(policePositions);
+                    PoliceAdapter adapter = new PoliceAdapter(policePositions,new ACPFragmnet());
                     LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
                     recyclerView.setLayoutManager(layoutManager);
                     recyclerView.setAdapter(adapter);
