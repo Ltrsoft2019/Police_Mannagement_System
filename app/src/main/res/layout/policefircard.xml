@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/policefircard"
+        android:layout_margin="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:paddingTop="10dp"
+                    android:textSize="18dp"
+                    android:text="FIR No :"/>
+                <TextView
+                    android:id="@+id/Fir_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="10dp"
+
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                  />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:paddingTop="10dp"
+                    android:textSize="18dp"
+                    android:text="UNIT NAME :"/>
+                <TextView
+                    android:id="@+id/Unit_names"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="10dp"
+
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                  />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:paddingTop="10dp"
+                    android:textSize="18dp"
+                    android:text="FIR TYPE :"/>
+                <TextView
+                    android:id="@+id/Fir_stages"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="10dp"
+
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:paddingTop="10dp"
+                    android:textSize="18dp"
+                    android:text="FIR ID : "/>
+                <TextView
+                    android:id="@+id/Act_Section"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="10dp"
+
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

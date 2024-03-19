@@ -15,6 +15,7 @@ public class FirModel {
         this.FIRNo = FIRNo;
     }
 
+
     public FirModel(String id, String district_Name, String unitName, String FIRNo, String RI, String year, String month, String offence_From_Date, String offence_To_Date, String FIR_Reg_DateTime, String FIR_Date, String FIR_Type, String FIR_Stage, String complaint_Mode, String crimeGroup_Name, String crimeHead_Name, String latitude, String longitude, String actSection, String IOName, String KGID, String IOAssigned_Date, String internal_IO, String place_of_Offence, String distance_from_PS, String beat_Name, String village_Area_Name, String male, String female, String boy, String girl, String age_0, String VICTIM_COUNT, String accused_Count, String arrested_Male, String arrested_Female, String arrested_Count, String accused_ChargeSheeted_Count, String conviction_Count, String FIR_ID, String unit_ID, String crime_No) {
         this.id = id;
         District_Name = district_Name;
