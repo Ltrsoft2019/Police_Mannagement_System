@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.PiechartModelclass;
 import com.ltrsoft.police_mannagement_system.Model.PolicePosition;
 import com.ltrsoft.police_mannagement_system.R;
+import com.ltrsoft.police_mannagement_system.Uigraph.GettingFirRecycler;
 import com.ltrsoft.police_mannagement_system.Uigraph.Piechartgraph;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
 
@@ -34,6 +36,7 @@ public class PIDash extends Fragment {
     private PieChart chart;
     private TextView total;
     LinearLayout layout;
+    RecyclerView recyclerView;
     TextView io_name ;
     private   String URL = "https://rj.ltr-soft.com/dataset_api/police/police_of_my_unit.php";
     @Override
@@ -44,6 +47,7 @@ public class PIDash extends Fragment {
         chart = view.findViewById(R.id.acp_piechart);
         layout=view.findViewById(R.id.linearlayout);
         total=view.findViewById(R.id.total);
+        recyclerView=view.findViewById(R.id.acp_fir);
         io_name=view.findViewById(R.id.io_name);
 
         ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
@@ -57,6 +61,8 @@ public class PIDash extends Fragment {
         String IONAME=bundle.getString("IONAME");
         io_name.setText("PI name :"+IONAME);
         Toast.makeText(getContext(), "KGID="+KGID, Toast.LENGTH_SHORT).show();
+        GettingFirRecycler gettingFirRecycler=new GettingFirRecycler(recyclerView,KGID);
+        gettingFirRecycler.setrecyclerview();
         DAO dao = new DAO(getContext());
         HashMap<String,String> map = new HashMap<>();
         map.put("KGID",KGID);
