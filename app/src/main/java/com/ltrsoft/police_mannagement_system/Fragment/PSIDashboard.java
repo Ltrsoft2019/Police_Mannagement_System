@@ -76,7 +76,7 @@ public class PSIDashboard extends Fragment {
                         JSONObject disdetail = oneDistrict.getJSONObject("unit_Name");
 
                         String unit_name = disdetail.getString("UnitName");
-                        JSONArray dysps = oneDistrict.getJSONArray("PSI");
+                        JSONArray dysps = oneDistrict.getJSONArray("police");
                         for (int j = 0; j <dysps.length() ; j++) {
                             JSONObject oneDysp = dysps.getJSONObject(j);
                             police.add(new PolicePosition(oneDysp.getString("KGID"),
