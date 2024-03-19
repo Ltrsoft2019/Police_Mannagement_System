@@ -18,11 +18,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
-import com.ltrsoft.police_mannagement_system.Fragment.analys.*;
+import com.ltrsoft.police_mannagement_system.Fragment.ACPList;
 import com.ltrsoft.police_mannagement_system.R;
-
-
-public class navigationfragment extends Fragment {
+public class Navigationfragment extends Fragment {
     NavigationView nav;
     ActionBarDrawerToggle drawerToggle;
     Toolbar toolbar;
@@ -34,7 +32,7 @@ public class navigationfragment extends Fragment {
     private CardView feature_list;
     int position=0;
     private boolean flag=true;
-    public navigationfragment() {}
+    public Navigationfragment() {}
 
     @Nullable
     @Override
@@ -69,9 +67,11 @@ public class navigationfragment extends Fragment {
         imgr = v1.findViewById(R.id.imgrev);
         editimg = v1.findViewById(R.id.etedit);
         if (position==0) {
-            getFragmentManager().beginTransaction().add(R.id.fraglayot, new TotalACP()).commit();
+            getFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.fraglayot, new ACPList())
+                    .commit();
         }
-
         return view;
     }
 }

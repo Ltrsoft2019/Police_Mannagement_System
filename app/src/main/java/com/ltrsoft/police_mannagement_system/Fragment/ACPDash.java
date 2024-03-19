@@ -1,4 +1,4 @@
-package com.ltrsoft.police_mannagement_system.Fragment.analys;
+package com.ltrsoft.police_mannagement_system.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
@@ -26,29 +28,37 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-public class ACPFragmnet extends Fragment {
-    public ACPFragmnet() {}
+public class ACPDash extends Fragment {
+    public ACPDash() {}
     private PieChart chart;
     private TextView total;
     LinearLayout layout;
-    private static final String URL = "https://rj.ltr-soft.com/dataset_api/police/dysp_list.php";
+    private TextView io_name;
+    private   String URL = "https://rj.ltr-soft.com/dataset_api/police/police_data.php";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.acp_layout, container, false);
         chart = view.findViewById(R.id.acp_piechart);
+        ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
+        if (actionBar!=null){
+            actionBar.setTitle("ACP analysis");
+        }
        layout=view.findViewById(R.id.linearlayout);
        total=view.findViewById(R.id.total);
-
+        io_name = view.findViewById(R.id.io_name);
 
         Bundle bundle=getArguments();
         String KGID=bundle.getString("KGID");
-        Toast.makeText(getContext(), "KGID="+KGID, Toast.LENGTH_SHORT).show();
+        String IONAME=bundle.getString("IONAME");
+        io_name.setText("ACP name :"+IONAME);
+//        Toast.makeText(getContext(), "KGID="+KGID, Toast.LENGTH_SHORT).show();
         DAO dao = new DAO(getContext());
         HashMap<String,String>map = new HashMap<>();
-        map.put("KGIDx",KGID);
+        map.put("KGID",KGID);
+        map.put("position","Dy.Sp");
+
         dao.getData(map, URL, new NewCallBack() {
             @Override
             public void onError(String error) {
@@ -57,25 +67,27 @@ public class ACPFragmnet extends Fragment {
 
             @Override
             public void onSuccess(Object object) {
+                ArrayList<PolicePosition>police =new ArrayList<>();
               try {
                   ArrayList<PolicePosition>policePositions=new ArrayList<>();
-                  JSONObject jsonObject = new JSONObject(String.valueOf(object));
-                  JSONArray jsonArray = jsonObject.getJSONArray("districts");
-                  for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                      JSONArray jsonArray1 = jsonObject1.getJSONArray("dy_sp");
-                      for (int j = 0; j < jsonArray1.length(); j++) {
-                        JSONObject jsonObject2 = jsonArray1.getJSONObject(i);
-                        policePositions.add(new PolicePosition(jsonObject2.getString("IOName"),
-                                jsonObject2.getString("KGID"),"",
-                                jsonObject1.getString("district_name")
-                                ,jsonObject1.getString("Unit_ID")
-                                ,jsonObject1.getString("UnitName")));
-                           total.setText("Total Dysp = "+policePositions.size());
-                      }
+                  JSONObject maibObj = new JSONObject(String.valueOf(object));
+                    JSONArray districts = maibObj.getJSONArray("districts");
+                  for (int i = 0; i < districts.length(); i++) {
+                      JSONObject oneDistrict = districts.getJSONObject(i);
+                        JSONObject disdetail = oneDistrict.getJSONObject("district_name");
+                        String disname = disdetail.getString("District_Name");
+                        JSONArray dysps = oneDistrict.getJSONArray("Dy.Sp");
+                            for (int j = 0; j <dysps.length() ; j++) {
+                                JSONObject oneDysp = dysps.getJSONObject(j);
+                                police.add(new PolicePosition(oneDysp.getString("KGID"),
+                                        oneDysp.getString("IOName"),
+                                        "",
+                                       disname,"",""));
+//                                Log.d("iteration", String.valueOf(j));
+                            }
                   }
-//                  Toast.makeText(getContext(), "size "+policePositions.size(), Toast.LENGTH_SHORT).show();
-                  setPieChart(policePositions);
+                  Toast.makeText(getContext(), "dysp list "+policePositions.size(), Toast.LENGTH_SHORT).show();
+                  setPieChart(police);
               }
               catch (JSONException e){
                   System.out.println("JSON Error "+e.toString());
@@ -87,6 +99,20 @@ public class ACPFragmnet extends Fragment {
             @Override
             public void onEmpty() {
                 Toast.makeText(getContext(), "on empty", Toast.LENGTH_SHORT).show();
+            }
+        });
+        chart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DySpLis dySpLis = new DySpLis();
+                Bundle bundle=new Bundle();
+                bundle.putString("KGID",KGID);
+
+                dySpLis.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fraglayot, dySpLis)
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 

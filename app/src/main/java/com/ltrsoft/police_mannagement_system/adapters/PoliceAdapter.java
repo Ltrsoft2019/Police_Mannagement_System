@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,12 +13,10 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ltrsoft.police_mannagement_system.Fragment.analys.ACPFragmnet;
 import com.ltrsoft.police_mannagement_system.Model.PolicePosition;
 import com.ltrsoft.police_mannagement_system.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PoliceAdapter extends RecyclerView.Adapter<PoliceAdapter.MyHolder> {
     private ArrayList<PolicePosition>policePositions;
@@ -49,13 +46,13 @@ public class PoliceAdapter extends RecyclerView.Adapter<PoliceAdapter.MyHolder> 
                 Context context= v.getContext();
                 AppCompatActivity activity= (AppCompatActivity) context;
 
-                ACPFragmnet acpFragmnet=new ACPFragmnet();
                 Bundle bundle=new Bundle();
                 bundle.putString("KGID",position1.getKGID());
+                bundle.putString("IONAME",position1.getIOName());
 
                 fragment.setArguments(bundle);
                 activity.getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main_container,fragment)
+                        .replace(R.id.fraglayot,fragment)
                         .addToBackStack(null)
                         .commit();
             }
@@ -68,7 +65,6 @@ public class PoliceAdapter extends RecyclerView.Adapter<PoliceAdapter.MyHolder> 
     }
 
     public class MyHolder extends RecyclerView.ViewHolder{
-
         private TextView batch_no,police_name;
         private CardView police_card;
         public MyHolder(@NonNull View itemView) {
