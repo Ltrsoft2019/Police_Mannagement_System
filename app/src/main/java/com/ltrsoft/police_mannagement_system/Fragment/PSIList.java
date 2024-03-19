@@ -97,10 +97,9 @@ public class PSIList extends Fragment {
     }
 
     private void setRecycle(ArrayList<PolicePosition> police) {
-        PoliceAdapter adapter = new PoliceAdapter(police,new PIDash());
+        PoliceAdapter adapter = new PoliceAdapter(police,new PSIDashboard());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-
     }
 }

@@ -33,7 +33,7 @@ public class PSIDashboard extends Fragment {
     private TextView total;
     LinearLayout layout;
     TextView io_name ;
-    private   String URL = "https://rj.ltr-soft.com/dataset_api/police/police_of_my_unit.php";
+    private   String URL = "https://rj.ltr-soft.com/dataset_api/police/all_police_of_psi.php";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -57,8 +57,7 @@ public class PSIDashboard extends Fragment {
         DAO dao = new DAO(getContext());
         HashMap<String,String> map = new HashMap<>();
         map.put("KGID",KGID);
-        map.put("position","HC");
-
+//        map.put("position","HC");
         dao.getData(map, URL, new NewCallBack() {
             @Override
             public void onError(String error) {
