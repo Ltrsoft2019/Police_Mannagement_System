@@ -45,7 +45,7 @@ public class DySpDash extends Fragment {
         View view = inflater.inflate(R.layout.acp_layout, container, false);
         chart = view.findViewById(R.id.acp_piechart);
         layout=view.findViewById(R.id.linearlayout);
-        total=view.findViewById(R.id.total);
+       // total=view.findViewById(R.id.total);
         io_name=view.findViewById(R.id.io_name);
         recyclerView=view.findViewById(R.id.acp_fir);
         ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();

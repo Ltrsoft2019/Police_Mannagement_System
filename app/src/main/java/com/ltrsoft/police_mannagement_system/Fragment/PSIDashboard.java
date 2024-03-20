@@ -12,11 +12,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.PiechartModelclass;
 import com.ltrsoft.police_mannagement_system.Model.PolicePosition;
 import com.ltrsoft.police_mannagement_system.R;
+import com.ltrsoft.police_mannagement_system.Uigraph.GettingFirRecycler;
 import com.ltrsoft.police_mannagement_system.Uigraph.Piechartgraph;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
 
@@ -33,6 +35,7 @@ public class PSIDashboard extends Fragment {
     private TextView total;
     LinearLayout layout;
     TextView io_name ;
+    private RecyclerView recyclerView;
     private   String URL = "https://rj.ltr-soft.com/dataset_api/police/all_police_of_psi.php";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,7 +43,7 @@ public class PSIDashboard extends Fragment {
         View view = inflater.inflate(R.layout.acp_layout, container, false);
         chart = view.findViewById(R.id.acp_piechart);
         layout=view.findViewById(R.id.linearlayout);
-        total=view.findViewById(R.id.total);
+//        total=view.findViewById(R.id.total);
         io_name=view.findViewById(R.id.io_name);
 
         ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
@@ -58,6 +61,8 @@ public class PSIDashboard extends Fragment {
         HashMap<String,String> map = new HashMap<>();
         map.put("KGID",KGID);
 //        map.put("position","HC");
+        GettingFirRecycler gettingFirRecycler=new GettingFirRecycler(recyclerView,KGID);
+        gettingFirRecycler.setrecyclerview();
         dao.getData(map, URL, new NewCallBack() {
             @Override
             public void onError(String error) {

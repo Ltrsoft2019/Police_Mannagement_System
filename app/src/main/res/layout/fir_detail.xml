@@ -6,17 +6,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragment.analysis.FirDetail">
+
     <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/barchartcard"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="5dp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
@@ -24,11 +27,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                 android:orientation="vertical">
                 <org.eazegraph.lib.charts.BarChart
                     android:id="@+id/detail_fir_barchart"
                     android:layout_width="match_parent"
-                    android:layout_height="350dp"
+                    android:layout_height="320dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
@@ -36,159 +39,41 @@
                     />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-        <!-- Pie chart and details of pie chart -->
+
         <androidx.cardview.widget.CardView
             android:layout_below="@+id/barchartcard"
-            android:id="@+id/cardviewpiechart"
+            android:layout_margin="5dp"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="10dp">
-
-
-            <!-- and details of pie chart-->
+            android:id="@+id/piechart"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="@dimen/cardview_compat_inset_shadow"
+            android:layout_height="wrap_content">
 
             <LinearLayout
+                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <!--Pie chart to display the data-->
-
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textAlignment="center"
+                    android:paddingTop="4dp"
+                    android:textSize="18dp"
+                    android:text="Total Count"
+                    android:id="@+id/io_name"
+                    android:layout_height="35dp"/>
                 <org.eazegraph.lib.charts.PieChart
-                    android:id="@+id/detail_pie"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:padding="6dp"
-                    android:layout_weight="1.2"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginBottom="15dp"
+                    android:id="@+id/acp_piechart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"/>
 
-                    />
 
-                <!-- to display pie chart details -->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:layout_marginLeft="20dp"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical"
-                    >
+                     android:id="@+id/linearlayout"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center_vertical">
-
-                        <!--View to display the yellow color icon-->
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="match_parent"
-                            android:background="#FFA726"/>
-
-                        <!--Text view to display R -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Male"
-                            android:paddingLeft="10dp"/>
-
-                    </LinearLayout>
-
-                    <!--Linear layout to display Python-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="5dp">
-
-                        <!--View to display the green color icon-->
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="match_parent"
-                            android:background="#29B6F6"/>
-
-                        <!--Text view to display python text -->
-                        <TextView
-                            android:layout_width="45dp"
-                            android:layout_height="32dp"
-                            android:paddingLeft="10dp"
-                            android:text="Female" />
-
-                    </LinearLayout>
-
-                    <!--Linear layout to display C++-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="5dp">
-
-                        <!--View to display the red color icon-->
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="match_parent"
-                            android:background="#EF5350"/>
-
-                        <!--Text view to display C++ text -->
-                        <TextView
-                            android:id="@+id/total_complaints"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Boy"
-                            android:paddingLeft="10dp"/>
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="5dp">
-
-                        <!--View to display the red color icon-->
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="match_parent"
-                            android:background="#EF5350"/>
-
-                        <!--Text view to display C++ text -->
-                        <TextView
-                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Boy"
-                            android:paddingLeft="10dp"/>
-
-                    </LinearLayout>
-
-                    <!--Linear layout to display Java-->
-                    <LinearLayout
-                        android:id="@+id/total"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="5dp">
-
-                        <!--View to display the red color icon-->
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="match_parent"
-                            android:background="#EF5350"/>
-
-                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Total"
-                            android:paddingLeft="10dp"/>
-
-                    </LinearLayout>
-
- 
                 </LinearLayout>
 
             </LinearLayout>
@@ -200,13 +85,17 @@
             android:layout_height="wrap_content"
             android:id="@+id/detail_card"
             android:layout_margin="10dp"
-            android:layout_below="@+id/cardviewpiechart">
+            android:layout_below="@+id/piechart">
             <LinearLayout
+                android:paddingLeft="10dp"
+
+                android:layout_marginBottom="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
+                    android:textSize="18dp"
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
                     android:text=" FIR No"
@@ -214,6 +103,7 @@
                     android:id="@+id/FIRNo"/>
 
                 <TextView
+                    android:textSize="18dp"
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
                     android:text="Internal IO"
@@ -221,19 +111,22 @@
                     android:id="@+id/Internal_IO"/>
 
                 <TextView
-                 android:layout_marginTop="20dp"
+                    android:textSize="18dp"
+                    android:layout_marginTop="20dp"
                  android:layout_width="wrap_content"
                  android:text="Unit Name"
                  android:layout_height="wrap_content"
                  android:id="@+id/unit_name"/>
                 <TextView
+                    android:textSize="18dp"
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
                     android:text="Offence From Date"
                     android:layout_height="wrap_content"
                     android:id="@+id/Offence_From_Date"/>
                 <TextView
-                android:layout_marginTop="20dp"
+                    android:textSize="18dp"
+                    android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:text=" Offence To Date"
                 android:layout_height="wrap_content"
@@ -242,9 +135,11 @@
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
                     android:text="FIR Type"
+                    android:textSize="18dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/FIR_Type"/>
                 <TextView
+                    android:textSize="18dp"
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
                     android:text="FIR Stage"
@@ -252,30 +147,35 @@
                     android:id="@+id/FIR_Stage"/>
 
                 <TextView
+                    android:textSize="18dp"
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
                     android:text="Complaint Mode"
                     android:layout_height="wrap_content"
                     android:id="@+id/Complaint_Mode"/>
                 <TextView
-                android:layout_marginTop="20dp"
+                    android:textSize="18dp"
+                    android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:text="CrimeGroup Name"
                 android:layout_height="wrap_content"
                 android:id="@+id/CrimeGroup_Name"/>
                 <TextView
+                    android:textSize="18dp"
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
                     android:text="Crime Head"
                     android:layout_height="wrap_content"
                     android:id="@+id/CrimeHead"/>
                 <TextView
+                    android:textSize="18dp"
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
                     android:text="ActSection"
                     android:layout_height="wrap_content"
                     android:id="@+id/ActSection"/>
                 <TextView
+                    android:textSize="18dp"
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:text="IOName"
@@ -286,20 +186,24 @@
                     android:layout_width="wrap_content"
                     android:text=" Place of Offence"
                     android:layout_height="wrap_content"
+                    android:textSize="18dp"
                     android:id="@+id/Place_of_Offence"/>
                 <TextView
+                    android:textSize="18dp"
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
                     android:text=" Beat_Name"
                     android:layout_height="wrap_content"
                     android:id="@+id/Beat_Name"/>
                 <TextView
+                    android:textSize="18dp"
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:text=" Village_Area_Name"
                     android:layout_height="wrap_content"
                     android:id="@+id/Village_Area_Name"/>
                 <TextView
+                    android:textSize="18dp"
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:text=" Unit ID"

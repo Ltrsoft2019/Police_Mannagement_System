@@ -32,7 +32,7 @@ public class FirAnalysis extends Fragment {
                              Bundle savedInstanceState) {
         view= inflater.inflate(R.layout.fir_detail, container, false);
         barChart = view.findViewById(R.id.detail_fir_barchart);
-        pieChart = view.findViewById(R.id.detail_pie);
+        pieChart = view.findViewById(R.id.acp_piechart);
 
 
         setBarChart();
