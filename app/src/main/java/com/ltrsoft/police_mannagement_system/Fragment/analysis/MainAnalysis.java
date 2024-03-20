@@ -24,11 +24,13 @@ import com.ltrsoft.police_mannagement_system.Model.PiechartModelclass;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.Uigraph.Piechartgraph;
 import com.ltrsoft.police_mannagement_system.adapters.DistrictAdapter;
+import com.ltrsoft.police_mannagement_system.deo.DAO;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MainAnalysis extends Fragment {
@@ -36,9 +38,10 @@ public class MainAnalysis extends Fragment {
     public PieChart chart;
     private LineChart lineChart;
     private LinearLayout layout;
-    TextView textView;
+   private TextView textView;
     private RecyclerView recyclerView;
-    ArrayList<PiechartModelclass>list;
+    private ArrayList<PiechartModelclass>list;
+    private String  URLS= "https://rj.ltr-soft.com/public/dataset_api/fir_tbl/fir_read_station.php";
 
     @Nullable
     @Override
@@ -49,7 +52,11 @@ public class MainAnalysis extends Fragment {
          layout=view.findViewById(R.id.piechartitem);
          textView=view.findViewById(R.id.Total_cases);
         recyclerView = view.findViewById(R.id.district_recycler);
-       // setPie(100,12,50);
+
+        DAO dao = new DAO(getContext());
+        HashMap hashMap=new HashMap<>();
+//        hashMap.put("Unit_ID",)
+//        dao.getData();
         list=new ArrayList<>();
         list.add(new PiechartModelclass("Hinious",100,"#FFA726"));
         list.add(new PiechartModelclass("Hinious",100,"#EF5350"));
@@ -60,9 +67,9 @@ public class MainAnalysis extends Fragment {
         textView.append(" 600");
         Piechartgraph piechartgraph=new Piechartgraph(list,layout);
         piechartgraph.setpie(chart);
-      // piechartgraph.setcardlist(list);
-       setLine(getEntries());
-       setRecycler();
+
+        setLine(getEntries());
+        setRecycler();
 
        chart.setOnClickListener(new View.OnClickListener() {
            @Override

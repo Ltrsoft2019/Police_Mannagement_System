@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <!-- Pie chart and details of pie chart -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewpiechart"
         android:layout_width="match_parent"

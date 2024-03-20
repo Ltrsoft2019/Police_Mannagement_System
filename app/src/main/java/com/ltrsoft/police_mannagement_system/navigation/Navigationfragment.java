@@ -1,7 +1,6 @@
 package com.ltrsoft.police_mannagement_system.navigation;
 
-import
-        android.os.Bundle;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,9 +19,12 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.ltrsoft.police_mannagement_system.Fragment.ACPDash;
 import com.ltrsoft.police_mannagement_system.Fragment.ACPList;
 import com.ltrsoft.police_mannagement_system.Fragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.R;
+import com.ltrsoft.police_mannagement_system.utils.UserDataAccess;
+
 public class Navigationfragment extends Fragment {
     private BottomNavigationView navigationView;
     NavigationView nav;
@@ -71,31 +73,28 @@ public class Navigationfragment extends Fragment {
         name = v1.findViewById(R.id.pname);
         imgr = v1.findViewById(R.id.imgrev);
         editimg = v1.findViewById(R.id.etedit);
-//        if (position==0) {
-//            getFragmentManager()
-//                    .beginTransaction()
-//                    .add(R.id.fraglayot, new ACPList())
-//                    .commit();
-//        }
+
+        UserDataAccess access = new UserDataAccess();
+        String position=access.getPosition(getActivity());
+        String kgid = access.getKgid(getActivity());
+        Bundle bundle = new Bundle();
+        bundle.putString("KGID",kgid);
+        bundle.putString("IONAME",kgid);
+
+        if (position=="ACP"){
+
+            ACPDash acpDash = new ACPDash();
+            acpDash.setArguments(bundle);
+            loadFragment(acpDash);
+
+        }
+//        loadFragment(new ACPList());
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id  = menuItem.getItemId();
 
-                if (id==R.id.nav_home){
-                    loadFragment(new ACPList());
-                } else if (id==R.id.nav_history) {
-                    loadFragment(new MainAnalysis());
-                }
-//                else if (id==R.id.nav_add) {
-//                    loadFragment(new ACPList());
-//                }
-//                else if (id==R.id.nav_task) {
-//                    loadFragment(new ACPList());
-//                }
-//                else if (id==R.id.nav_report) {
-//                    loadFragment(new ACPList());
-//                }
+
                 return false;
             }
         });
@@ -103,6 +102,7 @@ public class Navigationfragment extends Fragment {
     }
 
     private void loadFragment(Fragment acpList) {
+
         getActivity().getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fraglayot,acpList)
