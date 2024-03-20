@@ -135,7 +135,7 @@ public class ACPDash extends Fragment {
 
     private void setPieChart(ArrayList<PolicePosition> policePositions) {
         ArrayList<PiechartModelclass>modelclasses=new ArrayList<>();
-        modelclasses.add(new PiechartModelclass("Male",(1+ policePositions.size()), "#FF5722"));
+        modelclasses.add(new PiechartModelclass("Male",(1+ policePositions.size()), "#FFF424"));
         Piechartgraph piechartgraph = new Piechartgraph(modelclasses,layout);
         piechartgraph.setpie(chart);
     }
