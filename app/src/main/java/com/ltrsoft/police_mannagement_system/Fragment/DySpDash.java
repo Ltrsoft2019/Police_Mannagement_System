@@ -131,6 +131,7 @@ public class DySpDash extends Fragment {
     private void setPieChart(ArrayList<PolicePosition> policePositions) {
         ArrayList<PiechartModelclass>modelclasses=new ArrayList<>();
         modelclasses.add(new PiechartModelclass("Male",(1+ policePositions.size()), "#00B2E2"));
+        modelclasses.add(new PiechartModelclass("FeMale",0, "#00B2E2"));
         Piechartgraph piechartgraph = new Piechartgraph(modelclasses,layout);
         piechartgraph.setpie(chart);
     }
