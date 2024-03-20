@@ -3,6 +3,7 @@ package com.ltrsoft.police_mannagement_system.navigation;
 import
         android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -17,10 +18,13 @@ import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.ltrsoft.police_mannagement_system.Fragment.ACPList;
+import com.ltrsoft.police_mannagement_system.Fragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.R;
 public class Navigationfragment extends Fragment {
+    private BottomNavigationView navigationView;
     NavigationView nav;
     ActionBarDrawerToggle drawerToggle;
     Toolbar toolbar;
@@ -41,6 +45,7 @@ public class Navigationfragment extends Fragment {
         float_drawer = view.findViewById(R.id.float_drawer);
         feature_list = view.findViewById(R.id.feature_list);
         toolbar = view.findViewById(R.id.toolbar);
+        navigationView = view.findViewById(R.id.ubotnav);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
 
         nav = view.findViewById(R.id.naviga);
@@ -66,12 +71,41 @@ public class Navigationfragment extends Fragment {
         name = v1.findViewById(R.id.pname);
         imgr = v1.findViewById(R.id.imgrev);
         editimg = v1.findViewById(R.id.etedit);
-        if (position==0) {
-            getFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.fraglayot, new ACPList())
-                    .commit();
-        }
+//        if (position==0) {
+//            getFragmentManager()
+//                    .beginTransaction()
+//                    .add(R.id.fraglayot, new ACPList())
+//                    .commit();
+//        }
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                int id  = menuItem.getItemId();
+
+                if (id==R.id.nav_home){
+                    loadFragment(new ACPList());
+                } else if (id==R.id.nav_history) {
+                    loadFragment(new MainAnalysis());
+                }
+//                else if (id==R.id.nav_add) {
+//                    loadFragment(new ACPList());
+//                }
+//                else if (id==R.id.nav_task) {
+//                    loadFragment(new ACPList());
+//                }
+//                else if (id==R.id.nav_report) {
+//                    loadFragment(new ACPList());
+//                }
+                return false;
+            }
+        });
         return view;
+    }
+
+    private void loadFragment(Fragment acpList) {
+        getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fraglayot,acpList)
+                    .commit();
     }
 }
