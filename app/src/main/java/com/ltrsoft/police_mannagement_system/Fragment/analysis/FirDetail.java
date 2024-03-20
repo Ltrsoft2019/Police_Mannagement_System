@@ -180,10 +180,10 @@ public class FirDetail extends Fragment {
         Arrested_Count= Float.valueOf(model.getArrested_Count());
         VICTIM_COUNT= Float.valueOf(model.getVICTIM_COUNT());
 
-      list.add(new BargraphModelclass("VICTIM", VICTIM_COUNT,"#FFA726"));
-    list.add(new BargraphModelclass("Accused", Accused_Count,"#FFA726"));
+      list.add(new BargraphModelclass("VICTIM", VICTIM_COUNT,"#66BB6A"));
+    list.add(new BargraphModelclass("Accused", Accused_Count,"#EF5350"));
       list.add(new BargraphModelclass("Arrested", Arrested_Count,"#FFA726"));
-      list.add(new BargraphModelclass("Convicted", Conviction_Count,"#FFA726"));
+      list.add(new BargraphModelclass("Convicted", Conviction_Count,"#00B2E2 "));
         Bargraphchart bargraphchart=new Bargraphchart(list);
        bargraphchart.setbargraph(barChart);
 
@@ -197,7 +197,7 @@ public class FirDetail extends Fragment {
       list.add(new PiechartModelclass("Male",Male,"#FFA726"));
       list.add(new PiechartModelclass("Female",Female,"#EF5350"));
       list.add(new PiechartModelclass("BOY",BOY,"#66BB6A"));
-      list.add(new PiechartModelclass("Girl",Girl,"#EF5350"));
+      list.add(new PiechartModelclass("Girl",Girl,"#00B2E2"));
         Piechartgraph piechartgraph=new Piechartgraph(list,layout);
         piechartgraph.setpie(pieChart);
 
