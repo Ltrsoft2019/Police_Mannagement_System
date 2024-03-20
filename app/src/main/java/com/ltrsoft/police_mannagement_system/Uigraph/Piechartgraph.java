@@ -56,8 +56,7 @@ public class Piechartgraph {
                ViewGroup.LayoutParams.MATCH_PARENT,
                ViewGroup.LayoutParams.WRAP_CONTENT
        );
-         layoutParams.setMargins(30, 20, 30, 20);
-         cardView.setLayoutParams(layoutParams);
+          cardView.setLayoutParams(layoutParams);
          cardView.setCardBackgroundColor(Color.WHITE);
          cardView.setRadius(15);
          cardView.setCardElevation(2);
@@ -76,7 +75,7 @@ public class Piechartgraph {
                        ViewGroup.LayoutParams.WRAP_CONTENT
                ));
                linearLayout2.setOrientation(LinearLayout.HORIZONTAL);
-               layoutParams.setMargins(40,  10, 30, 10);
+               layoutParams.setMargins(10,  10, 10, 10);
 
                View  view=new View(context);
                LinearLayout.LayoutParams viewlayout=new LinearLayout.LayoutParams(
@@ -88,8 +87,8 @@ public class Piechartgraph {
 
                int color=Color.parseColor(modellist.getColorcode());
                view. setBackgroundColor(color);
-              viewlayout.setMargins(5,5,130,5);
-                  view.setPadding(10,10,0,0);
+              viewlayout.setMargins(10,13,130,5);
+                  view.setPadding(15,13,0,0);
                  view.setLayoutParams(viewlayout);
                 TextView textView=new TextView(context);
                LinearLayout.LayoutParams textviewparam=new LinearLayout.LayoutParams(

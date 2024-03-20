@@ -46,7 +46,7 @@ public class PIDash extends Fragment {
         View view = inflater.inflate(R.layout.acp_layout, container, false);
         chart = view.findViewById(R.id.acp_piechart);
         layout=view.findViewById(R.id.linearlayout);
-        total=view.findViewById(R.id.total);
+        //total=view.findViewById(R.id.total);
         recyclerView=view.findViewById(R.id.acp_fir);
         io_name=view.findViewById(R.id.io_name);
 
@@ -67,6 +67,7 @@ public class PIDash extends Fragment {
         HashMap<String,String> map = new HashMap<>();
         map.put("KGID",KGID);
         map.put("position","PSI");
+
 
         dao.getData(map, URL, new NewCallBack() {
             @Override

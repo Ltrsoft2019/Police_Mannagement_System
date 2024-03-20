@@ -1,6 +1,7 @@
 package com.ltrsoft.police_mannagement_system.adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ltrsoft.police_mannagement_system.Fragment.analysis.FirDetail;
 import com.ltrsoft.police_mannagement_system.Model.FircardModel;
 import com.ltrsoft.police_mannagement_system.R;
 
@@ -46,7 +48,14 @@ public class PoliceFirAdapter extends RecyclerView.Adapter<PoliceFirAdapter.view
              public void onClick(View view) {
                  Context context=view.getContext();
                  AppCompatActivity activity= (AppCompatActivity) context;
-                // activity.getSupportFragmentManager().beginTransaction().replace(R.id.)
+                 FirDetail firDetail=new FirDetail();
+                 Bundle bundle=new Bundle();
+                 bundle.putString("FIR_ID", model.getFIR_ID());
+                 bundle.putString("Unit_ID", model.getUnit_ID());
+                 firDetail.setArguments(bundle);
+                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,firDetail).addToBackStack(null).commit();
+
+
               }
          });
     

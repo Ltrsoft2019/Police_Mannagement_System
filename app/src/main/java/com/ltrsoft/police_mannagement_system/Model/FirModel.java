@@ -1,17 +1,57 @@
 package com.ltrsoft.police_mannagement_system.Model;
 
 public class FirModel {
-    private String id, District_Name, UnitName, FIRNo, RI, Year, Month, Offence_From_Date, Offence_To_Date,
-            FIR_Reg_DateTime, FIR_Date, FIR_Type, FIR_Stage, Complaint_Mode, CrimeGroup_Name,
-            CrimeHead_Name, Latitude, Longitude, ActSection, IOName, KGID, IOAssigned_Date,
-            Internal_IO, Place_of_Offence, Distance_from_PS, Beat_Name, Village_Area_Name, Male,
-            Female, Boy, Girl, Age_0, VICTIM_COUNT, Accused_Count, Arrested_Male, Arrested_Female,
-            Arrested_Count, Accused_ChargeSheeted_Count, Conviction_Count, FIR_ID, Unit_ID, Crime_No;
+
+    private String id;
+
+    public FirModel() {}
+
+    private String District_Name;
+    private String UnitName;
+    private String FIRNo;
+    private String RI;
+    private String Year;
+    private String Month;
+    private String Offence_From_Date;
+    private String Offence_To_Date;
+    private String FIR_Reg_DateTime;
+    private String FIR_Date;
+    private String FIR_Type;
+    private String FIR_Stage;
+    private String Complaint_Mode;
+    private String CrimeGroup_Name;
+    private String CrimeHead_Name;
+    private String Latitude;
+    private String Longitude;
+    private String ActSection;
+    private String IOName;
+    private String KGID;
+    private String IOAssigned_Date;
+    private String Internal_IO;
+    private String Place_of_Offence;
+    private String Distance_from_PS;
+    private String Beat_Name;
+    private String Village_Area_Name;
+    private String Male;
+    private String Female;
+    private String Boy;
+    private String Girl;
+    private String Age_0;
+    private String VICTIM_COUNT;
+    private String Accused_Count;
+    private String Arrested_Male;
+    private String Arrested_Female;
+    private String Arrested_Count;
+    private String Accused_ChargeSheeted_Count;
+    private String Conviction_Count;
+    private String FIR_ID;
+    private String Unit_ID;
+    private String Crime_No;
 
     public FirModel(String id, String district_Name, String unitName, String FIRNo) {
         this.id = id;
-        District_Name = district_Name;
-        UnitName = unitName;
+        this.District_Name = district_Name;
+        this.UnitName = unitName;
         this.FIRNo = FIRNo;
     }
 

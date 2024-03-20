@@ -56,12 +56,12 @@ public class ACPDash extends Fragment {
         }
         recyclerView=view.findViewById(R.id.acp_fir);
        layout=view.findViewById(R.id.linearlayout);
-       total=view.findViewById(R.id.total);
+//       total=view.findViewById(R.id.total);
         io_name = view.findViewById(R.id.io_name);
          Bundle bundle=getArguments();
           KGID=bundle.getString("KGID");
         String IONAME=bundle.getString("IONAME");
-        io_name.setText("ACP name :"+IONAME);
+        io_name.setText("ACP NAME : "+IONAME);
 //        Toast.makeText(getContext(), "KGID="+KGID, Toast.LENGTH_SHORT).show();
         //setrecycler();
         GettingFirRecycler gettingFirRecycler=new GettingFirRecycler(recyclerView,KGID);
@@ -135,7 +135,7 @@ public class ACPDash extends Fragment {
 
     private void setPieChart(ArrayList<PolicePosition> policePositions) {
         ArrayList<PiechartModelclass>modelclasses=new ArrayList<>();
-        modelclasses.add(new PiechartModelclass("Male",(1+ policePositions.size()), "#00B2E2"));
+        modelclasses.add(new PiechartModelclass("Male",(1+ policePositions.size()), "#FF5722"));
         Piechartgraph piechartgraph = new Piechartgraph(modelclasses,layout);
         piechartgraph.setpie(chart);
     }

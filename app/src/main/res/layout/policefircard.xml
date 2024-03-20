@@ -6,7 +6,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/policefircard"
-        android:layout_margin="10dp">
+        android:elevation="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -14,14 +17,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="35dp"
                     android:layout_weight="1"
-                    android:textAlignment="center"
                     android:paddingTop="10dp"
-                    android:textSize="18dp"
-                    android:text="FIR No :"/>
+                    android:text="FIR No :"
+                    android:paddingLeft="15dp"
+                    android:textSize="18dp" />
                 <TextView
                     android:id="@+id/Fir_no"
                     android:layout_width="0dp"
@@ -29,7 +33,7 @@
                     android:layout_weight="1"
                     android:paddingTop="10dp"
 
-                    android:textAlignment="center"
+                    android:paddingLeft="15dp"
                     android:textSize="18dp"
                   />
 
@@ -39,9 +43,9 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="35dp"
                     android:layout_weight="1"
-                    android:textAlignment="center"
+                    android:paddingLeft="15dp"
                     android:paddingTop="10dp"
                     android:textSize="18dp"
                     android:text="UNIT NAME :"/>
@@ -52,7 +56,7 @@
                     android:layout_weight="1"
                     android:paddingTop="10dp"
 
-                    android:textAlignment="center"
+                    android:paddingLeft="15dp"
                     android:textSize="18dp"
                   />
 
@@ -62,9 +66,9 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="35dp"
                     android:layout_weight="1"
-                    android:textAlignment="center"
+                    android:paddingLeft="15dp"
                     android:paddingTop="10dp"
                     android:textSize="18dp"
                     android:text="FIR TYPE :"/>
@@ -75,7 +79,7 @@
                     android:layout_weight="1"
                     android:paddingTop="10dp"
 
-                    android:textAlignment="center"
+                    android:paddingLeft="15dp"
                     android:textSize="18dp"
                     />
 
@@ -85,10 +89,10 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="35dp"
                     android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:paddingTop="10dp"
+                    android:paddingLeft="15dp"
+                     android:paddingTop="10dp"
                     android:textSize="18dp"
                     android:text="FIR ID : "/>
                 <TextView
@@ -98,7 +102,7 @@
                     android:layout_weight="1"
                     android:paddingTop="10dp"
 
-                    android:textAlignment="center"
+                    android:paddingLeft="15dp"
                     android:textSize="18dp"
                     />
 
