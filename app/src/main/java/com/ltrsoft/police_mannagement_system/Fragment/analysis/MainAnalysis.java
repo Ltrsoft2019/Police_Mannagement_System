@@ -51,7 +51,6 @@ public class MainAnalysis extends Fragment {
          lineChart = view.findViewById(R.id.linechart);
          layout=view.findViewById(R.id.piechartitem);
          textView=view.findViewById(R.id.Total_cases);
-        recyclerView = view.findViewById(R.id.district_recycler);
 
         DAO dao = new DAO(getContext());
         HashMap hashMap=new HashMap<>();
