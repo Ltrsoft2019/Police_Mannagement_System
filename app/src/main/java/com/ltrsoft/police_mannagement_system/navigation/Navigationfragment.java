@@ -20,7 +20,6 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.ltrsoft.police_mannagement_system.Fragment.ACPDash;
-import com.ltrsoft.police_mannagement_system.Fragment.ACPList;
 import com.ltrsoft.police_mannagement_system.Fragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.utils.UserDataAccess;
@@ -75,18 +74,18 @@ public class Navigationfragment extends Fragment {
         editimg = v1.findViewById(R.id.etedit);
 
         UserDataAccess access = new UserDataAccess();
-        String position=access.getPosition(getActivity());
-        String kgid = access.getKgid(getActivity());
+//        String position=access.getPosition(getActivity());
+//        String kgid = access.getKgid(getActivity());
+        String position="ACP";
+        String kgid = "1827332";
         Bundle bundle = new Bundle();
         bundle.putString("KGID",kgid);
         bundle.putString("IONAME",kgid);
 
         if (position=="ACP"){
-
             ACPDash acpDash = new ACPDash();
             acpDash.setArguments(bundle);
             loadFragment(acpDash);
-
         }
 //        loadFragment(new ACPList());
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -94,7 +93,17 @@ public class Navigationfragment extends Fragment {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id  = menuItem.getItemId();
 
-
+                if (id==R.id.nav_history){
+                    if (position=="ACP"){
+                        ACPDash acpDash = new ACPDash();
+                        acpDash.setArguments(bundle);
+                        loadFragment(acpDash);
+                    }
+                } else if (id==R.id.nav_add) {
+                    MainAnalysis analysis = new MainAnalysis();
+                    analysis.setArguments(bundle);
+                    loadFragment(analysis);
+                }
                 return false;
             }
         });

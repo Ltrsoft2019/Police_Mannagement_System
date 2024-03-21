@@ -36,7 +36,7 @@ public class PSIDashboard extends Fragment {
     LinearLayout layout;
     TextView io_name ;
     private RecyclerView recyclerView;
-    private   String URL = "https://rj.ltr-soft.com/dataset_api/police/all_police_of_psi.php";
+    private   String URL = "https://rj.ltr-soft.com/dataset_api/police/police_of_my_unit.php";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -72,9 +72,9 @@ public class PSIDashboard extends Fragment {
 
             @Override
             public void onSuccess(Object object) {
+                int femaleCnt=0;
                 ArrayList<PolicePosition> police =new ArrayList<>();
                 try {
-                    ArrayList<PolicePosition>policePositions=new ArrayList<>();
                     JSONObject maibObj = new JSONObject(String.valueOf(object));
                     JSONArray districts = maibObj.getJSONArray("unit_Name");
                     for (int i = 0; i < districts.length(); i++) {
@@ -82,7 +82,10 @@ public class PSIDashboard extends Fragment {
                         JSONObject disdetail = oneDistrict.getJSONObject("unit_Name");
 
                         String unit_name = disdetail.getString("UnitName");
-                        JSONArray dysps = oneDistrict.getJSONArray("police");
+                        JSONObject total = disdetail.getJSONObject("total");
+                        femaleCnt+=Integer.parseInt(total.getString("female"));
+
+                        JSONArray dysps = oneDistrict.getJSONArray("HC");
                         for (int j = 0; j <dysps.length() ; j++) {
                             JSONObject oneDysp = dysps.getJSONObject(j);
                             police.add(new PolicePosition(oneDysp.getString("KGID"),
@@ -93,7 +96,7 @@ public class PSIDashboard extends Fragment {
                         }
                     }
                     Toast.makeText(getContext(), "dysp list "+police.size(), Toast.LENGTH_SHORT).show();
-                    setPieChart(police);
+                    setPieChart(police,femaleCnt);
                 }
                 catch (JSONException e){
                     System.out.println("JSON Error "+e.toString());
@@ -111,6 +114,7 @@ public class PSIDashboard extends Fragment {
         chart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 ConstableList dySpLis = new ConstableList();
                 Bundle bundle=new Bundle();
                 bundle.putString("KGID",KGID);
@@ -125,9 +129,10 @@ public class PSIDashboard extends Fragment {
 
         return view;
     }
-    private void setPieChart(ArrayList<PolicePosition> policePositions) {
+    private void setPieChart(ArrayList<PolicePosition> policePositions, int femaleCnt) {
         ArrayList<PiechartModelclass>modelclasses=new ArrayList<>();
         modelclasses.add(new PiechartModelclass("Male",(1+ policePositions.size()), "#00B2E2"));
+        modelclasses.add(new PiechartModelclass("FeMale",femaleCnt, "#FCAE1E"));
         Piechartgraph piechartgraph = new Piechartgraph(modelclasses,layout);
         piechartgraph.setpie(chart);
     }

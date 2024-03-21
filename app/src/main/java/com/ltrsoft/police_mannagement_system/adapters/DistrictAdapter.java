@@ -34,15 +34,15 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         District district = list.get(position);
-        holder.t1.append("  "+district.getDistrict_name());
-        holder.t2.append("\n"+district.getTotalcase());
-        holder.t3.append("\n"+district.getTotalpolice());
+        holder.t1.append("  "+district.getDistrict_Name());
+//        holder.t2.append("\n"+district.getTotalcase());
+//        holder.t3.append("\n"+district.getTotalpolice());
         holder.districtcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Context context=view.getContext();
-                AppCompatActivity activity= (AppCompatActivity) context;
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new DistrictAnalysis()).addToBackStack(null).commit();
+//                Context context=view.getContext();
+//                AppCompatActivity activity= (AppCompatActivity) context;
+//                activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new DistrictAnalysis()).addToBackStack(null).commit();
 
             }
         });

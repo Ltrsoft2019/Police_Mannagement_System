@@ -78,8 +78,8 @@ public class PIDash extends Fragment {
             @Override
             public void onSuccess(Object object) {
                 ArrayList<PolicePosition> police =new ArrayList<>();
+                int femalecnt=0;
                 try {
-                    ArrayList<PolicePosition>policePositions=new ArrayList<>();
                     JSONObject maibObj = new JSONObject(String.valueOf(object));
                     JSONArray districts = maibObj.getJSONArray("unit_Name");
                     for (int i = 0; i < districts.length(); i++) {
@@ -87,6 +87,8 @@ public class PIDash extends Fragment {
                         JSONObject disdetail = oneDistrict.getJSONObject("unit_Name");
 
                         String unit_name = disdetail.getString("UnitName");
+                        JSONObject total = disdetail.getJSONObject("total");
+                        femalecnt+=Integer.parseInt(total.getString("female"));
                         JSONArray dysps = oneDistrict.getJSONArray("PSI");
                         for (int j = 0; j <dysps.length() ; j++) {
                             JSONObject oneDysp = dysps.getJSONObject(j);
@@ -94,11 +96,11 @@ public class PIDash extends Fragment {
                                     oneDysp.getString("IOName"),
                                     "",
                                     "","",unit_name));
-//                            Log.d("iteration", String.valueOf(j));
+                            Log.d("iteration", String.valueOf(j));
                         }
                     }
                     Toast.makeText(getContext(), "dysp list "+police.size(), Toast.LENGTH_SHORT).show();
-                    setPieChart(police);
+                    setPieChart(police,femalecnt);
                 }
                 catch (JSONException e){
                     System.out.println("JSON Error "+e.toString());
@@ -130,9 +132,10 @@ public class PIDash extends Fragment {
 
         return view;
     }
-    private void setPieChart(ArrayList<PolicePosition> policePositions) {
+    private void setPieChart(ArrayList<PolicePosition> policePositions, int femalecnt) {
         ArrayList<PiechartModelclass>modelclasses=new ArrayList<>();
         modelclasses.add(new PiechartModelclass("Male",(1+ policePositions.size()), "#EF5350"));
+        modelclasses.add(new PiechartModelclass("female",femalecnt, "#FCAE1E"));
         Piechartgraph piechartgraph = new Piechartgraph(modelclasses,layout);
         piechartgraph.setpie(chart);
     }

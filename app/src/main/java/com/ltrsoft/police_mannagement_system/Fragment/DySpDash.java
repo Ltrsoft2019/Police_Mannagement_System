@@ -76,14 +76,17 @@ public class DySpDash extends Fragment {
             @Override
             public void onSuccess(Object object) {
                 ArrayList<PolicePosition> police =new ArrayList<>();
+                int feamlecnt=0;
                 try {
                     ArrayList<PolicePosition>policePositions=new ArrayList<>();
                     JSONObject maibObj = new JSONObject(String.valueOf(object));
                     JSONArray districts = maibObj.getJSONArray("unit_Name");
+
                     for (int i = 0; i < districts.length(); i++) {
                         JSONObject oneDistrict = districts.getJSONObject(i);
                         JSONObject disdetail = oneDistrict.getJSONObject("unit_Name");
-
+                        JSONObject total = disdetail.getJSONObject("total");
+                        feamlecnt+=Integer.parseInt(total.getString("female"));
                         String disname = "latur";
                         JSONArray dysps = oneDistrict.getJSONArray("PI");
                         for (int j = 0; j <dysps.length() ; j++) {
@@ -96,7 +99,7 @@ public class DySpDash extends Fragment {
                         }
                     }
                     Toast.makeText(getContext(), "dysp list "+policePositions.size(), Toast.LENGTH_SHORT).show();
-                    setPieChart(police);
+                    setPieChart(police,feamlecnt);
                 }
                 catch (JSONException e){
                     System.out.println("JSON Error "+e.toString());
@@ -125,14 +128,15 @@ public class DySpDash extends Fragment {
                         .commit();
             }
         });
-
         return view;
     }
-    private void setPieChart(ArrayList<PolicePosition> policePositions) {
+    private void setPieChart(ArrayList<PolicePosition> policePositions, int feamlecnt) {
+
         ArrayList<PiechartModelclass>modelclasses=new ArrayList<>();
         modelclasses.add(new PiechartModelclass("Male",(1+ policePositions.size()), "#00B2E2"));
-        modelclasses.add(new PiechartModelclass("FeMale",0, "#00B2E2"));
+        modelclasses.add(new PiechartModelclass("FeMale",feamlecnt, "#FCAE1E"));
         Piechartgraph piechartgraph = new Piechartgraph(modelclasses,layout);
         piechartgraph.setpie(chart);
+
     }
 }

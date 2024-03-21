@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +20,7 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.District;
 import com.ltrsoft.police_mannagement_system.Model.PiechartModelclass;
 import com.ltrsoft.police_mannagement_system.R;
@@ -34,12 +36,13 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MainAnalysis extends Fragment {
-     View view;
+    private View view;
     public PieChart chart;
     private LineChart lineChart;
     private LinearLayout layout;
-   private TextView textView;
+    private TextView textView;
     private RecyclerView recyclerView;
+    private String URL ="https://rj.ltr-soft.com/dataset_api/district/unique_district.php";
     private ArrayList<PiechartModelclass>list;
     private String  URLS= "https://rj.ltr-soft.com/public/dataset_api/fir_tbl/fir_read_station.php";
 
@@ -51,41 +54,40 @@ public class MainAnalysis extends Fragment {
          lineChart = view.findViewById(R.id.linechart);
          layout=view.findViewById(R.id.piechartitem);
          textView=view.findViewById(R.id.Total_cases);
-        recyclerView = view.findViewById(R.id.district_recycler);
+//        recyclerView = view.findViewById(R.id.district_recycler);
 
-        DAO dao = new DAO(getContext());
-        HashMap hashMap=new HashMap<>();
+//        HashMap hashMap=new HashMap<>();
 //        hashMap.put("Unit_ID",)
 //        dao.getData();
-        list=new ArrayList<>();
-        list.add(new PiechartModelclass("Hinious",100,"#FFA726"));
-        list.add(new PiechartModelclass("Hinious",100,"#EF5350"));
-        list.add(new PiechartModelclass("Hinious",100,"#66BB6A"));
-        list.add(new PiechartModelclass("Hinious",100,"#FFA726"));
-        list.add(new PiechartModelclass("Hinious",100,"#EF5350"));
-        list.add(new PiechartModelclass("Hinious",100,"#66BB6A"));
-        textView.append(" 600");
-        Piechartgraph piechartgraph=new Piechartgraph(list,layout);
-        piechartgraph.setpie(chart);
+//        list=new ArrayList<>();
+//        list.add(new PiechartModelclass("Hinious",100,"#FFA726"));
+//        list.add(new PiechartModelclass("Hinious",100,"#EF5350"));
+//        list.add(new PiechartModelclass("Hinious",100,"#66BB6A"));
+//        list.add(new PiechartModelclass("Hinious",100,"#FFA726"));
+//        list.add(new PiechartModelclass("Hinious",100,"#EF5350"));
+//        list.add(new PiechartModelclass("Hinious",100,"#66BB6A"));
+//        textView.append(" 600");
+//        Piechartgraph piechartgraph=new Piechartgraph(list,layout);
+//        piechartgraph.setpie(chart);
+//
+//        setLine(getEntries());
+//        setRecycler();
 
-        setLine(getEntries());
-        setRecycler();
-
-       chart.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-              getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,new FilterFragment()).addToBackStack(null).commit();
-
-           }
-       });
-
-        lineChart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,new FilterFragment()).addToBackStack(null).commit();
-
-            }
-        });
+//       chart.setOnClickListener(new View.OnClickListener() {
+//           @Override
+//           public void onClick(View v) {
+//              getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,new FilterFragment()).addToBackStack(null).commit();
+//
+//           }
+//       });
+//
+//        lineChart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,new FilterFragment()).addToBackStack(null).commit();
+//
+//            }
+//        });
          return view;
     }
 
