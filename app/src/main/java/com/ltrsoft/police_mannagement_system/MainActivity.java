@@ -6,7 +6,9 @@ androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-import com.ltrsoft.police_mannagement_system.Fragment.Login;
+import com.ltrsoft.police_mannagement_system.Fragment
+         .Login;
+import com.ltrsoft.police_mannagement_system.Fragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.navigation.Navigationfragment;
 import com.ltrsoft.police_mannagement_system.utils.SessionManager;
 
@@ -21,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
         if (sessionManager.isLoggedIn()){
             getSupportFragmentManager()
                     .beginTransaction().
-                    add(R.id.main_container,navigationfragment)
+                    add(R.id.main_container,new MainAnalysis())
                     .commit();
         }else {
             getSupportFragmentManager()
                     .beginTransaction().
-                    add(R.id.main_container,navigationfragment)
+                    add(R.id.main_container,new MainAnalysis())
                     .commit();
         }
 

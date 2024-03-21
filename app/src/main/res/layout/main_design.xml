@@ -117,10 +117,12 @@
              android:layout_width="match_parent"
              android:layout_height="40dp"
               android:textAlignment="center"
+
              android:id="@+id/yearspinner"
              android:gravity="center"/>
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/barchartyear"
+
+           <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchartyear"
             android:layout_width="match_parent"
             android:layout_below="@+id/yearspinner"
             android:layout_height="350dp"
@@ -128,6 +130,7 @@
              android:layout_marginBottom="10dp"
 
             />
+
 
         <TextView
             android:layout_below="@+id/linecard"

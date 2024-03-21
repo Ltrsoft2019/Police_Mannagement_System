@@ -154,7 +154,7 @@ public class DAO<T> {
             }
         };
         request.setRetryPolicy(new DefaultRetryPolicy(
-                2000,
+                6000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queue.add(request);

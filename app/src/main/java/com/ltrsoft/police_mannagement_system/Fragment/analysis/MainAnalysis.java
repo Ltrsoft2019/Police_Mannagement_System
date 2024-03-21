@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,20 +20,27 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
+import com.ltrsoft.police_mannagement_system.Model.BargraphModelclass;
 import com.ltrsoft.police_mannagement_system.Model.District;
 import com.ltrsoft.police_mannagement_system.Model.PiechartModelclass;
 import com.ltrsoft.police_mannagement_system.R;
+import com.ltrsoft.police_mannagement_system.Uigraph.Bargraphchart;
+import com.ltrsoft.police_mannagement_system.Uigraph.Fourbargraph;
 import com.ltrsoft.police_mannagement_system.Uigraph.Piechartgraph;
 import com.ltrsoft.police_mannagement_system.adapters.DistrictAdapter;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,8 +52,12 @@ public class MainAnalysis extends Fragment {
     private LineChart lineChart;
     private LinearLayout layout;
     private TextView textView;
-    private RecyclerView recyclerView;
-    private String URL ="https://rj.ltr-soft.com/dataset_api/district/unique_district.php";
+    private Spinner yearspinner;
+    private BarChart monthwisebarchart;
+    private HorizontalScrollView horizontalScrollView;
+    String selectedyear;
+    private String GETDATAOFTHEYEAR="https://rj.ltr-soft.com/dataset_api/fir_tbl/all_fir_of_table.php";
+     private String URL ="https://rj.ltr-soft.com/dataset_api/district/unique_district.php";
     private ArrayList<PiechartModelclass>list;
     private String  URLS= "https://rj.ltr-soft.com/public/dataset_api/fir_tbl/fir_read_station.php";
 
@@ -54,6 +69,23 @@ public class MainAnalysis extends Fragment {
          lineChart = view.findViewById(R.id.linechart);
          layout=view.findViewById(R.id.piechartitem);
          textView=view.findViewById(R.id.Total_cases);
+         horizontalScrollView=view.findViewById(R.id.horizontalScrollView);
+         monthwisebarchart=view.findViewById(R.id.barchartyear);
+         yearspinner=view.findViewById(R.id.yearspinner);
+         setspinner();
+         yearspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+             @Override
+             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                 selectedyear=adapterView.getItemAtPosition(i).toString();
+                 setbarchartbyyear(selectedyear);
+             }
+
+             @Override
+             public void onNothingSelected(AdapterView<?> adapterView) {
+              selectedyear="2016";
+             }
+         });
+
 //        recyclerView = view.findViewById(R.id.district_recycler);
 
 //        HashMap hashMap=new HashMap<>();
@@ -91,17 +123,24 @@ public class MainAnalysis extends Fragment {
          return view;
     }
 
-    private void setRecycler() {
-        ArrayList<District>districts= new ArrayList<>();
-        districts.add(new District("1","Latur","100","419213"));
-        districts.add(new District("1","Bengluru","16700","19213"));
-        districts.add(new District("1","Mumbai","45100","919213"));
-        districts.add(new District("1","Pune","9100","43199213"));
-        DistrictAdapter adapter = new DistrictAdapter(districts);
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(adapter);
+    private void setspinner() {
+
+        ArrayList list1=new ArrayList();
+        list1.add("2016");
+        list1.add("2017");
+        list1.add("2018");
+        list1.add("2019");
+        list1.add("2020");
+        list1.add("2021");
+        list1.add("2022");
+        list1.add("2023");
+        list1.add("2024");
+        ArrayAdapter<String> adapter=new ArrayAdapter(getContext(), android.R.layout.simple_dropdown_item_1line,list1);
+        yearspinner.setAdapter(adapter);
+
     }
+
+
 
     private void setLine(List<Entry> entries) {
         LineDataSet dataSet = new LineDataSet(entries, "Label");
@@ -137,6 +176,85 @@ public class MainAnalysis extends Fragment {
         entries.add(new Entry(3f, 50f));
         entries.add(new Entry(4f, 70f));
         entries.add(new Entry(5f, 90f));
+        return entries;
+    }
+    public void setbarchartbyyear(String year){
+      DAO dao=new DAO(getContext());
+      HashMap<String,String>map=new HashMap<>();
+      map.put("year",year);
+      dao.getData(map, GETDATAOFTHEYEAR, new NewCallBack() {
+          @Override
+          public void onError(String error) {
+              Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
+          }
+
+          @Override
+          public void onSuccess(Object object) {
+              ArrayList<String> list1 = new ArrayList<>();
+              if (!list1.isEmpty()){
+                  list1.clear();
+              }
+              String totalcount="";
+              try {
+                  JSONObject jsonObject =new JSONObject(String.valueOf(object));
+                    totalcount = jsonObject.getString("count");
+                   StringBuilder months = new StringBuilder("month");
+                  for (int i = 1; i < 13; i++) {
+                      list1.add(jsonObject.getString(months+String.valueOf(i)));
+
+                  }
+                  setbargraphofmonthwiseyear(totalcount,list1);
+
+                 // Toast.makeText(getContext(), "size "+list1.size(), Toast.LENGTH_SHORT).show();
+              }catch (JSONException e){
+                  Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
+              }
+
+          }
+
+          @Override
+          public void onEmpty() {
+
+          }
+      });
+    }
+
+    private void setbargraphofmonthwiseyear(String totalcount, ArrayList<String> list1)
+    {
+//        if (monthwisebarchart.isShowValues()){
+//            monthwisebarchart.clearChart();
+//        }
+//        ArrayList<BargraphModelclass>list=new ArrayList<>();
+//
+//        list.clear();
+        ArrayList<ArrayList<BarEntry>> entriesList = new ArrayList<>();
+        entriesList.add(getBarEntriesOne(list1));
+         ArrayList<BargraphModelclass>list=new ArrayList<>();
+        list.add(new BargraphModelclass("#FFF424"));
+
+
+        String[] xAxisLabels = new String[]{"jan", "feb", "march", "april", "may", "june", "julai","aug",
+                "sep","oct","nov","dec"};
+
+        Fourbargraph.setoneBarChart(entriesList, monthwisebarchart, xAxisLabels,list);
+
+
+    }
+    private ArrayList<BarEntry> getBarEntriesOne(ArrayList<String>list1) {
+        ArrayList<BarEntry> entries = new ArrayList<>();
+        entries.add(new BarEntry(1f, 4));
+        entries.add(new BarEntry(2f, 6));
+        entries.add(new BarEntry(3f, 8));
+        entries.add(new BarEntry(4f, 2));
+        entries.add(new BarEntry(5f, 4));
+
+        entries.add(new BarEntry(6f, 1));
+        entries.add(new BarEntry(6f, 1));
+        entries.add(new BarEntry(8f, 1));
+        entries.add(new BarEntry(11f, 1));
+        entries.add(new BarEntry(12f, 1));
+        entries.add(new BarEntry(14f, 1));
+        entries.add(new BarEntry(15f, 1));
         return entries;
     }
 }

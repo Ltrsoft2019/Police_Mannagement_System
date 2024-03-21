@@ -185,7 +185,7 @@ public class FirDetail extends Fragment {
       list.add(new BargraphModelclass("Arrested", Arrested_Count,"#FFA726"));
       list.add(new BargraphModelclass("Convicted", Conviction_Count,"#00B2E2 "));
         Bargraphchart bargraphchart=new Bargraphchart(list);
-       bargraphchart.setbargraph(barChart);
+      // bargraphchart.setbargraph(barChart);
 
     }
     public void setPieChart(FirModel model){
