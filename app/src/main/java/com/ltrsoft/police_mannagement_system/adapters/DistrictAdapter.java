@@ -39,9 +39,13 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.ViewHo
         holder.districtcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Context context=view.getContext();
-//                AppCompatActivity activity= (AppCompatActivity) context;
-//                activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new DistrictAnalysis()).addToBackStack(null).commit();
+                Context context=view.getContext();
+                AppCompatActivity activity= (AppCompatActivity) context;
+                activity.getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fraglayot,new DistrictAnalysis())
+                        .addToBackStack(null)
+                        .commit();
             }
         });
     }

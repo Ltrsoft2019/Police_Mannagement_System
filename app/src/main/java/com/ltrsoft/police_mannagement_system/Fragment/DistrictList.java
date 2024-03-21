@@ -25,6 +25,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class DistrictList extends Fragment {
+    public DistrictList() {}
     private String URL = "https://rj.ltr-soft.com/dataset_api/district/unique_district.php";
     @Nullable
     @Override
@@ -52,15 +53,12 @@ public class DistrictList extends Fragment {
                     recyclerView.setLayoutManager(layoutManager);
                     recyclerView.setAdapter(adapter);
                 }catch (JSONException e){
-
+                    Toast.makeText(getContext(), "error "+e, Toast.LENGTH_SHORT).show();
                 }
-
             }
-
             @Override
             public void onEmpty() {
                 Toast.makeText(getContext(), "empty ", Toast.LENGTH_SHORT).show();
-
             }
         });
         return view;
