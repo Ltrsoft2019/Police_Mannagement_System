@@ -65,15 +65,15 @@ public class DistrictAnalysis extends Fragment {
     }
 
     private void setRecycler() {
-        ArrayList<Stationmodel> districts= new ArrayList<>();
-        districts.add(new Stationmodel("Station 1","999","419213","100"));
-        districts.add(new Stationmodel("Station 2","555","16700","213"));
-        districts.add(new Stationmodel("Station 3","666","45100","13"));
-        districts.add(new Stationmodel("Station 4","444","5659100","51"));
-        StationAdapter adapter = new StationAdapter(    districts);
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(adapter);
+//        ArrayList<Stationmodel> districts= new ArrayList<>();
+//        districts.add(new Stationmodel("Station 1","999","419213","100"));
+//        districts.add(new Stationmodel("Station 2","555","16700","213"));
+//        districts.add(new Stationmodel("Station 3","666","45100","13"));
+//        districts.add(new Stationmodel("Station 4","444","5659100","51"));
+//        StationAdapter adapter = new StationAdapter(    districts);
+//        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+//        recyclerView.setLayoutManager(manager);
+//        recyclerView.setAdapter(adapter);
     }
 
     private void setLine(List<Entry> entries) {

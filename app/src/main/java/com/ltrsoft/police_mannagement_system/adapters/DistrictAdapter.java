@@ -18,9 +18,9 @@ import com.ltrsoft.police_mannagement_system.R;
 import java.util.ArrayList;
 
 public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.ViewHolder> {
-    public ArrayList<District>list;
+    public ArrayList<String>list;
 
-    public DistrictAdapter(ArrayList<District> list) {
+    public DistrictAdapter(ArrayList<String> list) {
         this.list = list;
     }
 
@@ -33,15 +33,15 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        District district = list.get(position);
-        holder.t1.append("  "+district.getDistrict_Name());
-         holder.districtcard.setOnClickListener(new View.OnClickListener() {
+
+        holder.t1.append("  "+list.get(position));
+
+        holder.districtcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                Context context=view.getContext();
 //                AppCompatActivity activity= (AppCompatActivity) context;
 //                activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new DistrictAnalysis()).addToBackStack(null).commit();
-
             }
         });
     }

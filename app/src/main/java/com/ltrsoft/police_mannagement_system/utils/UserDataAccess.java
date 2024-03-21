@@ -28,5 +28,16 @@ public class UserDataAccess {
         editor.putString("position", position)
                 .apply();
     }
+    public String getIOName(Activity activity) {
+        SharedPreferences pref = activity.getSharedPreferences("UserData", MODE_PRIVATE);
+        return pref.getString("ioname","ACP");
+    }
+
+    public void setIOName(String ioname, Activity activity) {
+        SharedPreferences pref = activity.getSharedPreferences("UserData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("ioname", ioname)
+                .apply();
+    }
 }
 

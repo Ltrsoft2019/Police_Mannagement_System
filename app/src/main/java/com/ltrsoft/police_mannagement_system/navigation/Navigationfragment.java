@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +21,10 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.ltrsoft.police_mannagement_system.Fragment.ACPDash;
-import com.ltrsoft.police_mannagement_system.Fragment.analysis.MainAnalysis;
+import com.ltrsoft.police_mannagement_system.Fragment.DySpDash;
+import com.ltrsoft.police_mannagement_system.Fragment.PIDash;
+import com.ltrsoft.police_mannagement_system.Fragment.PSIDashboard;
+import com.ltrsoft.police_mannagement_system.Fragment.StationList;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.utils.UserDataAccess;
 
@@ -37,6 +41,7 @@ public class Navigationfragment extends Fragment {
     private CardView feature_list;
     int position=0;
     private boolean flag=true;
+    Fragment fragment ;
     public Navigationfragment() {}
 
     @Nullable
@@ -74,33 +79,43 @@ public class Navigationfragment extends Fragment {
         editimg = v1.findViewById(R.id.etedit);
 
         UserDataAccess access = new UserDataAccess();
-//        String position=access.getPosition(getActivity());
-//        String kgid = access.getKgid(getActivity());
-        String position="ACP";
-        String kgid = "1827332";
+        String position=access.getPosition(getActivity());
+        String kgid = access.getKgid(getActivity());
         Bundle bundle = new Bundle();
         bundle.putString("KGID",kgid);
         bundle.putString("IONAME",kgid);
 
-        if (position=="ACP"){
-            ACPDash acpDash = new ACPDash();
-            acpDash.setArguments(bundle);
-            loadFragment(acpDash);
+        if (position.equals("ACP")){
+            Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
+            fragment = new ACPDash();
+            fragment.setArguments(bundle);
+            loadFragment(fragment);
+        } else if (position.equals("PI")) {
+            Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
+            fragment = new PIDash();
+            fragment.setArguments(bundle);
+            loadFragment(fragment);
+        }else if (position.equals("PSI")) {
+            Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
+            fragment = new PSIDashboard();
+            fragment.setArguments(bundle);
+            loadFragment(fragment);
+        }else if (position.equals("Dy.Sp")) {
+            Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
+            fragment = new DySpDash();
+            fragment.setArguments(bundle);
+            loadFragment(fragment);
         }
-//        loadFragment(new ACPList());
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id  = menuItem.getItemId();
 
                 if (id==R.id.nav_history){
-                    if (position=="ACP"){
-                        ACPDash acpDash = new ACPDash();
-                        acpDash.setArguments(bundle);
-                        loadFragment(acpDash);
-                    }
-                } else if (id==R.id.nav_add) {
-                    MainAnalysis analysis = new MainAnalysis();
+                    loadFragment(fragment);
+                }
+                else if (id==R.id.nav_add) {
+                    StationList analysis = new StationList();
                     analysis.setArguments(bundle);
                     loadFragment(analysis);
                 }
@@ -110,11 +125,11 @@ public class Navigationfragment extends Fragment {
         return view;
     }
 
-    private void loadFragment(Fragment acpList) {
+    private void loadFragment(Fragment fragment) {
 
         getActivity().getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fraglayot,acpList)
+                    .replace(R.id.fraglayot,fragment)
                     .commit();
     }
 }

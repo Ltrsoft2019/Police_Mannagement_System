@@ -33,6 +33,7 @@ public class Login extends Fragment {
     private TextView signUpTextView;
     private Button loginButton;
     private View view;
+    private String URLS ="https://rj.ltr-soft.com/dataset_api/position/login.php";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -62,17 +63,17 @@ public class Login extends Fragment {
             public void onClick(View v) {
                 if (!(kgid.getText().toString().trim()).isEmpty()){
                         if (!(interanlid.getText().toString().isEmpty())){
-//                            loginUser(kgid.getText().toString(),interanlid.getText().toString());
-                            SessionManager sessionManager = new SessionManager(getContext());
-                            sessionManager.setLogin(true);
-                            UserDataAccess access = new UserDataAccess();
-                            access.setKgid("1827332",getActivity());
-                            access.setPosition("ACP",getActivity());
-
-                            getActivity().getSupportFragmentManager()
-                                    .beginTransaction().
-                                    add(R.id.main_container,new Navigationfragment())
-                                    .commit();
+                            loginUser(kgid.getText().toString(),interanlid.getText().toString());
+//                            SessionManager sessionManager = new SessionManager(getContext());
+//                            sessionManager.setLogin(true);
+//                            UserDataAccess access = new UserDataAccess();
+//                            access.setKgid("1827332",getActivity());
+//                            access.setPosition("ACP",getActivity());
+//
+//                            getActivity().getSupportFragmentManager()
+//                                    .beginTransaction().
+//                                    add(R.id.main_container,new Navigationfragment())
+//                                    .commit();
 
                     }
                         else {
@@ -96,9 +97,9 @@ public class Login extends Fragment {
         DAO  dao = new DAO(getContext());
         HashMap<String ,String>map = new HashMap<>();
         map.put("KGID",kgid);
-        map.put("InternalIO",internal);
+        map.put("Internal_IO",internal);
 
-        dao.getData(map, "", new NewCallBack() {
+        dao.getData(map, URLS, new NewCallBack() {
             @Override
             public void onError(String error) {
                 Toast.makeText(getContext(), "error is "+error, Toast.LENGTH_SHORT).show();
@@ -106,12 +107,37 @@ public class Login extends Fragment {
 
             @Override
             public void onSuccess(Object object) {
-                Toast.makeText(getContext(), "Response = "+object, Toast.LENGTH_SHORT).show();
-//                SessionManager sessionManager = new SessionManager(getContext());
-//                sessionManager.setLogin(true);
-//                UserDataAccess access = new UserDataAccess();
-//                access.setKgid("1827332",getActivity());
-//                access.setPosition("ACP",getActivity());
+               try {
+                   JSONObject response = new JSONObject(String.valueOf(object));
+                   String Message = response.getString("Message");
+                   if (Message.equals("100")){
+                       String position = response.getString("position");
+                       JSONObject data = response.getJSONObject("data");
+
+                       String KGID = data.getString("KGID");
+                       String IOName = data.getString("IOName");
+
+                       SessionManager sessionManager = new SessionManager(getContext());
+                       sessionManager.setLogin(true);
+                       UserDataAccess access = new UserDataAccess();
+                       access.setKgid(kgid,getActivity());
+                       access.setPosition(position,getActivity());
+                       access.setPosition(position,getActivity());
+                       access.setIOName(IOName,getActivity());
+
+                       getActivity().getSupportFragmentManager()
+                               .beginTransaction()
+                               .replace(R.id.main_container,new Navigationfragment())
+                               .commit();
+                   }
+                   else {
+                       Toast.makeText(getContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
+                   }
+
+               }catch (JSONException e){
+
+               }
+
 
             }
 
@@ -121,4 +147,6 @@ public class Login extends Fragment {
             }
         });
     }
+
+
 }
