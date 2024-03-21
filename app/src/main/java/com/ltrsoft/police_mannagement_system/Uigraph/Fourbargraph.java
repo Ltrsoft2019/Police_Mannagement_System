@@ -10,6 +10,7 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.ltrsoft.police_mannagement_system.Model.BargraphModelclass;
+import com.ltrsoft.police_mannagement_system.Model.Bargraphscrollable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,13 +48,13 @@ public class Fourbargraph {
             barChart.groupBars(2, groupSpace, barSpace);
             barChart.invalidate();
     }
-    public static void setoneBarChart(ArrayList<ArrayList<BarEntry>> entriesList, BarChart barChart, String[] xAxisLabels,
-                                   ArrayList<BargraphModelclass>list) {
-
+    public static void setoneBarChart(ArrayList<Bargraphscrollable>list, BarChart barChart,String[] xAxisLabels) {
         List<IBarDataSet> barDataSets = new ArrayList<>();
 
-        for (int i = 0; i < entriesList.size(); i++) {
-            BarDataSet barDataSet = new BarDataSet(entriesList.get(i), "Set " + (i + 1));
+        for (int i = 0; i <list.size(); i++) {
+            ArrayList<BarEntry >barEntries=new ArrayList<>();
+            barEntries.add(new BarEntry(list.get(i).getXaxis(),Float.valueOf(list.get(i).getYxis())));
+            BarDataSet barDataSet = new BarDataSet(barEntries, "");
             barDataSet.setColor(Color.parseColor(list.get(i).getColorcode()));
             barDataSets.add(barDataSet);
         }
@@ -70,15 +71,13 @@ public class Fourbargraph {
 
         barChart.setDragEnabled(true);
         barChart.setVisibleXRangeMaximum(4);
-        float barSpace = 0.05f;
-        //float groupSpace = 0.4f;
-        barData.setBarWidth(0.15f);
+         barData.setBarWidth(0.5f);
         barChart.getXAxis().setAxisMinimum(0);
+        // Shift bars off the right side y-axis
 
         barChart.animate();
 
-      //  barChart.groupBars(2, groupSpace, barSpace);
-        barChart.invalidate();
+         barChart.invalidate();
     }
 
 }

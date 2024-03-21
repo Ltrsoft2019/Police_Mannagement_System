@@ -30,10 +30,16 @@
             android:weightSum="2">
 
             <!--Pie chart to display the data-->
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="40dp"
+             android:textAlignment="center"
+             android:text="FIR STAGES"
+             android:textSize="18dp"/>
 
             <org.eazegraph.lib.charts.PieChart
                 xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/piechart"
+                android:id="@+id/firstagespie"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:padding="6dp"
@@ -77,27 +83,27 @@
              android:id="@+id/linecard"
             android:layout_below="@+id/piechartitem"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             tools:layout_editor_absoluteX="-16dp" >
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+                    android:layout_marginTop="5dp"
                    android:id="@+id/response_time"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:text="Response Time:"
+                    android:text="Year Wise Cases"
                     />
-
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/linechart"
+                    <org.eazegraph.lib.charts.BarChart
+                    android:id="@+id/barchartofyear"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="300dp"
                      android:layout_marginTop="15dp"
                      android:layout_marginBottom="10dp" />
 
@@ -120,6 +126,11 @@
 
              android:id="@+id/yearspinner"
              android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textAlignment="center"
+                    android:id="@+id/totalyearwiase"/>
 
            <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/barchartyear"
