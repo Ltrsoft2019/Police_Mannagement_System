@@ -21,10 +21,12 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.ltrsoft.police_mannagement_system.Fragment.ACPDash;
+import com.ltrsoft.police_mannagement_system.Fragment.DistrictList;
 import com.ltrsoft.police_mannagement_system.Fragment.DySpDash;
 import com.ltrsoft.police_mannagement_system.Fragment.PIDash;
 import com.ltrsoft.police_mannagement_system.Fragment.PSIDashboard;
 import com.ltrsoft.police_mannagement_system.Fragment.StationList;
+import com.ltrsoft.police_mannagement_system.Fragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.utils.UserDataAccess;
 
@@ -111,11 +113,16 @@ public class Navigationfragment extends Fragment {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id  = menuItem.getItemId();
 
-                if (id==R.id.nav_history){
+                if (id==R.id.nav_home){
                     loadFragment(fragment);
                 }
+                else if (id==R.id.nav_history) {
+                    MainAnalysis analysis = new MainAnalysis();
+                    analysis.setArguments(bundle);
+                    loadFragment(analysis);
+                }
                 else if (id==R.id.nav_add) {
-                    StationList analysis = new StationList();
+                    DistrictList analysis = new DistrictList();
                     analysis.setArguments(bundle);
                     loadFragment(analysis);
                 }

@@ -154,10 +154,34 @@ public class DAO<T> {
             }
         };
         request.setRetryPolicy(new DefaultRetryPolicy(
-                6000,
+                4000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queue.add(request);
     }
-
+    public void  getData(HashMap<String,String>map, String url ,NewCallBack callBack,int timeout){
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                System.out.println("resposne = "+response);
+                callBack.onSuccess(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                callBack.onError(error.toString());
+            }
+        }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                return map;
+            }
+        };
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                timeout,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        queue.add(request);
+    }
 }
