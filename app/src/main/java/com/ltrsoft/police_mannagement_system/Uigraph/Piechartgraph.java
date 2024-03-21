@@ -28,15 +28,6 @@ public class Piechartgraph {
         this.context=layout.getContext();
     }
 
-//    public void setpie(PieChart pieChart) {
-//        pieChart.clearChart(); // Clear existing pie chart data
-//        for (PiechartModelclass model : list) {
-//            pieChart.addPieSlice(new PieModel(model.getLabel(), model.getValue(), Color.parseColor(model.getColor())));
-//        }
-//        pieChart.startAnimation();
-//    }
-
-
     public  void setpie(PieChart chart){
         for (PiechartModelclass modellist :list){
 
@@ -87,7 +78,7 @@ public class Piechartgraph {
 
                int color=Color.parseColor(modellist.getColorcode());
                view. setBackgroundColor(color);
-              viewlayout.setMargins(10,13,130,5);
+              viewlayout.setMargins(10,13,120,5);
                   view.setPadding(15,13,0,0);
                  view.setLayoutParams(viewlayout);
                 TextView textView=new TextView(context);
@@ -97,8 +88,8 @@ public class Piechartgraph {
                        1
                );
 
-                textView.setText(modellist.getLabel()+" : ");
-               textviewparam.setMargins(5,10,130,0);
+                textView.setText(modellist.getLabel()+" :");
+               textviewparam.setMargins(5,10,120,0);
                textView.setPadding(0,10,0,0);
                 textView.setLayoutParams(textviewparam);
                TextView textView2=new TextView(context);

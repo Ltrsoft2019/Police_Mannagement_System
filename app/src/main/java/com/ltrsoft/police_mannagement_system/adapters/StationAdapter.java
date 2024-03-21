@@ -1,15 +1,18 @@
 package com.ltrsoft.police_mannagement_system.adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ltrsoft.police_mannagement_system.Fragment.analysis.Station_Analysis;
 import com.ltrsoft.police_mannagement_system.Model.Stationmodel;
 import com.ltrsoft.police_mannagement_system.R;
 
@@ -34,14 +37,20 @@ public class StationAdapter extends RecyclerView.Adapter<StationAdapter.Viewhold
         Stationmodel district = list.get(position);
     holder.t1.setText("Station Name :  "+district.getUnitName());
 
-//    holder.stationcard.setOnClickListener(new View.OnClickListener() {
-//        @Override
-//        public void onClick(View view) {
-//            Context context= view.getContext();
-//            AppCompatActivity activity= (AppCompatActivity) context;
-//           activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new Station_Analysis()).addToBackStack(null).commit();
-//        }
-//    });
+    holder.stationcard.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Context context= view.getContext();
+
+            AppCompatActivity activity= (AppCompatActivity) context;
+            Station_Analysis stationAnalysis=new Station_Analysis();
+            Bundle bundle=new Bundle();
+            bundle.putString("Unit_ID", district.getUnit_ID());
+            stationAnalysis.setArguments(bundle);
+
+           activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,stationAnalysis).addToBackStack(null).commit();
+        }
+    });
 
     }
 

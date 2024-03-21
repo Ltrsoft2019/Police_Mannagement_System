@@ -126,6 +126,11 @@ public class Navigationfragment extends Fragment {
                     analysis.setArguments(bundle);
                     loadFragment(analysis);
                 }
+                else if (id==R.id.nav_task){
+                    StationList stationList=new StationList();
+                    stationList.setArguments(bundle);
+                    loadFragment(stationList);
+                }
                 return false;
             }
         });
