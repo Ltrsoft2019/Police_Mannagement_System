@@ -188,10 +188,9 @@ public class FirDetail extends Fragment {
         Integer BOY= Integer.valueOf(model.getBoy());
         Integer Girl= Integer.valueOf(model.getGirl());
       ArrayList<PiechartModelclass> list=new ArrayList<>();
-      list.add(new PiechartModelclass("Male",Male,"#FFA726"));
-      list.add(new PiechartModelclass("Female",Female,"#EF5350"));
-      list.add(new PiechartModelclass("BOY",BOY,"#66BB6A"));
-      list.add(new PiechartModelclass("Girl",Girl,"#00B2E2"));
+      list.add(new PiechartModelclass("Male",Male+BOY,"#FFA726"));
+      list.add(new PiechartModelclass("Female",Female+Girl,"#EF5350"));
+
         Piechartgraph piechartgraph=new Piechartgraph(list,layout);
         piechartgraph.setpie(pieChart);
 

@@ -132,7 +132,7 @@ public class Navigationfragment extends Fragment {
                     loadFragment(analysis);
                 }
                 else if (id==R.id.nav_task){
-                    StationList stationList=new StationList();
+                    DistrictList stationList=new DistrictList();
                     stationList.setArguments(bundle);
                     loadFragment(stationList);
                 }
