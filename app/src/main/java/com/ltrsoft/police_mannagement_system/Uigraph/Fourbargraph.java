@@ -39,13 +39,13 @@ public class Fourbargraph {
 
             barChart.setDragEnabled(true);
             barChart.setVisibleXRangeMaximum(4);
-            float barSpace = 0.05f;
-            float groupSpace = 0.4f;
-            barData.setBarWidth(0.15f);
+            float barSpace = 0.04f;
+            float groupSpace = 0.3f;
+            barData.setBarWidth(0.14f);
             barChart.getXAxis().setAxisMinimum(0);
 
             barChart.animate();
-            barChart.groupBars(2, groupSpace, barSpace);
+            barChart.groupBars(0, groupSpace, barSpace);
             barChart.invalidate();
     }
     public static void setoneBarChart(ArrayList<Bargraphscrollable>list, BarChart barChart,String[] xAxisLabels) {
@@ -67,7 +67,7 @@ public class Fourbargraph {
         barChart.getXAxis().setCenterAxisLabels(true);
         barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
         // barChart.getXAxis().setGranularity(1);
-        barChart.getXAxis().setGranularityEnabled(true);
+     //   barChart.getXAxis().setGranularityEnabled(true);
 
         barChart.setDragEnabled(true);
         barChart.setVisibleXRangeMaximum(4);

@@ -61,12 +61,12 @@ public class ComplaintAnalysis extends Fragment {
         entries.add(new BarEntry(5f, 4));
 
         entries.add(new BarEntry(6f, 1));
-        entries.add(new BarEntry(6f, 1));
+        entries.add(new BarEntry(7f, 1));
         entries.add(new BarEntry(8f, 1));
+        entries.add(new BarEntry(9f, 1));
+        entries.add(new BarEntry(10f, 18));
         entries.add(new BarEntry(11f, 1));
-        entries.add(new BarEntry(12f, 1));
-        entries.add(new BarEntry(14f, 1));
-        entries.add(new BarEntry(15f, 1));
+        entries.add(new BarEntry(13f, 10));
          return entries;
     }
 
@@ -78,13 +78,13 @@ public class ComplaintAnalysis extends Fragment {
         entries.add(new BarEntry(5f, 14));
 
         entries.add(new BarEntry(6f, 10));
-        entries.add(new BarEntry(6f, 13));
+        entries.add(new BarEntry(7f, 13));
         entries.add(new BarEntry(8f, 15));
-        entries.add(new BarEntry(11f, 17));
-        entries.add(new BarEntry(12f, 1));
-        entries.add(new BarEntry(14f, 16
+        entries.add(new BarEntry(9f, 17));
+        entries.add(new BarEntry(10f, 1));
+        entries.add(new BarEntry(11f, 16
         ));
-        entries.add(new BarEntry(15f, 1));
+        entries.add(new BarEntry(12f, 10));
          return entries;
     }
 
