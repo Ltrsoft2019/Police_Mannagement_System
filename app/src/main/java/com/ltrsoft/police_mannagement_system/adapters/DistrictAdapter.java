@@ -1,6 +1,7 @@
 package com.ltrsoft.police_mannagement_system.adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,9 +42,13 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.ViewHo
             public void onClick(View view) {
                 Context context=view.getContext();
                 AppCompatActivity activity= (AppCompatActivity) context;
+                DistrictAnalysis analysis = new DistrictAnalysis();
+                Bundle bundle = new Bundle();
+                bundle.putString("District_name",list.get(position));
+                analysis.setArguments(bundle);
                 activity.getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fraglayot,new DistrictAnalysis())
+                        .replace(R.id.fraglayot,analysis)
                         .addToBackStack(null)
                         .commit();
             }

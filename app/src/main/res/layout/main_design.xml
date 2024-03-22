@@ -10,12 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="20dp">
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textAlignment="center"
+            android:id="@+id/district_analyse"
+            android:text="Analyse By District "
+            android:textSize="18dp"/>
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewpiechart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_below="@+id/district_analyse"
         android:elevation="10dp"
         app:cardCornerRadius="10dp">
 

@@ -28,6 +28,7 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.ltrsoft.police_mannagement_system.Fragment.DistrictList;
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.BargraphModelclass;
 import com.ltrsoft.police_mannagement_system.Model.Bargraphscrollable;
@@ -61,6 +62,8 @@ public class MainAnalysis extends Fragment {
     org.eazegraph.lib.charts.BarChart barChartyear;
     private PieChart pieChart,firtypepiechart;
     String selectedyear;
+    private TextView district_analyse;
+    private String FIRTYPE="https://rj.ltr-soft.com//dataset_api/fir_type/read_year_and_unit.php";
     private String FIRSTAGESBYYEAR="https://rj.ltr-soft.com//dataset_api/fir_status/count_fir_by_year.php";
     private String GETDATAOFTHEYEAR="https://rj.ltr-soft.com/dataset_api/fir_tbl/all_fir_of_table.php";
      private String URL ="https://rj.ltr-soft.com/dataset_api/district/unique_district.php";
@@ -86,42 +89,48 @@ public class MainAnalysis extends Fragment {
          monthwisebarchart=view.findViewById(R.id.barchartyear);
          yearspinner=view.findViewById(R.id.yearspinner);
          pieChart = view.findViewById(R.id.firstagespie);
+        district_analyse = view.findViewById(R.id.district_analyse);
+
+        district_analyse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                        .replace(R.id.fraglayot,new DistrictList())
+                        .commit();
+            }
+        });
 //         new SetupDataTask().execute();
 //             setspinner();
 //             setyeatbarchart();
 //             setfirstagespie();
         new Handler().postDelayed(() -> {
             setspinner();
-        }, 4000);
+        }, 1000);
 
+        new Handler().postDelayed(() -> {
+
+             setfirstagespie();
+        }, 5000);
         new Handler().postDelayed(() -> {
             setyeatbarchart();
         }, 8000);
-
-        new Handler().postDelayed(() -> {
-            setfirstagespie();
-        }, 12000);
         new Handler().postDelayed(() ->{
              setfirtypepiechart();
-                },16000);
-
+                },10000);
         yearspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
              @Override
              public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                  selectedyear=adapterView.getItemAtPosition(i).toString();
                  setbarchartbyyear(selectedyear);
              }
-
              @Override
              public void onNothingSelected(AdapterView<?> adapterView) {
               selectedyear="2016";
              }
          });
-
-
          return view;
     }
-
     private void setyeatbarchart() {
         ArrayList<BargraphModelclass>list1=new ArrayList<>();
         DAO dao=new DAO(getContext());
@@ -130,7 +139,6 @@ public class MainAnalysis extends Fragment {
             public void onError(String error) {
                 Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onSuccess(Object object) {
                 ArrayList<String>list2=new ArrayList<>();
@@ -145,13 +153,10 @@ public class MainAnalysis extends Fragment {
                 }
                 setbargraphofyear(list2);
              }
-
             @Override
             public void onEmpty() {
-
             }
         },8000);
-
      }
      private void setbargraphofyear(ArrayList<String> list){
         ArrayList<BargraphModelclass>modelclasses=new ArrayList<>();
@@ -166,11 +171,8 @@ public class MainAnalysis extends Fragment {
         modelclasses.add(new BargraphModelclass("2024",Float.valueOf(list.get(8)),"#EA0075"));
         Bargraphchart bargraphchart=new Bargraphchart(modelclasses);
         bargraphchart.setbargraph(barChartyear);
-
      }
-
     private void setspinner() {
-
         ArrayList list1=new ArrayList();
         list1.add("2016");
         list1.add("2017");
@@ -183,16 +185,7 @@ public class MainAnalysis extends Fragment {
         list1.add("2024");
         ArrayAdapter<String> adapter=new ArrayAdapter(getContext(), android.R.layout.simple_dropdown_item_1line,list1);
         yearspinner.setAdapter(adapter);
-
     }
-
-
-
-
-
-
-
-
     public void setbarchartbyyear(String year){
       DAO dao=new DAO(getContext());
       HashMap<String,String>map=new HashMap<>();
@@ -268,7 +261,6 @@ public class MainAnalysis extends Fragment {
             public void onError(String error) {
                 Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onSuccess(Object object) {
                 ArrayList<PiechartModelclass>list1=new ArrayList<>();
@@ -293,25 +285,24 @@ public class MainAnalysis extends Fragment {
                 }catch (JSONException e){
                     Toast.makeText(getContext(), "Jconvictedson Exception"+e, Toast.LENGTH_SHORT).show();
                 }
-
                 ArrayList<PiechartModelclass>list2=new ArrayList<>();
-                list2.add(new PiechartModelclass("disAcq",Integer.valueOf(disAcq),"#FFF424"));
-                list2.add(new PiechartModelclass("convicted",Integer.valueOf(convicte),"#EA0075"));
-                list2.add(new PiechartModelclass("pendingTrial",Integer.valueOf(pendingTrial),"#B3DD31"));
-                list2.add(new PiechartModelclass("boundOver",Integer.valueOf(boundOver),"#FF8C00"));
-                list2.add(new PiechartModelclass("otherDisposal",Integer.valueOf(otherDisposal),"#8A2BE2"));
-                list2.add(new PiechartModelclass("traced",Integer.valueOf(traced),"#FF8C00"));
-                list2.add(new PiechartModelclass("falseCase",Integer.valueOf(falseCase),"#32CD32"));
-                list2.add(new PiechartModelclass("underInvestigation",Integer.valueOf(undetected),"#FF1493"));
-                list2.add(new PiechartModelclass("unTraced",Integer.valueOf(abated),"#1E90FF"));
-                list2.add(new PiechartModelclass("compounded",Integer.valueOf(falseCase),"#FF4500"));
-                list2.add(new PiechartModelclass("abated",Integer.valueOf(compounded),"#9400D3"));
-                list2.add(new PiechartModelclass("undetected",Integer.valueOf(unTraced),"#00FF7F"));
-                list2.add(new PiechartModelclass("undetected",Integer.valueOf(underInvestigation),"#FF69B4"));
+                list2.add(new PiechartModelclass("disAcq", Integer.valueOf(disAcq), "#1f77b4")); // blue
+                list2.add(new PiechartModelclass("convicted", Integer.valueOf(convicte), "#ff7f0e")); // orange
+                list2.add(new PiechartModelclass("pendingTrial", Integer.valueOf(pendingTrial), "#2ca02c")); // green
+                list2.add(new PiechartModelclass("boundOver", Integer.valueOf(boundOver), "#d62728")); // red
+                list2.add(new PiechartModelclass("otherDisposal", Integer.valueOf(otherDisposal), "#9467bd")); // purple
+                list2.add(new PiechartModelclass("traced", Integer.valueOf(traced), "#8c564b")); // brown
+                list2.add(new PiechartModelclass("falseCase", Integer.valueOf(falseCase), "#e377c2")); // pink
+                list2.add(new PiechartModelclass("underInvestigation", Integer.valueOf(underInvestigation), "#7f7f7f")); // gray
+                list2.add(new PiechartModelclass("abated", Integer.valueOf(abated), "#bcbd22")); // yellow-green
+                list2.add(new PiechartModelclass("undetected", Integer.valueOf(undetected), "#17becf")); // light blue
+                list2.add(new PiechartModelclass("compounded", Integer.valueOf(compounded), "#aec7e8")); // light purple
+                list2.add(new PiechartModelclass("unTraced", Integer.valueOf(unTraced), "#ffbb78")); // light orange
+               // list2.add(new PiechartModelclass("underInvestigation", Integer.valueOf( ), "#ff4500")); // orange-red
+
                 Piechartgraph piechartgraph=new Piechartgraph(list2,firstagelayout);
                 piechartgraph.setpie(firstagespie);
             }
-
             @Override
             public void onEmpty() {
                 Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
@@ -327,7 +318,6 @@ public class MainAnalysis extends Fragment {
             public void onError(String error) {
                 Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onSuccess(Object object) {
                 String Heinous="",Non_Heinous="";
@@ -335,8 +325,6 @@ public class MainAnalysis extends Fragment {
                    JSONObject jsonObject=new JSONObject(String.valueOf(object));
                    Non_Heinous= jsonObject.getString("Non Heinous");
                    Heinous=jsonObject.getString("Heinous");
-
-
                }catch (JSONException e){
                    Toast.makeText(getContext(), "Json Exception"+e, Toast.LENGTH_SHORT).show();
               }
@@ -346,17 +334,12 @@ public class MainAnalysis extends Fragment {
                 list2.add(new PiechartModelclass("Non Heinous",Integer.valueOf(Heinous),"#66BB6A"));
                 Piechartgraph piechartgraph=new Piechartgraph(list2,firtypelayout);
                piechartgraph.setpie(firtypepiechart);
-
             }
-
             @Override
             public void onEmpty() {
 
             }
         });
-
-
     }
-
 }
 
