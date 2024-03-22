@@ -45,6 +45,7 @@ public class Navigationfragment extends Fragment {
     int position=0;
     private boolean flag=true;
     Fragment fragment ;
+    TextView textView;
     public Navigationfragment() {}
 
     @Nullable
@@ -54,6 +55,7 @@ public class Navigationfragment extends Fragment {
         float_drawer = view.findViewById(R.id.float_drawer);
         feature_list = view.findViewById(R.id.feature_list);
         toolbar = view.findViewById(R.id.toolbar);
+
         navigationView = view.findViewById(R.id.ubotnav);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
 

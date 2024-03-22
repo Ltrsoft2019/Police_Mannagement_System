@@ -84,7 +84,7 @@ public class Piechartgraph {
 
                int color=Color.parseColor(modellist.getColorcode());
                view. setBackgroundColor(color);
-              viewlayout.setMargins(10,13,120,5);
+              viewlayout.setMargins(10,13,70,5);
                   view.setPadding(15,13,0,0);
                  view.setLayoutParams(viewlayout);
                 TextView textView=new TextView(context);
@@ -95,18 +95,18 @@ public class Piechartgraph {
                );
 
                 textView.setText(modellist.getLabel()+" :");
-               textviewparam.setMargins(5,10,120,0);
-               textView.setPadding(0,10,0,0);
+               textviewparam.setMargins(5,0,110,10);
+               textView.setPadding(0,0,0,2);
                 textView.setLayoutParams(textviewparam);
                TextView textView2=new TextView(context);
                LinearLayout.LayoutParams textviewparam2=new LinearLayout.LayoutParams(
                        0,
-                       (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 35, context.getResources().getDisplayMetrics()),
+                       ViewGroup.LayoutParams.WRAP_CONTENT,
                        1
                );
 
                textView2.setText(String.valueOf(modellist.getValue()));
-               textviewparam2.setMargins(5,10,50,0);
+               textviewparam2.setMargins(5,10,0,0);
                textView2.setPadding(0,10,0,0);
                textView2.setLayoutParams(textviewparam2);
                 linearLayout2.addView(view);
