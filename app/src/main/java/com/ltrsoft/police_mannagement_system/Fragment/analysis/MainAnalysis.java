@@ -48,7 +48,12 @@ public class MainAnalysis extends Fragment {
     org.eazegraph.lib.charts.BarChart barChartyear;
     private PieChart pieChart,firtypepiechart,Complaint_Modepiechart;
     String selectedyear;
+    private boolean flag=false;
+    private boolean flag2=false;
+
     private TextView district_analyse;
+    private  String OverallComplaintmode="https://rj.ltr-soft.com/dataset_api/cmplaint_mode/read_all_count.php";
+    private String OverllFirType="https://rj.ltr-soft.com/dataset_api/fir_type/read_all_count.php";
     private String FIRTYPE="https://rj.ltr-soft.com//dataset_api/fir_type/read_year_and_unit.php";
     private String FIRSTAGESBYYEAR="https://rj.ltr-soft.com//dataset_api/fir_status/count_fir_by_year.php";
     private String GETDATAOFTHEYEAR="https://rj.ltr-soft.com/dataset_api/fir_tbl/all_fir_of_table.php";
@@ -57,7 +62,7 @@ public class MainAnalysis extends Fragment {
     private  String GETYEARCOUNTURL="https://rj.ltr-soft.com/dataset_api/fir_tbl/all_year_count.php";
     private String  URLS= "https://rj.ltr-soft.com/public/dataset_api/fir_tbl/fir_read_station.php";
     private String FIRTYPEYEARWISE="https://rj.ltr-soft.com//dataset_api/fir_type/read_by_year.php";
-    private String COM_MODE="https://rj.ltr-soft.com/dataset_api/cmplaint_mode/read_all_count.php";
+    private String COM_MODE="https://rj.ltr-soft.com/dataset_api/cmplaint_mode/read_all_by_year.php";
     DAO dao;
 
     @Nullable
@@ -83,6 +88,7 @@ public class MainAnalysis extends Fragment {
         fir_typespinner = view.findViewById(R.id.fir_typespinner);
         cmp_mode_spinner = view.findViewById(R.id.cmp_mode_spinner);
          dao = new DAO(getContext());
+         district_analyse.setText("Get Data OF Districts");
         district_analyse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,15 +99,15 @@ public class MainAnalysis extends Fragment {
                         .commit();
             }
         });
-
+            // Overallfirtypepie();
              setspinner(yearspinner);
              setspinner(fir_typespinner);
              setspinner(cmp_mode_spinner);
+
              setOnItemSelected();
              setyeatbarchart();
              setfirstagespie();
-            setComplaintPie();
-         return view;
+          return view;
     }
 
     private void setOnItemSelected() {
@@ -121,7 +127,13 @@ public class MainAnalysis extends Fragment {
         fir_typespinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                setfirtypepiechart(parent.getItemAtPosition(position).toString());
+                if (flag) {
+                    setfirtypepiechart(parent.getItemAtPosition(position).toString());
+                }else {
+                   Overallfirtypepie();
+                   flag=true;
+                }
+
             }
 
             @Override
@@ -130,11 +142,28 @@ public class MainAnalysis extends Fragment {
             }
         });
 
+      cmp_mode_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+          @Override
+          public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+              if (flag2) {
+                  setComplaintPie(adapterView.getItemAtPosition(i).toString());
+              }else {
+                   setOverallComplaintmode();
+                  flag2=true;
+              }
 
+          }
+
+          @Override
+          public void onNothingSelected(AdapterView<?> adapterView) {
+
+          }
+      });
     }
 
-    private void setComplaintPie() {
+    private void setComplaintPie(String year) {
         HashMap <String,String>map=new HashMap<>();
+        map.put("year",year);
         dao.getData(map, COM_MODE, new NewCallBack() {
             @Override
             public void onError(String error) {
@@ -143,7 +172,7 @@ public class MainAnalysis extends Fragment {
 
             @Override
             public void onSuccess(Object object) {
-                Toast.makeText(getContext(), "resposne "+object, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "resposne "+object, Toast.LENGTH_SHORT).show();
                 try {
                     ArrayList <PiechartModelclass>modelclasses=new ArrayList<>();
                     JSONObject jsonObject = new JSONObject(String.valueOf(object));
@@ -159,8 +188,7 @@ public class MainAnalysis extends Fragment {
                     String judicialMagistrateReferenceAndOrganised = jsonObject.getString("Judicial/Magistrate Reference & Organised");
                     String distressCallOverPhone = jsonObject.getString("Distress call over phone");
 
-                    // Create instances of PiechartModelclass
-                    modelclasses.add(new PiechartModelclass("Written", Integer.valueOf(written), "#1f77b4"));
+                     modelclasses.add(new PiechartModelclass("Written", Integer.valueOf(written), "#1f77b4"));
                     modelclasses.add(new PiechartModelclass("Sue-moto by Police", Integer.valueOf(sueMotoByPolice), "#ff7f0e"));
                     modelclasses.add(new PiechartModelclass("Judicial/Magistrate reference", Integer.valueOf(judicialMagistrateReference), "#2ca02c"));
                     modelclasses.add(new PiechartModelclass("NULL", Integer.valueOf(nullValue), "#d62728"));
@@ -386,6 +414,89 @@ public class MainAnalysis extends Fragment {
                    Toast.makeText(getContext(), "Json Exception"+e, Toast.LENGTH_SHORT).show();
               }
             }
+            @Override
+            public void onEmpty() {
+
+            }
+        });
+    }
+    public void Overallfirtypepie(){
+        dao.getData(null, OverllFirType, new NewCallBack() {
+            @Override
+            public void onError(String error) {
+                Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSuccess(Object object) {
+                String Non_Heinous="";
+                String Heinous="";
+                try {
+                    JSONObject jsonObject=new JSONObject(String.valueOf(object));
+                       Non_Heinous= jsonObject.getString("Non Heinous");
+                       Heinous= jsonObject.getString("Heinous");
+                }catch (JSONException e)
+                {
+                    Toast.makeText(getContext(), "error"+e, Toast.LENGTH_SHORT).show();
+                }
+                ArrayList<PiechartModelclass>list2=new ArrayList<>();
+                list2.add(new PiechartModelclass("Heinous",Integer.valueOf(Non_Heinous),"#ff7f0e"));
+                list2.add(new PiechartModelclass("Non Heinous",Integer.valueOf(Heinous),"#1f77b4"));
+
+                Piechartgraph piechartgraph=new Piechartgraph(list2,firtypelayout);
+                piechartgraph.setpie(firtypepiechart);
+
+            }
+
+            @Override
+            public void onEmpty() {
+
+            }
+        });
+    }
+    public void setOverallComplaintmode(){
+        dao.getData(null, OverallComplaintmode, new NewCallBack() {
+            @Override
+            public void onError(String error) {
+                Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSuccess(Object object) {
+                try {
+                    ArrayList<PiechartModelclass> modelclasses = new ArrayList<>();
+                    JSONObject jsonObject = new JSONObject(String.valueOf(object));
+                    String written = jsonObject.getString("Written");
+                    String sueMotoByPolice = jsonObject.getString("Sue-moto by Police");
+                    String judicialMagistrateReference = jsonObject.getString("Judicial/Magistrate reference");
+                    String nullValue = jsonObject.getString("NULL");
+                    String others = jsonObject.getString("Others");
+                    String oral = jsonObject.getString("Oral");
+                    String online = jsonObject.getString("Online");
+                    String writtenAndOrganised = jsonObject.getString("Written & Organised");
+                    String oralAndOrganised = jsonObject.getString("Oral & Organised");
+                    String judicialMagistrateReferenceAndOrganised = jsonObject.getString("Judicial/Magistrate Reference & Organised");
+                    String distressCallOverPhone = jsonObject.getString("Distress call over phone");
+
+                    modelclasses.add(new PiechartModelclass("Written", Integer.valueOf(written), "#1f77b4"));
+                    modelclasses.add(new PiechartModelclass("Sue-moto by Police", Integer.valueOf(sueMotoByPolice), "#ff7f0e"));
+                    modelclasses.add(new PiechartModelclass("Judicial/Magistrate reference", Integer.valueOf(judicialMagistrateReference), "#2ca02c"));
+                    modelclasses.add(new PiechartModelclass("NULL", Integer.valueOf(nullValue), "#d62728"));
+                    modelclasses.add(new PiechartModelclass("Others", Integer.valueOf(others), "#9467bd"));
+                    modelclasses.add(new PiechartModelclass("Oral", Integer.valueOf(oral), "#8c564b"));
+                    modelclasses.add(new PiechartModelclass("Online", Integer.valueOf(online), "#e377c2"));
+                    modelclasses.add(new PiechartModelclass("Written & Organised", Integer.valueOf(writtenAndOrganised), "#7f7f7f"));
+                    modelclasses.add(new PiechartModelclass("Oral & Organised", Integer.valueOf(oralAndOrganised), "#bcbd22"));
+                    modelclasses.add(new PiechartModelclass("Judicial/Magistrate Reference & Organised", Integer.valueOf(judicialMagistrateReferenceAndOrganised), "#17becf"));
+                    modelclasses.add(new PiechartModelclass("Distress call over phone", Integer.valueOf(distressCallOverPhone), "#aec7e8"));
+                    Piechartgraph piechartgraph = new Piechartgraph(modelclasses, complaintmodelayout);
+                    piechartgraph.setpie(Complaint_Modepiechart);
+
+                } catch (JSONException e) {
+                    Toast.makeText(getContext(), "" + e, Toast.LENGTH_SHORT).show();
+                }
+            }
+
             @Override
             public void onEmpty() {
 

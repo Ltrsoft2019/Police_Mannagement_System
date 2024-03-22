@@ -15,8 +15,9 @@
             android:layout_height="40dp"
             android:textAlignment="center"
             android:id="@+id/district_analyse"
-            android:text="Analyse By District "
-            android:textSize="18dp"/>
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+              android:textSize="20dp"/>
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewpiechart"
         android:layout_width="match_parent"
@@ -199,8 +200,7 @@
                     android:text="Fir Type"
                     android:textAlignment="center"
                     android:textSize="18dp"
-                    android:visibility="gone"
-                    android:layout_marginTop="10dp"
+                     android:layout_marginTop="10dp"
                     android:id="@+id/cmp_mode_spinner"
                     android:gravity="center"/>
                 <org.eazegraph.lib.charts.PieChart
