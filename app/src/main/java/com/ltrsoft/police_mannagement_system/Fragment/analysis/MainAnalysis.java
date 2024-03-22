@@ -42,7 +42,7 @@ public class MainAnalysis extends Fragment {
     private LineChart lineChart;
     private LinearLayout layout,firstagelayout,firtypelayout,complaintmodelayout;
     private TextView totalyearwise,textView;
-    private Spinner yearspinner,fir_typespinner,cmp_mode_spinner;
+    private Spinner yearspinner,fir_typespinner,cmp_mode_spinner,stage_spinner;
     private BarChart monthwisebarchart;
     private HorizontalScrollView horizontalScrollView;
     org.eazegraph.lib.charts.BarChart barChartyear;
@@ -81,6 +81,7 @@ public class MainAnalysis extends Fragment {
          horizontalScrollView=view.findViewById(R.id.horizontalScrollView);
          monthwisebarchart=view.findViewById(R.id.barchartyear);
          yearspinner=view.findViewById(R.id.yearspinner);
+         stage_spinner=view.findViewById(R.id.stage_spinner);
          pieChart = view.findViewById(R.id.firstagespie);
         district_analyse = view.findViewById(R.id.district_analyse);
         Complaint_Modepiechart = view.findViewById(R.id.Complaint_Modepiechart);
@@ -103,14 +104,25 @@ public class MainAnalysis extends Fragment {
              setspinner(yearspinner);
              setspinner(fir_typespinner);
              setspinner(cmp_mode_spinner);
-
+             setspinner(stage_spinner);
              setOnItemSelected();
              setyeatbarchart();
-             setfirstagespie();
-          return view;
+           return view;
     }
 
     private void setOnItemSelected() {
+        stage_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                selectedyear=adapterView.getItemAtPosition(i).toString();
+              setfirstagespie(selectedyear);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         yearspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -219,7 +231,7 @@ public class MainAnalysis extends Fragment {
         dao.getData(null, GETYEARCOUNTURL, new NewCallBack() {
             @Override
             public void onError(String error) {
-                Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onSuccess(Object object) {
@@ -328,9 +340,9 @@ public class MainAnalysis extends Fragment {
                 "sep","oct","nov","dec"};
         Fourbargraph.setoneBarChart( bargraphscrollables, monthwisebarchart, xAxisLabels);
      }
-      private void setfirstagespie(){
+      private void setfirstagespie(String year){
         HashMap<String,String>map=new HashMap<>();
-        map.put("year","2016");
+        map.put("year",year);
         dao.getData(map, FIRSTAGESBYYEAR, new NewCallBack() {
             @Override
             public void onError(String error) {

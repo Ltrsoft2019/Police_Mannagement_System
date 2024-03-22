@@ -87,8 +87,8 @@ public class DistrictAnalysis extends Fragment {
         textView.setText("Station Analysis");
         Bundle bundle=getArguments();
         district=bundle.getString("District_name");
-        Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
-        setspinner(yearspinner);
+        Toast.makeText(getContext(), ""+district, Toast.LENGTH_SHORT).show();
+         setspinner(yearspinner);
         setspinner(fir_typespinner);
         setspinner(cmp_mode_spinner);
         setspinner(stage_spinner);
@@ -200,7 +200,7 @@ public class DistrictAnalysis extends Fragment {
             }
             @Override
             public void onSuccess(Object object) {
-                Toast.makeText(getContext(), "Response "+object, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getContext(), "Response "+object, Toast.LENGTH_SHORT).show();
                 ArrayList<PiechartModelclass>list1=new ArrayList<>();
                 String disAcq = "",convicte="",pendingTrial="",boundOver="",otherDisposal="",traced=""
                         ,falseCase="",undetected="",abated="",compounded="",unTraced="",underInvestigation="";

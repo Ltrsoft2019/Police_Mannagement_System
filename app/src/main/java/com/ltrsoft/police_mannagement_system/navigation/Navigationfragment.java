@@ -27,6 +27,7 @@ import com.ltrsoft.police_mannagement_system.Fragment.DySpDash;
 import com.ltrsoft.police_mannagement_system.Fragment.PIDash;
 import com.ltrsoft.police_mannagement_system.Fragment.PSIDashboard;
 import com.ltrsoft.police_mannagement_system.Fragment.StationList;
+import com.ltrsoft.police_mannagement_system.Fragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.Fragment.analysis.Station_Analysis;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.utils.UserDataAccess;
@@ -122,17 +123,17 @@ public class Navigationfragment extends Fragment {
                     loadFragment(fragment);
                 }
                 else if (id==R.id.nav_history) {
-                    Station_Analysis analysis = new Station_Analysis();
+                    MainAnalysis analysis = new MainAnalysis();
                     analysis.setArguments(bundle);
                     loadFragment(analysis);
                 }
                 else if (id==R.id.nav_add) {
-                    DistrictList analysis = new DistrictList();
+                    StationList analysis = new StationList();
                     analysis.setArguments(bundle);
                     loadFragment(analysis);
                 }
                 else if (id==R.id.nav_task){
-                    DistrictList stationList=new DistrictList();
+                    StationList stationList=new StationList();
                     stationList.setArguments(bundle);
                     loadFragment(stationList);
                 }
