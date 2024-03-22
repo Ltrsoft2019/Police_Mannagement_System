@@ -79,8 +79,19 @@ String GETDATAOFTHEYEAR="https://rj.ltr-soft.com/dataset_api/fir_tbl/fir_by_year
         monthwisebarchart=view.findViewById(R.id.barchartyear);
         yearspinner=view.findViewById(R.id.yearspinner);
         pieChart = view.findViewById(R.id.firstagespie);
-
-        setfirstagespie();
+        view.findViewById(R.id.district_analyse).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PoliceList policeList = new PoliceList();
+                Bundle bundle1 = new Bundle();
+                bundle1.putString("Unit_Id",Unit_ID);
+                policeList.setArguments(bundle1);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fraglayot,policeList);
+            }
+        });
+//        setfirstagespie();
 //        setyeatbarchart();
 //        setspinner();
 //        setfirtypepiechart();
