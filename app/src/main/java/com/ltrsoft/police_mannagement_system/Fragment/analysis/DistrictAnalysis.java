@@ -1,7 +1,6 @@
 package com.ltrsoft.police_mannagement_system.Fragment.analysis;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

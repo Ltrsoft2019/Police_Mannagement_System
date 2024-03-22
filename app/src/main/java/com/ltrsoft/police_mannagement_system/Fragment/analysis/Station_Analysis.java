@@ -65,34 +65,25 @@ String GETDATAOFTHEYEAR="https://rj.ltr-soft.com/dataset_api/fir_tbl/fir_by_year
                              Bundle savedInstanceState) {
          View view= inflater.inflate(R.layout.main_design, container, false);
       Bundle bundle=getArguments();
-      Unit_ID=bundle.getString("Unit_ID");
+//      Unit_ID=bundle.getString("Unit_ID");
+        Unit_ID="1245";
        // Toast.makeText(getContext(), ""+Unit_ID, Toast.LENGTH_SHORT).show();
         firstagespie = view.findViewById(R.id.firstagespie);
         firtypelayout=view.findViewById(R.id.firtypelayout);
         firtypepiechart=view.findViewById(R.id.firtypepiechart);
-         firstagelayout=view.findViewById(R.id.firstagelayout);
+        firstagelayout=view.findViewById(R.id.firstagelayout);
         barChartyear=view.findViewById(R.id.barchartofyear);
         layout=view.findViewById(R.id.piechartitem);
         totalyearwise=view.findViewById(R.id.totalyearwiase);
         textView=view.findViewById(R.id.Total_cases);
-         monthwisebarchart=view.findViewById(R.id.barchartyear);
+        monthwisebarchart=view.findViewById(R.id.barchartyear);
         yearspinner=view.findViewById(R.id.yearspinner);
         pieChart = view.findViewById(R.id.firstagespie);
 
-        new Handler().postDelayed(() -> {
-            setspinner();
-        }, 4000);
-
-        new Handler().postDelayed(() -> {
-            setyeatbarchart();
-        }, 8000);
-
-        new Handler().postDelayed(() -> {
-            setfirstagespie();
-        }, 12000);
-        new Handler().postDelayed(() ->{
-            setfirtypepiechart();
-        },16000);
+        setfirstagespie();
+//        setyeatbarchart();
+//        setspinner();
+//        setfirtypepiechart();
 
         yearspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -107,8 +98,6 @@ String GETDATAOFTHEYEAR="https://rj.ltr-soft.com/dataset_api/fir_tbl/fir_by_year
                 setbarchartbyyear("2016");
             }
         });
-
-
         return view;
     }
     private void setyeatbarchart() {
@@ -143,7 +132,6 @@ String GETDATAOFTHEYEAR="https://rj.ltr-soft.com/dataset_api/fir_tbl/fir_by_year
 
             }
         },8000);
-
     }
     private void setbargraphofyear(ArrayList<String> list){
         ArrayList<BargraphModelclass>modelclasses=new ArrayList<>();
@@ -158,11 +146,8 @@ String GETDATAOFTHEYEAR="https://rj.ltr-soft.com/dataset_api/fir_tbl/fir_by_year
         modelclasses.add(new BargraphModelclass("2024",Float.valueOf(list.get(8)),"#EA0075"));
         Bargraphchart bargraphchart=new Bargraphchart(modelclasses);
         bargraphchart.setbargraph(barChartyear);
-
     }
-
     private void setspinner() {
-
         ArrayList list1=new ArrayList();
         list1.add("2016");
         list1.add("2017");
@@ -175,16 +160,7 @@ String GETDATAOFTHEYEAR="https://rj.ltr-soft.com/dataset_api/fir_tbl/fir_by_year
         list1.add("2024");
         ArrayAdapter<String> adapter=new ArrayAdapter(getContext(), android.R.layout.simple_dropdown_item_1line,list1);
         yearspinner.setAdapter(adapter);
-
     }
-
-
-
-
-
-
-
-
     public void setbarchartbyyear(String year){
         DAO dao=new DAO(getContext());
         HashMap<String,String> map=new HashMap<>();
@@ -226,10 +202,7 @@ String GETDATAOFTHEYEAR="https://rj.ltr-soft.com/dataset_api/fir_tbl/fir_by_year
             }
         });
     }
-
-    private void setbargraphofmonthwiseyear(String totalcount, ArrayList<String> list1)
-    {
-//
+    private void setbargraphofmonthwiseyear(String totalcount, ArrayList<String> list1) {
         totalyearwise.setText("Total Cases : "+totalcount);
         ArrayList<Bargraphscrollable>bargraphscrollables=new ArrayList<>();
         bargraphscrollables.add(new Bargraphscrollable(1f,list1.get(0),"#FFF424"));
@@ -330,28 +303,21 @@ String GETDATAOFTHEYEAR="https://rj.ltr-soft.com/dataset_api/fir_tbl/fir_by_year
                     JSONObject jsonObject=new JSONObject(String.valueOf(object));
                     Non_Heinous= jsonObject.getString("Non Heinous");
                     Heinous=jsonObject.getString("Heinous");
-
-
+                    ArrayList<PiechartModelclass>list2=new ArrayList<>();
+                    list2.add(new PiechartModelclass("Heinous",Integer.valueOf(Non_Heinous),"#EF5350"));
+                    list2.add(new PiechartModelclass("Non Heinous",Integer.valueOf(Heinous),"#66BB6A"));
+                    Piechartgraph piechartgraph=new Piechartgraph(list2,firtypelayout);
+                    piechartgraph.setpie(firtypepiechart);
                 }catch (JSONException e){
                     Toast.makeText(getContext(), "Json Exception"+e, Toast.LENGTH_SHORT).show();
                 }
-                ArrayList<PiechartModelclass>list2=new ArrayList<>();
-                list2.add(new PiechartModelclass("Heinous",Integer.valueOf(Non_Heinous),"#EF5350"));
 
-                list2.add(new PiechartModelclass("Non Heinous",Integer.valueOf(Heinous),"#66BB6A"));
-                Piechartgraph piechartgraph=new Piechartgraph(list2,firtypelayout);
-                piechartgraph.setpie(firtypepiechart);
 
             }
-
             @Override
             public void onEmpty() {
 
             }
         });
-
-
     }
-
-
 }
