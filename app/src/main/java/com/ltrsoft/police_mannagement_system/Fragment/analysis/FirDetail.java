@@ -67,14 +67,8 @@ public class FirDetail extends Fragment {
         Bundle bundle=getArguments();
         FIR_ID= bundle.getString("FIR_ID");
         Unit_IDs = bundle.getString("Unit_ID");
-        //Toast.makeText(getContext(), ""+Unit_ID+FIR_ID, Toast.LENGTH_SHORT).show();
-
-   getdata();
-
-
-
-
-        return view;
+         getdata();
+         return view;
     }
     public void getdata (){
         DAO dao=new DAO(getContext());

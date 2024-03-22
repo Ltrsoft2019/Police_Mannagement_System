@@ -13,10 +13,10 @@ public class FircardModel {
     public FircardModel(String FIR_ID, String FIRNo, String unitName, String unit_ID, String FIR_Type, String actSection, String IOName, String KGID) {
         this.FIR_ID = FIR_ID;
         this.FIRNo = FIRNo;
-        UnitName = unitName;
-        Unit_ID = unit_ID;
+        this.UnitName = unitName;
+        this.Unit_ID = unit_ID;
         this.FIR_Type = FIR_Type;
-        ActSection = actSection;
+        this.ActSection = actSection;
         this.IOName = IOName;
         this.KGID = KGID;
     }

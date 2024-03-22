@@ -17,6 +17,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -87,7 +88,9 @@ public class Navigationfragment extends Fragment {
         bundle.putString("KGID",kgid);
         bundle.putString("IONAME",kgid);
 
-        if (position.equals("ACP")){
+//        Fragment fragment1 = ;
+
+            if (position.equals("ACP")){
             Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
             fragment = new ACPDash();
             fragment.setArguments(bundle);
@@ -138,8 +141,9 @@ public class Navigationfragment extends Fragment {
     }
 
     private void loadFragment(Fragment fragment) {
-
-        getActivity().getSupportFragmentManager()
+    FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
+        Fragment prevous = fragmentManager.findFragmentById(R.id.fraglayot);
+        fragmentManager
                     .beginTransaction()
                     .replace(R.id.fraglayot,fragment)
                     .commit();
