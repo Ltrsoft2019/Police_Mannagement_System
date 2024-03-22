@@ -16,8 +16,8 @@ public class PolicePosition {
         this.IOName = IOName;
         Internal_IO = internal_IO;
         this.districts = districts;
-        Unit_ID = unit_ID;
-        UnitName = unitName;
+        this.Unit_ID = unit_ID;
+        this.UnitName = unitName;
     }
 
     public String getUnit_ID() {
