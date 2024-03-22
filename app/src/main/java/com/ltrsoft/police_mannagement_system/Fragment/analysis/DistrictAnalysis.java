@@ -1,6 +1,5 @@
 package com.ltrsoft.police_mannagement_system.Fragment.analysis;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -17,40 +16,27 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.ltrsoft.police_mannagement_system.Fragment.DistrictList;
 import com.ltrsoft.police_mannagement_system.Fragment.StationList;
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.BargraphModelclass;
 import com.ltrsoft.police_mannagement_system.Model.Bargraphscrollable;
-import com.ltrsoft.police_mannagement_system.Model.District;
 import com.ltrsoft.police_mannagement_system.Model.PiechartModelclass;
-import com.ltrsoft.police_mannagement_system.Model.Stationmodel;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.Uigraph.Bargraphchart;
 import com.ltrsoft.police_mannagement_system.Uigraph.Fourbargraph;
 import com.ltrsoft.police_mannagement_system.Uigraph.Piechartgraph;
-import com.ltrsoft.police_mannagement_system.adapters.DistrictAdapter;
-import com.ltrsoft.police_mannagement_system.adapters.StationAdapter;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
 
 import org.eazegraph.lib.charts.PieChart;
-import org.eazegraph.lib.models.PieModel;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class DistrictAnalysis extends Fragment {
     public DistrictAnalysis() {}
@@ -104,24 +90,10 @@ public class DistrictAnalysis extends Fragment {
              }
          });
         CrimeGroupSpinner = view.findViewById(R.id.CrimeGroupSpinner);
-        new Handler().postDelayed(() -> {
-            setspinner();
-        }, 1000);
-
-        new Handler().postDelayed(() -> {
-
-            setfirstagespie();
-        }, 5000);
-        new Handler().postDelayed(() -> {
-            setyeatbarchart();
-        }, 8000);
-        new Handler().postDelayed(() ->{
-           setfirtypepiechart();
-        },10000);
-//        setfirstagespie();
-//        setspinner();
-//        setyeatbarchart();
-        setComplaintGroup();
+        setspinner();
+        setfirstagespie();
+        setyeatbarchart();
+        setfirtypepiechart();
         return view;
     }
     private void setfirstagespie(){

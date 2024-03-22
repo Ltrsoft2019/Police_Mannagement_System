@@ -129,7 +129,6 @@
              android:layout_width="match_parent"
              android:layout_height="40dp"
               android:textAlignment="center"
-
              android:id="@+id/yearspinner"
              android:gravity="center"/>
                 <TextView
@@ -145,10 +144,7 @@
             android:layout_height="350dp"
              android:layout_marginTop="10dp"
              android:layout_marginBottom="10dp"
-
             />
-
-
         <TextView
             android:layout_below="@+id/linecard"
             android:layout_width="match_parent"
@@ -159,15 +155,22 @@
             android:layout_marginTop="10dp"
             android:id="@+id/fir_type"
             android:gravity="center"/>
+                <Spinner
+                    android:layout_below="@+id/linecard"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Fir Type"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/fir_typespinner"
+                    android:gravity="center"/>
                 <org.eazegraph.lib.charts.PieChart
              android:layout_width="match_parent"
              android:layout_height="350dp"
              android:layout_marginTop="10dp"
              android:id="@+id/firtypepiechart"
-
-
             android:layout_marginBottom="10dp"
-
             />
                 <LinearLayout
                     android:orientation="vertical"
@@ -186,15 +189,23 @@
                     android:layout_marginTop="10dp"
                     android:id="@+id/Complaint_Mode"
                     android:gravity="center"/>
+                <Spinner
+                    android:layout_below="@+id/linecard"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Fir Type"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/cmp_mode_spinner"
+                    android:gravity="center"/>
                 <org.eazegraph.lib.charts.PieChart
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
                      android:layout_marginTop="10dp"
                      android:id="@+id/Complaint_Modepiechart"
-
-
                     android:layout_marginBottom="10dp"
-
                     />
                 <LinearLayout
                     android:orientation="vertical"
@@ -209,11 +220,13 @@
                     android:layout_height="40dp"
                      android:textAlignment="center"
                     android:layout_marginTop="10dp"
+                    android:visibility="gone"
                     android:id="@+id/CrimeGroupSpinner"
                     android:gravity="center"/>
                 <org.eazegraph.lib.charts.PieChart
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
+                    android:visibility="gone"
                      android:layout_marginTop="10dp"
                      android:id="@+id/CrimeGroupPiechart"
                     android:layout_marginBottom="10dp"

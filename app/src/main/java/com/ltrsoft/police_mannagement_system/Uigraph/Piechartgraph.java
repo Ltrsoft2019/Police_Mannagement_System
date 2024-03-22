@@ -29,11 +29,14 @@ public class Piechartgraph {
     }
 
     public  void setpie(PieChart chart){
+        if (!chart.getData().isEmpty()){
+            chart.clearChart();
+        }
         for (PiechartModelclass modellist :list){
-
             chart.addPieSlice(
-            new PieModel(
-                        modellist.getLabel(), modellist.getValue(), Color.parseColor(modellist.getColorcode())));
+            new PieModel(modellist.getLabel(),
+                    modellist.getValue(),
+                    Color.parseColor(modellist.getColorcode())));
         }
         setcardlist();
        chart.startAnimation();
@@ -59,6 +62,9 @@ public class Piechartgraph {
                ViewGroup.LayoutParams.WRAP_CONTENT
        ));
             linearLayout1.setOrientation(LinearLayout.VERTICAL);
+            if (layout.getChildCount()>0){
+                layout.removeAllViews();
+            }
            for (PiechartModelclass modellist :list){
                LinearLayout linearLayout2=new LinearLayout(context);
                linearLayout2.setLayoutParams(new LinearLayout.LayoutParams(
