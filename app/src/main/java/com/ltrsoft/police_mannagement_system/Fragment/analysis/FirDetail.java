@@ -190,7 +190,8 @@ public class FirDetail extends Fragment {
       ArrayList<PiechartModelclass> list=new ArrayList<>();
       list.add(new PiechartModelclass("Male",Male+BOY,"#FFA726"));
       list.add(new PiechartModelclass("Female",Female+Girl,"#EF5350"));
-
+     // list.add(new PiechartModelclass("BOY",BOY,"#66BB6A"));
+      //list.add(new PiechartModelclass("Girl",Girl,"#00B2E2"));
         Piechartgraph piechartgraph=new Piechartgraph(list,layout);
         piechartgraph.setpie(pieChart);
 
