@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
@@ -29,6 +30,7 @@ import java.util.HashMap;
 public class Login extends Fragment {
     private EditText kgid;
     private EditText interanlid;
+    Fragment fragment;
     private TextView forgotPasswordTextView;
     private TextView signUpTextView;
     private Button loginButton;
@@ -64,41 +66,23 @@ public class Login extends Fragment {
                 if (!(kgid.getText().toString().trim()).isEmpty()){
                         if (!(interanlid.getText().toString().isEmpty())){
                             loginUser(kgid.getText().toString(),interanlid.getText().toString());
-//                            SessionManager sessionManager = new SessionManager(getContext());
-//                            sessionManager.setLogin(true);
-//                            UserDataAccess access = new UserDataAccess();
-//                            access.setKgid("1827332",getActivity());
-//                            access.setPosition("ACP",getActivity());
-//
-//                            getActivity().getSupportFragmentManager()
-//                                    .beginTransaction().
-//                                    add(R.id.main_container,new Navigationfragment())
-//                                    .commit();
-
                     }
                         else {
-
                             interanlid.setError("Enter Internal id");
-
                     }
                 }
                 else {
-
                     kgid.setError("this is compulsory field");
-
                 }
-
             }
         });
     }
 
     private void loginUser(String kgid, String internal) {
-
         DAO  dao = new DAO(getContext());
         HashMap<String ,String>map = new HashMap<>();
         map.put("KGID",kgid);
         map.put("Internal_IO",internal);
-
         dao.getData(map, URLS, new NewCallBack() {
             @Override
             public void onError(String error) {
@@ -124,28 +108,50 @@ public class Login extends Fragment {
                        access.setPosition(position,getActivity());
                        access.setPosition(position,getActivity());
                        access.setIOName(IOName,getActivity());
-
-                       getActivity().getSupportFragmentManager()
-                               .beginTransaction()
-                               .replace(R.id.main_container,new Navigationfragment())
-                               .commit();
+                       Bundle bundle = new Bundle();
+                       bundle.putString("KGID",kgid);
+                       bundle.putString("IONAME",kgid);
+                       if (position.equals("ACP")){
+                           Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
+                           fragment = new ACPDash();
+                           fragment.setArguments(bundle);
+                            loadFragment(fragment);
+                       } else if (position.equals("PI")) {
+                           Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
+                           fragment = new PIDash();
+                           fragment.setArguments(bundle);
+                            loadFragment(fragment);
+                       }else if (position.equals("PSI")) {
+                           Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
+                           fragment = new PSIDashboard();
+                           fragment.setArguments(bundle);
+                           loadFragment(fragment);
+                       }else if (position.equals("Dy.Sp")) {
+                           Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
+                           fragment = new DySpDash();
+                           fragment.setArguments(bundle);
+                           loadFragment(fragment);
+                       }
                    }
                    else {
                        Toast.makeText(getContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
                    }
-
                }catch (JSONException e){
-
                }
-
-
             }
-
             @Override
             public void onEmpty() {
                 Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    private void loadFragment(Fragment fragment) {
+        FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
+        Fragment prevous = fragmentManager.findFragmentById(R.id.fraglayot);
+        fragmentManager
+                .beginTransaction()
+                .replace(R.id.fraglayot,fragment)
+                .commit();
     }
 
 

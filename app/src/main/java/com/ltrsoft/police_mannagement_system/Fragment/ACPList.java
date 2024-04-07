@@ -53,7 +53,6 @@ public class ACPList extends Fragment {
             public void onError(String error) {
                 Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onSuccess(Object object) {
                 try {
@@ -78,7 +77,6 @@ public class ACPList extends Fragment {
                     System.out.println("error "+e.toString());
                 }
             }
-
             @Override
             public void onEmpty() {
                 Toast.makeText(getContext(), "on empty", Toast.LENGTH_SHORT).show();

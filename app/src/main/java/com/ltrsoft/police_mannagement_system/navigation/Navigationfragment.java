@@ -20,10 +20,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.ltrsoft.police_mannagement_system.Fragment.ACPDash;
 import com.ltrsoft.police_mannagement_system.Fragment.DistrictList;
 import com.ltrsoft.police_mannagement_system.Fragment.DySpDash;
+import com.ltrsoft.police_mannagement_system.Fragment.HierarchyAnalysis.ComplaintAnalysis;
+import com.ltrsoft.police_mannagement_system.Fragment.Login;
 import com.ltrsoft.police_mannagement_system.Fragment.PIDash;
 import com.ltrsoft.police_mannagement_system.Fragment.PSIDashboard;
 import com.ltrsoft.police_mannagement_system.Fragment.StationList;
@@ -41,6 +44,7 @@ public class Navigationfragment extends Fragment {
     String data, lang;
     ImageView imgr, editimg,float_drawer;
     TextView name;
+    FloatingActionButton btn;
     View v1;
     private CardView feature_list;
     int position=0;
@@ -56,7 +60,7 @@ public class Navigationfragment extends Fragment {
         float_drawer = view.findViewById(R.id.float_drawer);
         feature_list = view.findViewById(R.id.feature_list);
         toolbar = view.findViewById(R.id.toolbar);
-
+        btn=view.findViewById(R.id.floatingActionButton);
         navigationView = view.findViewById(R.id.ubotnav);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
 
@@ -65,6 +69,14 @@ public class Navigationfragment extends Fragment {
         drawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolbar, R.string.nav_open, R.string.nav_close);
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // Toast.makeText(getContext(), "clicked", Toast.LENGTH_SHORT).show();
+                fragment=new Login();
+                loadFragment(fragment);
+            }
+        });
 
         float_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,29 +102,26 @@ public class Navigationfragment extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putString("KGID",kgid);
         bundle.putString("IONAME",kgid);
-
-//        Fragment fragment1 = ;
-
             if (position.equals("ACP")){
             Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
             fragment = new ACPDash();
             fragment.setArguments(bundle);
-            loadFragment(fragment);
+           // loadFragment(fragment);
         } else if (position.equals("PI")) {
             Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
             fragment = new PIDash();
             fragment.setArguments(bundle);
-            loadFragment(fragment);
+           // loadFragment(fragment);
         }else if (position.equals("PSI")) {
             Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
             fragment = new PSIDashboard();
             fragment.setArguments(bundle);
-            loadFragment(fragment);
+            //loadFragment(fragment);
         }else if (position.equals("Dy.Sp")) {
             Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
             fragment = new DySpDash();
             fragment.setArguments(bundle);
-            loadFragment(fragment);
+            //loadFragment(fragment);
         }
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -120,22 +129,22 @@ public class Navigationfragment extends Fragment {
                 int id  = menuItem.getItemId();
 
                 if (id==R.id.nav_home){
-                    loadFragment(fragment);
+                   // loadFragment(fragment);
                 }
                 else if (id==R.id.nav_history) {
                     MainAnalysis analysis = new MainAnalysis();
                     analysis.setArguments(bundle);
-                    loadFragment(analysis);
+                   // loadFragment(analysis);
                 }
                 else if (id==R.id.nav_add) {
-                    StationList analysis = new StationList();
+                    ComplaintAnalysis analysis = new ComplaintAnalysis();
                     analysis.setArguments(bundle);
-                    loadFragment(analysis);
+                   // loadFragment(analysis);
                 }
                 else if (id==R.id.nav_task){
                     StationList stationList=new StationList();
                     stationList.setArguments(bundle);
-                    loadFragment(stationList);
+                   // loadFragment(stationList);
                 }
                 return false;
             }

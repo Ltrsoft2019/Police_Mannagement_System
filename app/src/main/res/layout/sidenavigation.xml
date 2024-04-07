@@ -60,6 +60,7 @@
             android:layout_below="@+id/toolbar"
             android:layout_above="@id/ubotnav"
             android:layout_marginTop="0dp" >
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/feature"
                 android:layout_width="70dp"
@@ -120,6 +121,21 @@
                     android:src="@drawable/phone_call" />
 
             </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.909"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.97"
+
+                app:srcCompat="@drawable/add_button__1_" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -148,7 +164,8 @@
         app:headerLayout="@layout/headernav"
         app:itemShapeFillColor="#FFFFFF"
         app:itemTextColor="#000000"
-        app:menu="@menu/side_nav_menu" />
+        app:menu="@menu/side_nav_menu"
+        />
 
 
 

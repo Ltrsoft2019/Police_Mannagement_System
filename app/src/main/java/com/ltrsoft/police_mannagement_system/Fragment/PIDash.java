@@ -67,14 +67,11 @@ public class PIDash extends Fragment {
         HashMap<String,String> map = new HashMap<>();
         map.put("KGID",KGID);
         map.put("position","PSI");
-
-
         dao.getData(map, URL, new NewCallBack() {
             @Override
             public void onError(String error) {
                 Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onSuccess(Object object) {
                 ArrayList<PolicePosition> police =new ArrayList<>();
@@ -107,9 +104,7 @@ public class PIDash extends Fragment {
                     Toast.makeText(getContext(), "JSON ERROR "+e.toString(), Toast.LENGTH_SHORT).show();
                     Log.e("JSONERROR",e.toString());
                 }
-
             }
-
             @Override
             public void onEmpty() {
                 Toast.makeText(getContext(), "on empty", Toast.LENGTH_SHORT).show();
@@ -121,7 +116,6 @@ public class PIDash extends Fragment {
                 PSIList dySpLis = new PSIList();
                 Bundle bundle=new Bundle();
                 bundle.putString("KGID",KGID);
-
                 dySpLis.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fraglayot, dySpLis)
@@ -129,7 +123,6 @@ public class PIDash extends Fragment {
                         .commit();
             }
         });
-
         return view;
     }
     private void setPieChart(ArrayList<PolicePosition> policePositions, int femalecnt) {

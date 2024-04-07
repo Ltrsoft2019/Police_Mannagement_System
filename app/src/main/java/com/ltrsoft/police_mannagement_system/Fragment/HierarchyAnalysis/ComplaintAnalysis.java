@@ -24,12 +24,6 @@ public class ComplaintAnalysis extends Fragment {
 
      }
     BarChart barChart;
-
-
-
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

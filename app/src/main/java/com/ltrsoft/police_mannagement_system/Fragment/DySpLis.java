@@ -1,5 +1,4 @@
 package com.ltrsoft.police_mannagement_system.Fragment;
-
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
@@ -27,14 +26,11 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
-
 public class DySpLis extends Fragment {
 
     public DySpLis() {}
     RecyclerView recyclerView;
     private   String URL = "https://rj.ltr-soft.com/dataset_api/police/police_data.php";
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,13 +47,11 @@ public class DySpLis extends Fragment {
         HashMap<String,String>map = new HashMap<>();
         map.put("KGID",KGID);
         map.put("position","Dy.Sp");
-
         dao.getData(map, URL, new NewCallBack() {
             @Override
             public void onError(String error) {
                 Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onSuccess(Object object) {
                 ArrayList<PolicePosition> police =new ArrayList<>();
@@ -85,9 +79,7 @@ public class DySpLis extends Fragment {
                     System.out.println("JSON Error "+e.toString());
                     Toast.makeText(getContext(), "JSON ERROR "+e.toString(), Toast.LENGTH_SHORT).show();
                 }
-
             }
-
             @Override
             public void onEmpty() {
                 Toast.makeText(getContext(), "on empty", Toast.LENGTH_SHORT).show();
@@ -101,6 +93,5 @@ public class DySpLis extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-
     }
 }
