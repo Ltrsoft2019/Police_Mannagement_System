@@ -152,6 +152,4 @@ public class Login extends Fragment {
                 .replace(R.id.fraglayot,fragment)
                 .commit();
     }
-
-
 }
