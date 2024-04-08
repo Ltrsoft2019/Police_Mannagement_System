@@ -12,8 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ltrsoft.police_mannagement_system.Fragment.analysis.Filter_month;
-import com.ltrsoft.police_mannagement_system.Fragment.analysis.FirFragment;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.analysis.FirFragment;
 import com.ltrsoft.police_mannagement_system.Model.Monthmodel;
 import com.ltrsoft.police_mannagement_system.R;
 

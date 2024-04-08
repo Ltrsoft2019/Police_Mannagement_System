@@ -6,7 +6,8 @@ import
 import android.os.Bundle;
 
 
-import com.ltrsoft.police_mannagement_system.Fragment.Login;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.Login;
+import com.ltrsoft.police_mannagement_system.fragments.PoliceLogin;
 import com.ltrsoft.police_mannagement_system.navigation.Navigationfragment;
 import com.ltrsoft.police_mannagement_system.utils.SessionManager;
 
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         }else {
             getSupportFragmentManager()
                     .beginTransaction().
-                    add(R.id.main_container,new Login())
+                    add(R.id.main_container,new PoliceLogin())
                     .commit();
         }
 

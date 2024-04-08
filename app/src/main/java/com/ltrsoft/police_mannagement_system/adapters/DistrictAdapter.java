@@ -12,8 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ltrsoft.police_mannagement_system.Fragment.analysis.DistrictAnalysis;
-import com.ltrsoft.police_mannagement_system.Model.District;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.analysis.DistrictAnalysis;
 import com.ltrsoft.police_mannagement_system.R;
 
 import java.util.ArrayList;

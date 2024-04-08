@@ -22,17 +22,19 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.ltrsoft.police_mannagement_system.Fragment.ACPDash;
-import com.ltrsoft.police_mannagement_system.Fragment.DistrictList;
-import com.ltrsoft.police_mannagement_system.Fragment.DySpDash;
-import com.ltrsoft.police_mannagement_system.Fragment.HierarchyAnalysis.ComplaintAnalysis;
-import com.ltrsoft.police_mannagement_system.Fragment.Login;
-import com.ltrsoft.police_mannagement_system.Fragment.PIDash;
-import com.ltrsoft.police_mannagement_system.Fragment.PSIDashboard;
-import com.ltrsoft.police_mannagement_system.Fragment.StationList;
-import com.ltrsoft.police_mannagement_system.Fragment.analysis.MainAnalysis;
-import com.ltrsoft.police_mannagement_system.Fragment.analysis.Station_Analysis;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.ACPDash;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.DySpDash;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.HierarchyAnalysis.ComplaintAnalysis;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.Login;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.PIDash;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.PSIDashboard;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.StationList;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.R;
+import com.ltrsoft.police_mannagement_system.fragments.AllotedTask;
+import com.ltrsoft.police_mannagement_system.fragments.Analysis;
+import com.ltrsoft.police_mannagement_system.fragments.MyListings;
+import com.ltrsoft.police_mannagement_system.fragments.PoliceAdd;
 import com.ltrsoft.police_mannagement_system.utils.UserDataAccess;
 
 public class Navigationfragment extends Fragment {
@@ -69,82 +71,24 @@ public class Navigationfragment extends Fragment {
         drawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolbar, R.string.nav_open, R.string.nav_close);
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               // Toast.makeText(getContext(), "clicked", Toast.LENGTH_SHORT).show();
-                fragment=new Login();
-                loadFragment(fragment);
-            }
-        });
-
-        float_drawer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (flag) {
-                    feature_list.setVisibility(View.VISIBLE);
-                    flag=false;
-                }
-                else {
-                    feature_list.setVisibility(View.GONE);
-                    flag=true;
-                }
-            }
-        });
-        v1 = nav.getHeaderView(0);
-        name = v1.findViewById(R.id.pname);
-        imgr = v1.findViewById(R.id.imgrev);
-        editimg = v1.findViewById(R.id.etedit);
-
-        UserDataAccess access = new UserDataAccess();
-        String position=access.getPosition(getActivity());
-        String kgid = access.getKgid(getActivity());
-        Bundle bundle = new Bundle();
-        bundle.putString("KGID",kgid);
-        bundle.putString("IONAME",kgid);
-            if (position.equals("ACP")){
-            Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
-            fragment = new ACPDash();
-            fragment.setArguments(bundle);
-           // loadFragment(fragment);
-        } else if (position.equals("PI")) {
-            Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
-            fragment = new PIDash();
-            fragment.setArguments(bundle);
-           // loadFragment(fragment);
-        }else if (position.equals("PSI")) {
-            Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
-            fragment = new PSIDashboard();
-            fragment.setArguments(bundle);
-            //loadFragment(fragment);
-        }else if (position.equals("Dy.Sp")) {
-            Toast.makeText(getContext(), "position"+position, Toast.LENGTH_SHORT).show();
-            fragment = new DySpDash();
-            fragment.setArguments(bundle);
-            //loadFragment(fragment);
-        }
+        float_drawer.setVisibility(View.GONE);
+        loadFragment(new Analysis());
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id  = menuItem.getItemId();
-
                 if (id==R.id.nav_home){
-                   // loadFragment(fragment);
-                }
-                else if (id==R.id.nav_history) {
-                    MainAnalysis analysis = new MainAnalysis();
-                    analysis.setArguments(bundle);
-                   // loadFragment(analysis);
+                    loadFragment(new Analysis());
+                } else if (id==R.id.nav_history) {
+                    loadFragment(new MyListings());
                 }
                 else if (id==R.id.nav_add) {
-                    ComplaintAnalysis analysis = new ComplaintAnalysis();
-                    analysis.setArguments(bundle);
-                   // loadFragment(analysis);
+                    loadFragment(new PoliceAdd());
                 }
-                else if (id==R.id.nav_task){
-                    StationList stationList=new StationList();
-                    stationList.setArguments(bundle);
-                   // loadFragment(stationList);
+                else if (id==R.id.nav_task) {
+                    loadFragment(new AllotedTask());
+                }else if (id==R.id.nav_report) {
+                    loadFragment(new AllotedTask());
                 }
                 return false;
             }
@@ -154,7 +98,6 @@ public class Navigationfragment extends Fragment {
 
     private void loadFragment(Fragment fragment) {
     FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
-        Fragment prevous = fragmentManager.findFragmentById(R.id.fraglayot);
         fragmentManager
                     .beginTransaction()
                     .replace(R.id.fraglayot,fragment)
