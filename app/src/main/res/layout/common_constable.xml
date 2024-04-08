@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.CommonConstable">
+    tools:context=".AnalysisFragment.CommonConstable">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fir_list_constable"

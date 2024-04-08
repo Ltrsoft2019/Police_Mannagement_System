@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ltrsoft.police_mannagement_system.Fragment.analysis.FirAnalysis;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.analysis.FirAnalysis;
 import com.ltrsoft.police_mannagement_system.Model.FirModel;
 import com.ltrsoft.police_mannagement_system.R;
 

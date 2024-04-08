@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ltrsoft.police_mannagement_system.Fragment.analysis.Station_Analysis;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.analysis.Station_Analysis;
 import com.ltrsoft.police_mannagement_system.Model.Stationmodel;
 import com.ltrsoft.police_mannagement_system.R;
 
@@ -47,8 +47,7 @@ public class StationAdapter extends RecyclerView.Adapter<StationAdapter.Viewhold
             Bundle bundle=new Bundle();
             bundle.putString("Unit_ID", district.getUnit_ID());
             stationAnalysis.setArguments(bundle);
-
-           activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container,stationAnalysis).addToBackStack(null).commit();
+           activity.getSupportFragmentManager().beginTransaction().replace(R.id.fraglayot,stationAnalysis).addToBackStack(null).commit();
         }
     });
 

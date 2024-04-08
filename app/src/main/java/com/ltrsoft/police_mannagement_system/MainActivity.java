@@ -6,7 +6,7 @@ import
 import android.os.Bundle;
 
 
-import com.ltrsoft.police_mannagement_system.Fragment.Login;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.Login;
 import com.ltrsoft.police_mannagement_system.navigation.Navigationfragment;
 import com.ltrsoft.police_mannagement_system.utils.SessionManager;
 
