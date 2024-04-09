@@ -41,6 +41,18 @@ public class Piechartgraph {
         setcardlist();
        chart.startAnimation();
      }
+    public  void setpiewithoutcard(PieChart chart){
+        if (!chart.getData().isEmpty()){
+            chart.clearChart();
+        }
+        for (PiechartModelclass modellist :list){
+            chart.addPieSlice(
+                    new PieModel(modellist.getLabel(),
+                            modellist.getValue(),
+                            Color.parseColor(modellist.getColorcode())));
+        }
+         chart.startAnimation();
+    }
 
 
 

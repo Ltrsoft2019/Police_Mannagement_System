@@ -1,14 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Analysis4">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.Analysis4"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        >
 
-</FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:layout_marginTop="5dp"
+            android:text="Criminals"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"/>
+        <Spinner
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"/>
+        <org.eazegraph.lib.charts.PieChart
+            android:id="@+id/piechart"
+            android:layout_width="match_parent"
+             android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <RelativeLayout
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                >
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#FFF424"
+                    android:layout_margin="4dp"
+                    android:id="@+id/color"
+
+
+                    />
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total Criminal"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/color"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:id="@+id/applied"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_criminal"
+                    android:textSize="20dp"
+                    android:text="10"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/applied"/>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                >
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#00B2E2"
+                    android:layout_margin="4dp"
+                    android:id="@+id/color2"
+
+
+                    />
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/color2"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="Total Warrant"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:id="@+id/granted_sevices"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_warrant"
+                    android:textSize="20dp"
+                    android:text="10"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/granted_sevices"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <RelativeLayout
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                >
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#9467bd"
+                    android:layout_margin="4dp"
+                    android:id="@+id/color3"
+
+
+                    />
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total Suspect"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/color3"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:id="@+id/total_rejected"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_suspect"
+                    android:textSize="20dp"
+                    android:text="10"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/total_rejected"/>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                >
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#EA0075"
+                    android:layout_margin="4dp"
+                    android:id="@+id/color4"
+
+
+                    />
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/color4"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="Total Victim"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:id="@+id/total_pending"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_victim"
+                    android:textSize="20dp"
+                    android:text="10"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/total_pending"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <RelativeLayout
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                >
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#ff7f0e"
+                    android:layout_margin="4dp"
+                    android:id="@+id/color5"
+
+
+                    />
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total Witness"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/color5"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:id="@+id/total_witne"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_witness"
+                    android:textSize="20dp"
+                    android:text="10"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/total_witne"/>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                >
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#2ca02c"
+                    android:layout_margin="4dp"
+                    android:id="@+id/color6"
+
+
+                    />
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/color6"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="Evidance Collection"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:id="@+id/evidance_collection"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_evidance"
+                    android:textSize="20dp"
+                    android:text="10"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/evidance_collection"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

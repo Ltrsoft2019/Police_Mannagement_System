@@ -8,6 +8,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.ltrsoft.police_mannagement_system.fragments.Analysis1;
 import com.ltrsoft.police_mannagement_system.fragments.Analysis2;
+import com.ltrsoft.police_mannagement_system.fragments.Analysis3;
+import com.ltrsoft.police_mannagement_system.fragments.Analysis4;
 
 public class AnalysisPageAdapter extends FragmentStateAdapter {
     public AnalysisPageAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
@@ -24,19 +26,17 @@ public class AnalysisPageAdapter extends FragmentStateAdapter {
             return addComplaintOnBehalf;
         }
         else if (position==2){
-            return new Analysis1();
+            return new Analysis3();
         }
         else if (position==3){
-            return new Analysis1();
+            return new Analysis4();
         }
-        else if (position==4){
-            return new Analysis1();
-        }
+
        else return null;
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 4;
     }
 }
