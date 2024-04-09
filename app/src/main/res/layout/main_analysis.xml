@@ -1,14 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Analysis1">
-
-    <!-- TODO: Update blank fragment layout -->
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.Analysis1"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1.5"
+    android:orientation="vertical"
+     >
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:layout_marginTop="5dp"
+        android:text="Complaint Analysis"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"/>
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/linechart"
+        android:layout_margin="1dp"/>
+</LinearLayout>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <RelativeLayout
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                 >
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#4DA0D8"
+                    android:layout_margin="4dp"
+                    android:id="@+id/color"
+
+
+                    />
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                      android:text="Total Alloted Complaint"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginRight="4dp"
+                   android:layout_toRightOf="@+id/color"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:id="@+id/total_Alloted_complaints"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_number"
+                     android:textSize="20dp"
+                    android:text="10"
+                    android:layout_centerInParent="true"
+                     android:layout_below="@+id/total_Alloted_complaints"/>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                >
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#FBB03B"
+                    android:layout_margin="4dp"
+                    android:id="@+id/color2"
+
+
+                    />
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/color2"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="Total Solved Complaint"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:id="@+id/total_solved_complaints"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_solved_number"
+                    android:textSize="20dp"
+                    android:text="10"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/total_solved_complaints"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <RelativeLayout
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                >
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#EF5350"
+                    android:layout_margin="4dp"
+                    android:id="@+id/color3"
+
+
+                    />
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="Total Complaint Convert to FIR"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/color3"
+                    android:id="@+id/total_Fir"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_fir"
+                    android:textSize="20dp"
+                    android:text="10"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/total_Fir"/>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+
+                android:layout_margin="6dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                >
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#00C853"
+                    android:layout_margin="4dp"
+                    android:id="@+id/color4"
+
+
+                    />
+                <TextView
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/color4"
+                    android:text="Total Ongoing Investigation"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:id="@+id/total_investigsation"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_investigation_number"
+                    android:textSize="20dp"
+                    android:text="2"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/total_investigsation"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+ </LinearLayout>
+
+
+</LinearLayout>

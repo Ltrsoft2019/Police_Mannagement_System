@@ -266,7 +266,7 @@ public class MainAnalysis extends Fragment {
         Bargraphchart bargraphchart=new Bargraphchart(modelclasses);
         bargraphchart.setbargraph(barChartyear);
      }
-    private void setspinner(Spinner spinner) {
+    public void setspinner(Spinner spinner) {
         ArrayList list1=new ArrayList();
         list1.add("2016");
         list1.add("2017");
