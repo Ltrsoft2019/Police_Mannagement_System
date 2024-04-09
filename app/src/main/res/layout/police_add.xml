@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:id="@+id/complaints"
+            android:id="@+id/addcomplaints"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/fir"
+            android:id="@+id/unidentified_objs"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:layout_marginLeft="50dp"
-                android:text="FIR"
+                android:text="Unidentified Object"
                 android:gravity="center"
                 android:textColor="#66000000"
                 android:textStyle="bold"/>
@@ -71,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:id="@+id/warrent"
+            android:id="@+id/unidentifiedbody"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:layout_marginLeft="50dp"
-                android:text="warrent"
+                android:text="Unidentified Body"
                 android:textColor="#66000000"
                 android:textStyle="bold" />
 
@@ -99,7 +99,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/duty_allot"
+            android:id="@+id/Add_Cuberc"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:layout_marginLeft="50dp"
-                android:text="Duty Allotment"
+                android:text="Cyber Crime"
                 android:textColor="#66000000"
                 android:textStyle="bold"/>
 
@@ -131,7 +131,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:id="@+id/Criminal"
+            android:id="@+id/Criminal_list"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -218,7 +218,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/AssignedTask"
+            android:id="@+id/investigations"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -238,7 +238,68 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="35dp"
-                android:text="Assigned Task"
+                android:text="Investigation"
+                android:textColor="#66000000"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/apply_leave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/card_background"
+            android:elevation="1dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"/>
+            <!--                android:background="@drawable/hacker" />-->
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="50dp"
+                android:text="Apply for leave "
+                android:textColor="#66000000"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dsf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:visibility="invisible"
+            android:layout_weight="1"
+            android:background="@drawable/card_background"
+            android:elevation="1dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp" />
+            <!--                android:background="@drawable/hacker" />-->
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="35dp"
+                android:text="Investigation"
                 android:textColor="#66000000"
                 android:textStyle="bold" />
 
