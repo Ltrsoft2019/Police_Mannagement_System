@@ -54,8 +54,8 @@ public class PoliceAdd extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.addcomplaints) {loadFragment(new AddComplaint());}
-        else if (v.getId() == R.id.unidentified_objs) {loadFragment(new AddComplaint());}
-        else if (v.getId() == R.id.unidentifiedbody) {loadFragment(new AddComplaint());}
+        else if (v.getId() == R.id.unidentified_objs) {loadFragment(new UnidentifiedBody());}
+        else if (v.getId() == R.id.unidentifiedbody) {loadFragment(new Unidentified_object());}
         else if (v.getId() == R.id.Add_Cuberc) {loadFragment(new AddComplaint());}
         else if (v.getId() == R.id.Criminal_list) {loadFragment(new AddComplaint());}
         else if (v.getId() == R.id.missing) {loadFragment(new AddComplaint());}

@@ -11,19 +11,11 @@ import android.view.ViewGroup;
 import com.ltrsoft.police_mannagement_system.R;
 
 public class Unidentified_object extends Fragment {
-
-    public Unidentified_object() {
-     }
-
-
-
+    public Unidentified_object() {}
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-         View view= inflater.inflate(R.layout.unidentified_object, container, false);
-
-
-
+        View view= inflater.inflate(R.layout.unidentified_object, container, false);
      return view;
     }
 }

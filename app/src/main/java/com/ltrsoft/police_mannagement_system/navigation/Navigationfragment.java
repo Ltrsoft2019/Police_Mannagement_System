@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,25 +21,13 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.ltrsoft.police_mannagement_system.AnalysisFragment.ACPDash;
-import com.ltrsoft.police_mannagement_system.AnalysisFragment.DySpDash;
-import com.ltrsoft.police_mannagement_system.AnalysisFragment.HierarchyAnalysis.ComplaintAnalysis;
-import com.ltrsoft.police_mannagement_system.AnalysisFragment.Login;
-import com.ltrsoft.police_mannagement_system.AnalysisFragment.PIDash;
-import com.ltrsoft.police_mannagement_system.AnalysisFragment.PSIDashboard;
-import com.ltrsoft.police_mannagement_system.AnalysisFragment.StationList;
-import com.ltrsoft.police_mannagement_system.AnalysisFragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.fragments.AddComplaint;
 import com.ltrsoft.police_mannagement_system.fragments.AllotedTask;
 import com.ltrsoft.police_mannagement_system.fragments.Analysis;
-import com.ltrsoft.police_mannagement_system.fragments.Analysis1;
-import com.ltrsoft.police_mannagement_system.fragments.Analysis2;
-import com.ltrsoft.police_mannagement_system.fragments.Analysis3;
-import com.ltrsoft.police_mannagement_system.fragments.Analysis4;
 import com.ltrsoft.police_mannagement_system.fragments.MyListings;
 import com.ltrsoft.police_mannagement_system.fragments.PoliceAdd;
-import com.ltrsoft.police_mannagement_system.utils.UserDataAccess;
+import com.ltrsoft.police_mannagement_system.fragments.UnidentifiedBody;
 
 public class Navigationfragment extends Fragment {
     private BottomNavigationView navigationView;
@@ -78,7 +65,7 @@ public class Navigationfragment extends Fragment {
         drawerToggle.syncState();
         float_drawer.setVisibility(View.GONE);
 
-        loadFragment(new AddComplaint());
+        loadFragment(new Analysis());
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
