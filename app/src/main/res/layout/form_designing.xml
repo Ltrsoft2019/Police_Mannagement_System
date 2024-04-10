@@ -184,6 +184,9 @@
             android:layout_width="0dp"
             android:layout_weight="8"
             android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+
+
             android:background="@drawable/formborder"/>
             <View
                 android:layout_width="0dp"
@@ -208,6 +211,8 @@
                 android:layout_width="0dp"
                 android:layout_weight="8"
                 android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+
                 android:background="@drawable/formborder"/>
             <View
                 android:layout_width="0dp"
@@ -234,7 +239,9 @@
                 android:layout_weight="9"
                 android:layout_height="40dp"
                 android:gravity="center"
-                 android:text="choose the date"
+                android:layout_marginLeft="5dp"
+
+                android:text="choose the date"
                  android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
@@ -268,6 +275,8 @@
                 android:gravity="center"
                 android:text="Location"
                 android:textSize="18dp"
+                android:layout_marginLeft="5dp"
+
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 android:background="@drawable/datepicker"/>
@@ -338,6 +347,8 @@
             android:background="@drawable/formborder"
             android:layout_width="0dp"
             android:layout_weight="8"
+            android:layout_marginLeft="5dp"
+
             android:layout_height="40dp"
             android:text="  is their any delay"/>
             <View
