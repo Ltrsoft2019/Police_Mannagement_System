@@ -44,23 +44,34 @@ public class PoliceAdd extends Fragment implements View.OnClickListener {
     }
 
     private void loadFragment(Fragment fragment) {
-        FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         fragmentManager
                 .beginTransaction()
-                .replace(R.id.fraglayot,fragment)
+                .replace(R.id.fraglayot, fragment)
                 .addToBackStack(null)
                 .commit();
     }
+
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.addcomplaints) {loadFragment(new AddComplaint());}
-        else if (v.getId() == R.id.unidentified_objs) {loadFragment(new UnidentifiedBody());}
-        else if (v.getId() == R.id.unidentifiedbody) {loadFragment(new Unidentified_object());}
-        else if (v.getId() == R.id.Add_Cuberc) {loadFragment(new AddComplaint());}
-        else if (v.getId() == R.id.Criminal_list) {loadFragment(new AddComplaint());}
-        else if (v.getId() == R.id.missing) {loadFragment(new AddComplaint());}
-        else if (v.getId() == R.id.self_proclaimed) {loadFragment(new AddComplaint());}
-        else if (v.getId() == R.id.investigations) {loadFragment(new AddComplaint());}
-        else if (v.getId() == R.id.apply_leave) {loadFragment(new AddComplaint());}
+        if (v.getId() == R.id.addcomplaints) {
+            loadFragment(new AddComplaint());
+        } else if (v.getId() == R.id.unidentified_objs) {
+            loadFragment(new Unidentified_object());
+        } else if (v.getId() == R.id.unidentifiedbody) {
+            loadFragment(new UnidentifiedBody());
+        } else if (v.getId() == R.id.Add_Cuberc) {
+            loadFragment(new Cyber_crime());
+        } else if (v.getId() == R.id.Criminal_list) {
+            loadFragment(new AddComplaint());
+        } else if (v.getId() == R.id.missing) {
+            loadFragment(new AddComplaint());
+        } else if (v.getId() == R.id.self_proclaimed) {
+            loadFragment(new AddComplaint());
+        } else if (v.getId() == R.id.investigations) {
+            loadFragment(new AddComplaint());
+        } else if (v.getId() == R.id.apply_leave) {
+            loadFragment(new AddComplaint());
+        }
     }
 }
