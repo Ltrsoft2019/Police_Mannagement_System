@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp" >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Cyber Crime"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"/>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:background="@drawable/formborder"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="40dp"
+                android:text="  Does you lost your money"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text=" Incident Date : "
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="2dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dob_date"
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="choose the date"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:background="@drawable/datepicker"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:background="@drawable/formborder"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="40dp"
+                android:text="  is their any delay"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Where Does it Occure :"
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="2dp"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:id="@+id/occur"
+                android:background="@drawable/formborder"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="40dp"
+                android:padding="4dp"
+                android:layout_marginLeft="5dp"
+                />
+            <ImageView
+                android:id="@+id/mike_img1"
+                android:paddingLeft="4dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/mic2"
+                android:layout_height="45dp"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Description About Photo :"
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="2dp"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:background="@drawable/formborder"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="40dp"
+                android:padding="4dp"
+                android:id="@+id/unsermname"
+                android:layout_marginLeft="5dp"
+                />
+            <ImageView
+                android:id="@+id/mike_img2"
+                android:paddingLeft="4dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/mic2"
+                android:layout_height="45dp"/>
+
+        </LinearLayout>
+
+
+
+
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:gravity="center"
+            android:text=" Select The Image : "
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="2dp"
+            />
+        <ImageView
+            android:id="@+id/camera_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:src="@drawable/cam2"
+            android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_margin="4dp"
+                android:layout_width="0dp"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/camera_tv"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="CAMERA"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:background="@drawable/datepicker"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="4dp"
+                android:layout_width="0dp"
+                android:gravity="start"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/gallery_tv"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="GALLERY"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:background="@drawable/datepicker"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Select Station : "
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="2dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Spinner
+                android:id="@+id/states"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="40dp"
+                android:background="@drawable/formborder"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/next_btn"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="Next"
+                android:gravity="center"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
