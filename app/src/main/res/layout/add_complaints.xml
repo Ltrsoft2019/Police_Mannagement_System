@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:layout_marginLeft="10dp"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,5 +8,143 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.AddComplaint">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Add User Detail"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="Enter User First Name :"
+        android:layout_marginLeft="5dp"
+        android:paddingLeft="2dp"
 
+        />
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         >
+
+     <EditText
+         android:background="@drawable/formborder"
+         android:layout_width="0dp"
+         android:layout_weight="8"
+         android:layout_height="40dp"
+          android:padding="4dp"
+         android:layout_marginLeft="5dp"
+            android:id="@+id/username"/>
+         <ImageView
+             android:paddingLeft="4dp"
+             android:layout_width="0dp"
+             android:layout_weight="1"
+             android:src="@drawable/mic2"
+             android:layout_height="45dp"/>
+
+     </LinearLayout>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="Enter User First Name :"
+        android:layout_marginLeft="5dp"
+        android:paddingLeft="2dp"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:background="@drawable/formborder"
+
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/username2"/>
+        <ImageView
+            android:paddingLeft="4dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/mic2"
+            android:layout_height="45dp"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="10dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="Enter User First Name :"
+        android:layout_marginLeft="5dp"
+        android:paddingLeft="2dp"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:background="@drawable/formborder"
+
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/username4"/>
+        <ImageView
+            android:paddingLeft="4dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/mic2"
+            android:layout_height="45dp"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="10dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="Enter User First Name :"
+        android:layout_marginLeft="5dp"
+        android:paddingLeft="2dp"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:background="@drawable/formborder"
+
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/username6"/>
+        <ImageView
+            android:paddingLeft="4dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/mic2"
+            android:layout_height="45dp"/>
+
+    </LinearLayout>
 </LinearLayout>

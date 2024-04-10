@@ -31,6 +31,7 @@ import com.ltrsoft.police_mannagement_system.AnalysisFragment.PSIDashboard;
 import com.ltrsoft.police_mannagement_system.AnalysisFragment.StationList;
 import com.ltrsoft.police_mannagement_system.AnalysisFragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.R;
+import com.ltrsoft.police_mannagement_system.fragments.AddComplaint;
 import com.ltrsoft.police_mannagement_system.fragments.AllotedTask;
 import com.ltrsoft.police_mannagement_system.fragments.Analysis;
 import com.ltrsoft.police_mannagement_system.fragments.Analysis1;
@@ -77,7 +78,7 @@ public class Navigationfragment extends Fragment {
         drawerToggle.syncState();
         float_drawer.setVisibility(View.GONE);
 
-        loadFragment(new Analysis());
+        loadFragment(new AddComplaint());
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
