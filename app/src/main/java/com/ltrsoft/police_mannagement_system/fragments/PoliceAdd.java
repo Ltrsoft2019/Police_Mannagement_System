@@ -63,7 +63,7 @@ public class PoliceAdd extends Fragment implements View.OnClickListener {
         } else if (v.getId() == R.id.Add_Cuberc) {
             loadFragment(new Cyber_crime());
         } else if (v.getId() == R.id.Criminal_list) {
-            loadFragment(new AddComplaint());
+            loadFragment(new AddCriminal());
         } else if (v.getId() == R.id.missing) {
             loadFragment(new AddComplaint());
         } else if (v.getId() == R.id.self_proclaimed) {
