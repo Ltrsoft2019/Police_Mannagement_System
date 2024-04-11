@@ -40,13 +40,13 @@ public class UnidentifiedBody extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.unidentified_object, container, false);
+            View view = inflater.inflate(R.layout.unidentified_body, container, false);
 
             // Initialize your views here
             date = view.findViewById(R.id.date); // replace R.id.date with your actual ID
             location = view.findViewById(R.id.current_location); // replace R.id.location with your actual ID
             camera = view.findViewById(R.id.camera); // replace R.id.camera with your actual ID
-            gallery = view.findViewById(R.id.gellery); // replace R.id.gallery with your actual ID
+            gallery = view.findViewById(R.id.gallery); // replace R.id.gallery with your actual ID
             dispImg = view.findViewById(R.id.disp_img); // replace R.id.disp_img with your actual ID
             currentLocation = view.findViewById(R.id.body_location); // replace R.id.body_location with your actual ID
             estimatedAge = view.findViewById(R.id.estimated_age); // replace R.id.estimated_age with your actual ID

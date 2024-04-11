@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <CheckBox
+                android:id="@+id/lost_money"
                 android:background="@drawable/formborder"
                 android:layout_width="0dp"
                 android:layout_weight="8"
@@ -70,6 +71,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <CheckBox
+                android:id="@+id/isdelay"
                 android:background="@drawable/formborder"
                 android:layout_width="0dp"
                 android:layout_weight="8"
@@ -137,7 +139,7 @@
                 android:layout_weight="8"
                 android:layout_height="40dp"
                 android:padding="4dp"
-                android:id="@+id/unsermname"
+                android:id="@+id/desc"
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
@@ -240,7 +242,8 @@
                 android:id="@+id/next_btn"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:text="Next"
+                android:text="Submit"
+                android:background="@drawable/btn_border"
                 android:gravity="center"
                 android:layout_gravity="center"
                 />
