@@ -236,7 +236,7 @@
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:text="Next"
-            android:gravity="center"
+            android:gravity="Submit"
             android:layout_gravity="center"
             />
     </LinearLayout>
