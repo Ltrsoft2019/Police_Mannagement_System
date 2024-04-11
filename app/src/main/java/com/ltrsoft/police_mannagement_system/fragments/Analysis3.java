@@ -17,37 +17,14 @@ import com.ltrsoft.police_mannagement_system.Uigraph.Fourbargraph;
 import java.util.ArrayList;
 
 public class Analysis3 extends Fragment {
-
-
-
-    public Analysis3() {
-
-     }
+    public Analysis3() {}
    private BarChart barChart;
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
          View view= inflater.inflate(R.layout.analysis3, container, false);
-
         barChart=view.findViewById(R.id.barchart);
         ArrayList<ArrayList<BarEntry>> entriesList = new ArrayList<>();
-        entriesList.add(getBarEntriesOne());
-        entriesList.add(getBarEntriesTwo());
-        entriesList.add(getBarEntriesThree()); // Add more as needed
-        entriesList.add(getBarEntriesfour()); // Add more as needed
-        ArrayList<BargraphModelclass>list=new ArrayList<>();
-        list.add(new BargraphModelclass("#FFF424"));
-        list.add(new BargraphModelclass("#00B2E2"));
-        list.add(new BargraphModelclass("#B3DD31"));
-        list.add(new BargraphModelclass("#EA0075"));
-
-        String[] xAxisLabels = new String[]{"jan", "feb", "march", "april", "may", "june", "julai","aug",
-                "sep","oct","nov","dec"};
-
-        Fourbargraph.setBarChart(entriesList, barChart, xAxisLabels,list);
         return view;
     }
     private ArrayList<BarEntry> getBarEntriesOne() {

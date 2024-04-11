@@ -235,8 +235,8 @@
             android:id="@+id/next_btn"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:text="Next"
-            android:gravity="Submit"
+            android:text="Submit"
+            android:gravity="center"
             android:layout_gravity="center"
             />
     </LinearLayout>

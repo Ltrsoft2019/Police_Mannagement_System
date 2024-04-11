@@ -72,14 +72,16 @@
                     android:textStyle="bold"
                     android:id="@+id/total_Alloted_complaints"
                     />
+
                 <TextView
+                    android:id="@+id/resposne"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/total_number"
-                    android:textSize="20dp"
-                    android:text="10"
+                    android:layout_height="16dp"
+                    android:layout_below="@+id/total_Alloted_complaints"
                     android:layout_centerInParent="true"
-                    android:layout_below="@+id/total_Alloted_complaints"/>
+                    android:layout_marginTop="15dp"
+                    android:text="10"
+                    android:textSize="20dp" />
 
 
             </RelativeLayout>
@@ -114,7 +116,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/total_solved_number"
+                    android:id="@+id/clearance"
                     android:textSize="20dp"
                     android:text="10"
                     android:layout_centerInParent="true"

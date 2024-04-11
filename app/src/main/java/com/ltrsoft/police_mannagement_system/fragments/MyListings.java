@@ -17,8 +17,6 @@ public class MyListings extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.mylist, container, false);
-
-        // Find all the RelativeLayout elements by their IDs
         assignedComplaint = view.findViewById(R.id.complaints);
         fir = view.findViewById(R.id.fir);
         warrant = view.findViewById(R.id.warrent);

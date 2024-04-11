@@ -28,6 +28,11 @@ public class Piechartgraph {
         this.context=layout.getContext();
     }
 
+    public Piechartgraph(ArrayList<PiechartModelclass> list, Context context) {
+        this.list = list;
+        this.context = context;
+    }
+
     public  void setpie(PieChart chart){
         if (!chart.getData().isEmpty()){
             chart.clearChart();
