@@ -38,7 +38,7 @@ public class PoliceLogin extends Fragment {
     private TextView signUpTextView;
     private Button loginButton;
     private View view;
-    private String URLS ="https://rj.ltr-soft.com/public/police_api/login/user_login.php";
+    private String URLS ="https://rj.ltr-soft.com/public/police_api/login/police_login.php";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

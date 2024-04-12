@@ -30,6 +30,7 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.ltrsoft.police_mannagement_system.AnalysisFragment.Login;
 import com.ltrsoft.police_mannagement_system.MainActivity;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.fragments.AboutPage;
@@ -77,7 +78,7 @@ public class Navigationfragment extends Fragment {
         drawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolbar, R.string.nav_open, R.string.nav_close);
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
-        float_drawer.setVisibility(View.GONE);
+        float_drawer.setVisibility(View.VISIBLE);
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -124,6 +125,17 @@ public class Navigationfragment extends Fragment {
                 return true;
             }
         });
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
+                fragmentManager
+                        .beginTransaction()
+                        .replace(R.id.fraglayot,new Login())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
         loadFragment(new Analysis());
 
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -144,6 +156,12 @@ public class Navigationfragment extends Fragment {
                     loadFragment(new AllotedTask());
                 }
                 return false;
+            }
+        });
+        float_drawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
         return view;
