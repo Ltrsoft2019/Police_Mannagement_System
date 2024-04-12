@@ -34,7 +34,7 @@ public class PoliceLogin extends Fragment {
     private EditText email;
     private EditText password;
     Fragment fragment;
-    private TextView forgotPasswordTextView;
+    private TextView forgotPasswordTextView,registration;
     private TextView signUpTextView;
     private Button loginButton;
     private View view;
@@ -53,6 +53,7 @@ public class PoliceLogin extends Fragment {
         forgotPasswordTextView =view. findViewById(R.id.forgot_password);
         signUpTextView = view.findViewById(R.id.registration);
         loginButton =view. findViewById(R.id.loginbtn);
+        registration =view. findViewById(R.id.registrations);
 
         forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +62,15 @@ public class PoliceLogin extends Fragment {
             }
         });
 
-
+        registration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction().
+                        replace(R.id.main_container,new Registration())
+                        .commit();
+            }
+        });
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,8 +94,8 @@ public class PoliceLogin extends Fragment {
         HashMap<String ,String> map = new HashMap<>();
         map.put("email",kgid);
         map.put("password",internal);
-        Toast.makeText(getContext(), kgid, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), internal, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getContext(), kgid, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getContext(), internal, Toast.LENGTH_SHORT).show();
         dao.getData(map, URLS, new NewCallBack() {
             @Override
             public void onError(String error) {
@@ -124,5 +133,4 @@ public class PoliceLogin extends Fragment {
                 .replace(R.id.main_container,fragment)
                 .commit();
     }
-
 }

@@ -21,17 +21,11 @@
         <item
             android:id="@+id/nav_feedback"
             android:title="Feedback" />
-
-
-
-
     </group>
-    <item
-        android:id="@+id/nav_setting"
-        android:title="Setting" />
-    <item
-        android:id="@+id/nav_language"
-        android:title="language" />
+<!--    <item-->
+<!--        android:id="@+id/nav_setting"-->
+<!--        android:title="Setting" />-->
+
     <item
         android:id="@+id/nav_logout"
         android:title="logout" />
