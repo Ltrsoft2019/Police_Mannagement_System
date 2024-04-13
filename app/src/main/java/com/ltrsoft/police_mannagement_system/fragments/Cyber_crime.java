@@ -143,9 +143,7 @@ public class Cyber_crime extends Fragment {
             }
 
             @Override
-            public void onEmpty() {
-
-            }
+            public void onEmpty() {}
         });
     }
 
