@@ -30,6 +30,43 @@ public class Witnesses {
         private String district_id;
         private String city_id;
 
+    public Witnesses(String witness_id, String full_name, String date_of_birth, String gender, String address,
+                     String phone_number, String email_address, String passport_number, String drivers_license,
+                     String social_security_number, String height, String weight, String build, String hair_color,
+                     String eye_color, String distinguishing_features, String occupation, String education_level,
+                     String marital_status, String family_members, String photo, String complaint_id,
+                     String description, String is_witness, String country_id, String state_id, String district_id,
+                     String city_id) {
+        this.witness_id = witness_id;
+        this.full_name = full_name;
+        this.date_of_birth = date_of_birth;
+        this.gender = gender;
+        this.address = address;
+        this.phone_number = phone_number;
+        this.email_address = email_address;
+        this.passport_number = passport_number;
+        this.drivers_license = drivers_license;
+        this.social_security_number = social_security_number;
+        this.height = height;
+        this.weight = weight;
+        this.build = build;
+        this.hair_color = hair_color;
+        this.eye_color = eye_color;
+        this.distinguishing_features = distinguishing_features;
+        this.occupation = occupation;
+        this.education_level = education_level;
+        this.marital_status = marital_status;
+        this.family_members = family_members;
+        this.photo = photo;
+        this.complaint_id = complaint_id;
+        this.description = description;
+        this.is_witness = is_witness;
+        this.country_id = country_id;
+        this.state_id = state_id;
+        this.district_id = district_id;
+        this.city_id = city_id;
+    }
+
     public String getWitness_id() {
         return witness_id;
     }
