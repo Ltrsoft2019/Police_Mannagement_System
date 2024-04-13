@@ -51,7 +51,11 @@ public class Apply_For_Leave extends Fragment {
 
         dateOfLeave.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {}
+            public void onClick(View v) {
+
+                
+
+            }
         });
 
         cameraTv.setOnClickListener(new View.OnClickListener() {

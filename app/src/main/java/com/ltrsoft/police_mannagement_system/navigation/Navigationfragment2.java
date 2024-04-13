@@ -37,7 +37,7 @@ import com.ltrsoft.police_mannagement_system.fragments.AboutPage;
 import com.ltrsoft.police_mannagement_system.fragments.AddComplaint;
 import com.ltrsoft.police_mannagement_system.fragments.AllotedTask;
 import com.ltrsoft.police_mannagement_system.fragments.Analysis;
-import com.ltrsoft.police_mannagement_system.fragments.FeedBack;
+import com.ltrsoft.police_mannagement_system.fragments.FeedBacks;
 import com.ltrsoft.police_mannagement_system.fragments.MyListings;
 import com.ltrsoft.police_mannagement_system.fragments.PoliceAdd;
 import com.ltrsoft.police_mannagement_system.fragments.PoliceLogin;
@@ -97,7 +97,7 @@ public class Navigationfragment2 extends Fragment {
                     loadFragment(new AboutPage());
                 }
                 else if (id==R.id.nav_feedback) {
-                    loadFragment(new FeedBack());
+                    loadFragment(new FeedBacks());
                 }else if (id==R.id.nav_logout) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     builder.setTitle("Logout Dailoge");
