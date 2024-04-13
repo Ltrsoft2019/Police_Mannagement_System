@@ -1,5 +1,4 @@
 package com.ltrsoft.police_mannagement_system.navigation;
-
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.DialogInterface;
@@ -45,7 +44,6 @@ import com.ltrsoft.police_mannagement_system.fragments.PoliceLogin;
 import com.ltrsoft.police_mannagement_system.fragments.Profile;
 import com.ltrsoft.police_mannagement_system.fragments.UnidentifiedBody;
 import com.ltrsoft.police_mannagement_system.utils.SessionManager;
-
 public class Navigationfragment extends Fragment {
     private BottomNavigationView navigationView;
     NavigationView nav;
@@ -116,9 +114,7 @@ public class Navigationfragment extends Fragment {
                     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
                             Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
-
                         }
                     });
                     builder.show();
@@ -138,6 +134,7 @@ public class Navigationfragment extends Fragment {
                         .commit();
             }
         });
+
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,7 +147,6 @@ public class Navigationfragment extends Fragment {
             }
         });
         loadFragment(new Analysis());
-
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -172,21 +168,19 @@ public class Navigationfragment extends Fragment {
                 return false;
             }
         });
+
         float_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
-            }
+            public void onClick(View v) {}
         });
         return view;
     }
-
     private void loadFragment(Fragment fragment) {
+
     FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
         fragmentManager
                     .beginTransaction()
                     .replace(R.id.fraglayot,fragment)
                     .commit();
     }
-
 }

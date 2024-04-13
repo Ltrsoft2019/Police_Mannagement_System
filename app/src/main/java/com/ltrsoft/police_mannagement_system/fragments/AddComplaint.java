@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
@@ -41,7 +42,7 @@ public class AddComplaint extends Fragment {
     private View view;
     private EditText fname,mname,lname;
     private RadioGroup gender;
-    private Spinner country;
+    private Spinner country,states;
     private TextView dob,camera,galery;
     private Button next;
     private ImageView dispimg;
@@ -61,6 +62,7 @@ public class AddComplaint extends Fragment {
         galery=view.findViewById(R.id.gallery_tv);
         next = view.findViewById(R.id.next_btn);
         dispimg = view.findViewById(R.id.camera_img);
+        states = view.findViewById(R.id.states);
         dao = new DAO(getContext());
 
         loaCountry();
@@ -106,6 +108,15 @@ public class AddComplaint extends Fragment {
             @Override
             public void onSuccess(Object object) {
                 Toast.makeText(getContext(), "result "+object, Toast.LENGTH_SHORT).show();
+                AddComplaint2 fragment = new AddComplaint2();
+                Bundle bundle = new Bundle();
+                bundle.putString("user_id","1");
+                fragment.setArguments(bundle);
+                FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
+                fragmentManager
+                        .beginTransaction()
+                        .replace(R.id.fraglayot,fragment)
+                        .commit();
             }
 
             @Override
@@ -128,17 +139,18 @@ public class AddComplaint extends Fragment {
             @Override
             public void onSuccess(Object object) {
                 String response = (String) object;
+                ArrayList<String>list1=new ArrayList<>();
                 if (!response.isEmpty()) {
                     try {
                         JSONArray jsonArray = new JSONArray(response);
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             String name = jsonObject.getString("state_name");
-                            list.add(name);
+                            list1.add(name);
                         }
-                        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, list);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, list1);
                         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-                        country.setAdapter(adapter);
+                        states.setAdapter(adapter);
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
