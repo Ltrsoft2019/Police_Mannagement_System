@@ -64,8 +64,8 @@ public class Add_Investigation extends Fragment {
         suspectCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int newVisibility = ( locationTextView.getVisibility() == View.VISIBLE) ? View.GONE : View.VISIBLE;
-                locationTextView.setVisibility( newVisibility);int oppositeVisibility = (newVisibility == View.VISIBLE) ? View.GONE : View.VISIBLE;
+                int newVisibility = ( nextButton.getVisibility() == View.VISIBLE) ? View.GONE : View.VISIBLE;
+                nextButton.setVisibility( newVisibility);int oppositeVisibility = (newVisibility == View.VISIBLE) ? View.GONE : View.VISIBLE;
                 suspectRecyclerView.setVisibility(oppositeVisibility);
 
             }
@@ -73,8 +73,8 @@ public class Add_Investigation extends Fragment {
         victimCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int newVisibility = ( locationTextView.getVisibility() == View.VISIBLE) ? View.GONE : View.VISIBLE;
-                locationTextView.setVisibility( newVisibility);int oppositeVisibility = (newVisibility == View.VISIBLE) ? View.GONE : View.VISIBLE;
+                int newVisibility = ( nextButton.getVisibility() == View.VISIBLE) ? View.GONE : View.VISIBLE;
+                nextButton.setVisibility( newVisibility);int oppositeVisibility = (newVisibility == View.VISIBLE) ? View.GONE : View.VISIBLE;
                 victimRecyclerView.setVisibility(oppositeVisibility);
 
             }
@@ -82,16 +82,16 @@ public class Add_Investigation extends Fragment {
        witnessCardView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               int newVisibility = ( locationTextView.getVisibility() == View.VISIBLE) ? View.GONE : View.VISIBLE;
-               locationTextView.setVisibility( newVisibility);int oppositeVisibility = (newVisibility == View.VISIBLE) ? View.GONE : View.VISIBLE;
+               int newVisibility = ( nextButton.getVisibility() == View.VISIBLE) ? View.GONE : View.VISIBLE;
+               nextButton.setVisibility( newVisibility);int oppositeVisibility = (newVisibility == View.VISIBLE) ? View.GONE : View.VISIBLE;
                witnessRecyclerView.setVisibility(oppositeVisibility);
            }
        });
        evidenceCardView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               int newVisibility = ( locationTextView.getVisibility() == View.VISIBLE) ? View.GONE : View.VISIBLE;
-               locationTextView.setVisibility( newVisibility);int oppositeVisibility = (newVisibility == View.VISIBLE) ? View.GONE : View.VISIBLE;
+               int newVisibility = ( nextButton.getVisibility() == View.VISIBLE) ? View.GONE : View.VISIBLE;
+               nextButton.setVisibility( newVisibility);int oppositeVisibility = (newVisibility == View.VISIBLE) ? View.GONE : View.VISIBLE;
                evidenceRecyclerView.setVisibility(oppositeVisibility);
            }
        });
@@ -155,14 +155,14 @@ public class Add_Investigation extends Fragment {
         victimPlusImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                fragment=new Add_Suspect();
+                fragment=new Add_Victim();
                 loadfragment(fragment);
             }
         });
         witnessPlusImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                fragment=new Add_Suspect();
+                fragment=new Add_Witness();
                 loadfragment(fragment);
             }
         });
@@ -293,8 +293,8 @@ public class Add_Investigation extends Fragment {
                }
                CommonAdapter adapter = new CommonAdapter(maps,R.drawable.complaint);
                LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-               witnessRecyclerView.setLayoutManager(layoutManager);
-               witnessRecyclerView.setAdapter(adapter);
+               evidenceRecyclerView.setLayoutManager(layoutManager);
+               evidenceRecyclerView.setAdapter(adapter);
            }
 
            @Override

@@ -14,22 +14,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
-import com.ltrsoft.police_mannagement_system.Model.Suspect;
 import com.ltrsoft.police_mannagement_system.R;
-import com.ltrsoft.police_mannagement_system.deo.DAO;
 
-public class Add_Suspect extends Fragment {
+public class Add_Witness extends Fragment {
 
-
-
-    public Add_Suspect()
-    {
-
-     }
-     private String Create_Suspect="https://rj.ltr-soft.com/public/police_api/complaint_suspect/create_complaint_suspect.php";
     private EditText fname, address, number, email, passport, driving_liscense, security_number, estimated_height, estimated_weight, estimated_build, haircolor, eye_color;
     private TextView dob_date;
     private RadioGroup gendergroup;
@@ -42,64 +31,21 @@ public class Add_Suspect extends Fragment {
     private TextView camera_tv, gallery_tv;
     private Button next_btn;
 
+
+    public Add_Witness() {
+
+     }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-           view= inflater.inflate(R.layout.add__suspect, container, false);
-          setid();
-          next_btn.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View view) {
-                  String sfname=fname.getText().toString();
-                  String saddress = address.getText().toString();
-                  String snumber = number.getText().toString();
-                  String semail = email.getText().toString();
-                  String spassport = passport.getText().toString();
-                  String sdriving_license = driving_liscense.getText().toString();
-                  String ssecurity_number = security_number.getText().toString();
-                  String sestimated_height = estimated_height.getText().toString();
-                  String sestimated_weight = estimated_weight.getText().toString();
-                  String sestimated_build = estimated_build.getText().toString();
-                  String shaircolor = haircolor.getText().toString();
-                  String seye_color = eye_color.getText().toString();
-                  String sdistinguish_feature = distinguish_feature.getText().toString();
-                  String soccupation = occupation.getText().toString();
-                  String seducational_level = educational_level.getText().toString();
-                  String smartial_status = martial_status.getText().toString();
-                  String sfamily_members = family_members.getText().toString();
-                  String sdescription = discription.getText().toString();
-                  Suspect suspect=new Suspect("",sfname,dob_date.toString(),gendergroup.toString(),saddress,snumber,
-                          semail,spassport,sdriving_license,ssecurity_number,sestimated_height,sestimated_weight,
-                          sestimated_build,shaircolor,seye_color,sdistinguish_feature,
-                          soccupation,seducational_level,smartial_status,sfamily_members,"","1","" +
-                          sdescription,"",country.toString(),states.toString(),district.toString(),city.toString());
-                  addcriminal(suspect);
+         view= inflater.inflate(R.layout.add_witness, container, false);
 
-              }
-          });
+    setid();
+
     return view;
     }
-   public void addcriminal(Suspect suspect){
-       DAO dao=new DAO(getContext());
-       dao.insertOrUpdate(suspect, new NewCallBack() {
-           @Override
-           public void onError(String error) {
-               Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
-           }
-
-           @Override
-           public void onSuccess(Object object) {
-               Toast.makeText(getContext(), ""+object, Toast.LENGTH_SHORT).show();
-
-           }
-
-           @Override
-           public void onEmpty() {
-               Toast.makeText(getContext(), "is empty", Toast.LENGTH_SHORT).show();
-
-           }
-       },Create_Suspect);
-   }
     private void setid(){
         fname = view.findViewById(R.id.fname);
         address = view.findViewById(R.id.address);

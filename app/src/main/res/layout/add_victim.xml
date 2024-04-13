@@ -11,7 +11,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Add Suspect Detail"
+            android:text="Add Victim Detail"
             android:textStyle="bold"
             android:textSize="20dp"
             android:gravity="center"
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="2dp"
-            android:text="Enter Suspect Full Name :"
+            android:text="Enter Victim Full Name :"
             android:layout_marginLeft="5dp"
             android:paddingLeft="2dp"
 
