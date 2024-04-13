@@ -146,9 +146,9 @@ public class Login extends Fragment {
     }
     private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
-        Fragment prevous = fragmentManager.findFragmentById(R.id.fraglayot);
         fragmentManager
                 .beginTransaction()
+                .addToBackStack(null)
                 .replace(R.id.fraglayot,fragment)
                 .commit();
     }

@@ -31,7 +31,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.ltrsoft.police_mannagement_system.AnalysisFragment.Login;
-import com.ltrsoft.police_mannagement_system.AnalysisFragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.MainActivity;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.fragments.AboutPage;
@@ -46,7 +45,7 @@ import com.ltrsoft.police_mannagement_system.fragments.Profile;
 import com.ltrsoft.police_mannagement_system.fragments.UnidentifiedBody;
 import com.ltrsoft.police_mannagement_system.utils.SessionManager;
 
-public class Navigationfragment extends Fragment {
+public class Navigationfragment2 extends Fragment {
     private BottomNavigationView navigationView;
     NavigationView nav;
     ActionBarDrawerToggle drawerToggle;
@@ -55,14 +54,14 @@ public class Navigationfragment extends Fragment {
     String data, lang;
     ImageView imgr, editimg,float_drawer;
     TextView name;
-    FloatingActionButton btn,btn2;
+    FloatingActionButton btn;
     View v1;
     private CardView feature_list;
     int position=0;
     private boolean flag=true;
     Fragment fragment ;
     TextView textView;
-    public Navigationfragment() {}
+    public Navigationfragment2() {}
 
     @Nullable
     @Override
@@ -72,7 +71,6 @@ public class Navigationfragment extends Fragment {
         feature_list = view.findViewById(R.id.feature_list);
         toolbar = view.findViewById(R.id.toolbar);
         btn=view.findViewById(R.id.floatingActionButton);
-        btn2=view.findViewById(R.id.floatingActionButton2);
         navigationView = view.findViewById(R.id.ubotnav);
         nav =view.findViewById(R.id.naviga);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
@@ -138,17 +136,6 @@ public class Navigationfragment extends Fragment {
                         .commit();
             }
         });
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
-                fragmentManager
-                        .beginTransaction()
-                        .replace(R.id.fraglayot,new MainAnalysis())
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
         loadFragment(new Analysis());
 
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -182,11 +169,11 @@ public class Navigationfragment extends Fragment {
     }
 
     private void loadFragment(Fragment fragment) {
-    FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
+        FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
         fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.fraglayot,fragment)
-                    .commit();
+                .beginTransaction()
+                .replace(R.id.fraglayot,fragment)
+                .commit();
     }
 
 }
