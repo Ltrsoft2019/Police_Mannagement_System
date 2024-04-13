@@ -70,7 +70,7 @@ public class AddComplaint2 extends Fragment {
                     if (!aginst.getText().toString().isEmpty()){
                         if (!desc.getText().toString().isEmpty()){
                             Complaint model = new Complaint("",subject.getText().toString(),desc.getText().toString(),
-                                    aginst.getText().toString(),date.getText().toString(),"","23","","","","","","","");
+                                    aginst.getText().toString(),date.getText().toString(),"","23","","","","","");
 
                                     dao.insertOrUpdate(model, new NewCallBack() {
                                         @Override
