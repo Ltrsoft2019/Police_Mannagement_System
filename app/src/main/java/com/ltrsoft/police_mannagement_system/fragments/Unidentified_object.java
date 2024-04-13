@@ -3,6 +3,7 @@ package com.ltrsoft.police_mannagement_system.fragments;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.location.Location;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -18,26 +19,31 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ltrsoft.police_mannagement_system.Interfaces.LocationCallBack;
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.UnidentifiedObject;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
+import com.ltrsoft.police_mannagement_system.utils.LocationProvider;
+import com.ltrsoft.police_mannagement_system.utils.Mic;
 
 public class Unidentified_object extends Fragment {
     public Unidentified_object() {}
-
     private TextView location,gallery,camera;
     private EditText object_founded, mark, condition;
     private ImageView displaying;
     private Button submit;
+    private ImageView m1,m2,m3;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_IMAGE_PICKER = 2;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.unidentified_object, container, false);
+            m1=view.findViewById(R.id.mike_img1);
+            m2=view.findViewById(R.id.mike_img2);
+            m3=view.findViewById(R.id.mike_img3);
 
-        // Initialize your views here
         location = view.findViewById(R.id.location);
         object_founded = view.findViewById(R.id.location_founded);
         mark = view.findViewById(R.id.unidentified_mark);
@@ -46,6 +52,12 @@ public class Unidentified_object extends Fragment {
         submit = view.findViewById(R.id.next_btn);
         gallery=view.findViewById(R.id.gallery_tv);
         camera=view.findViewById(R.id.camera_tv);
+
+        Mic mic= new Mic(getContext());
+        mic.startListening(object_founded,m1);
+        mic.startListening(condition,m2);
+        mic.startListening(mark,m3);
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,7 +102,17 @@ public class Unidentified_object extends Fragment {
       location.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
+              LocationProvider.getCurrentLocation(getContext(), new LocationCallBack() {
+                  @Override
+                  public void onLocationGet(Location latLng) {
+                      location.setText(String.valueOf(latLng.getLatitude()));
+                  }
 
+                  @Override
+                  public void onError(String error) {
+
+                  }
+              });
           }
       });
         return view;

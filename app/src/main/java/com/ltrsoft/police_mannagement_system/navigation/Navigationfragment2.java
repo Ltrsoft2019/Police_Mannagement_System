@@ -31,9 +31,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.ltrsoft.police_mannagement_system.AnalysisFragment.Login;
-import com.ltrsoft.police_mannagement_system.AnalysisFragment.analysis.MainAnalysis;
 import com.ltrsoft.police_mannagement_system.MainActivity;
-import com.ltrsoft.police_mannagement_system.Model.FeedBack;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.fragments.AboutPage;
 import com.ltrsoft.police_mannagement_system.fragments.AddComplaint;
@@ -47,25 +45,23 @@ import com.ltrsoft.police_mannagement_system.fragments.Profile;
 import com.ltrsoft.police_mannagement_system.fragments.UnidentifiedBody;
 import com.ltrsoft.police_mannagement_system.utils.SessionManager;
 
-public class Navigationfragment extends Fragment {
+public class Navigationfragment2 extends Fragment {
     private BottomNavigationView navigationView;
     NavigationView nav;
     ActionBarDrawerToggle drawerToggle;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     String data, lang;
-    ImageView imgr, editimg, float_drawer;
+    ImageView imgr, editimg,float_drawer;
     TextView name;
-    FloatingActionButton btn, btn2;
+    FloatingActionButton btn;
     View v1;
     private CardView feature_list;
-    int position = 0;
-    private boolean flag = true;
-    Fragment fragment;
+    int position=0;
+    private boolean flag=true;
+    Fragment fragment ;
     TextView textView;
-
-    public Navigationfragment() {
-    }
+    public Navigationfragment2() {}
 
     @Nullable
     @Override
@@ -74,10 +70,9 @@ public class Navigationfragment extends Fragment {
         float_drawer = view.findViewById(R.id.float_drawer);
         feature_list = view.findViewById(R.id.feature_list);
         toolbar = view.findViewById(R.id.toolbar);
-        btn = view.findViewById(R.id.floatingActionButton);
-        btn2 = view.findViewById(R.id.floatingActionButton2);
+        btn=view.findViewById(R.id.floatingActionButton);
         navigationView = view.findViewById(R.id.ubotnav);
-        nav = view.findViewById(R.id.naviga);
+        nav =view.findViewById(R.id.naviga);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         drawerLayout = view.findViewById(R.id.drawer);
         drawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolbar, R.string.nav_open, R.string.nav_close);
@@ -88,19 +83,22 @@ public class Navigationfragment extends Fragment {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id = menuItem.getItemId();
-                if (id == R.id.nav_home) {
+                if (id==R.id.nav_home){
                     loadFragment(new Analysis());
-                } else if (id == R.id.nav_profile) {
+                } else if (id==R.id.nav_profile) {
                     loadFragment(new Profile());
-                } else if (id == R.id.nav_contact) {
+                }
+                else if (id==R.id.nav_contact) {
                     String url = "https://ltr-soft.com";
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));//                    loadFragment();
                     startActivity(intent);
-                } else if (id == R.id.nav_about) {
+                }
+                else if (id==R.id.nav_about) {
                     loadFragment(new AboutPage());
-                } else if (id == R.id.nav_feedback) {
+                }
+                else if (id==R.id.nav_feedback) {
                     loadFragment(new FeedBacks());
-                } else if (id == R.id.nav_logout) {
+                }else if (id==R.id.nav_logout) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     builder.setTitle("Logout Dailoge");
                     builder.setMessage("Do You Want To Logout?");
@@ -116,7 +114,9 @@ public class Navigationfragment extends Fragment {
                     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+
                             Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+
                         }
                     });
                     builder.show();
@@ -128,61 +128,52 @@ public class Navigationfragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
                 fragmentManager
                         .beginTransaction()
-                        .replace(R.id.fraglayot, new Login())
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
-
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager
-                        .beginTransaction()
-                        .replace(R.id.fraglayot, new MainAnalysis())
+                        .replace(R.id.fraglayot,new Login())
                         .addToBackStack(null)
                         .commit();
             }
         });
         loadFragment(new Analysis());
+
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id = menuItem.getItemId();
-                if (id == R.id.nav_home) {
+                int id  = menuItem.getItemId();
+                if (id==R.id.nav_home){
                     loadFragment(new Analysis());
-                } else if (id == R.id.nav_history) {
+                } else if (id==R.id.nav_history) {
                     loadFragment(new MyListings());
-                } else if (id == R.id.nav_add) {
+                }
+                else if (id==R.id.nav_add) {
                     loadFragment(new PoliceAdd());
-                } else if (id == R.id.nav_task) {
+                }
+                else if (id==R.id.nav_task) {
                     loadFragment(new AllotedTask());
-                } else if (id == R.id.nav_report) {
+                }else if (id==R.id.nav_report) {
                     loadFragment(new AllotedTask());
                 }
                 menuItem.setChecked(true);
                 return false;
             }
         });
-
         float_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
             }
         });
         return view;
     }
 
     private void loadFragment(Fragment fragment) {
-
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
         fragmentManager
                 .beginTransaction()
-                .replace(R.id.fraglayot, fragment)
+                .replace(R.id.fraglayot,fragment)
                 .commit();
     }
+
 }

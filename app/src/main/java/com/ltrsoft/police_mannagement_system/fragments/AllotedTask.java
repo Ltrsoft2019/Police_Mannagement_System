@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.ltrsoft.police_mannagement_system.R;
-
-
 public class AllotedTask extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

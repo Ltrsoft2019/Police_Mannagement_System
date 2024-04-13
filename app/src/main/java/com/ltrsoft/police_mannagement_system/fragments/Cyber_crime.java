@@ -13,11 +13,13 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +28,13 @@ import com.ltrsoft.police_mannagement_system.Model.CyberCrimemodel;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class Cyber_crime extends Fragment {
     public Cyber_crime() {}
@@ -35,6 +43,7 @@ public class Cyber_crime extends Fragment {
     private ImageView disp;
     private CheckBox lost_money,isdelay;
     private Button submit;
+    private Spinner states;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_IMAGE_PICKER = 2;
     @Override
@@ -42,6 +51,7 @@ public class Cyber_crime extends Fragment {
                              Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.cyber_crime, container, false);
 
+        states = view.findViewById(R.id.states);
         where_does_occure = view.findViewById(R.id.occur);
         desc = view.findViewById(R.id.desc);
         camera = view.findViewById(R.id.camera_tv);
@@ -51,7 +61,7 @@ public class Cyber_crime extends Fragment {
         lost_money = view.findViewById(R.id.lost_money);
         isdelay = view.findViewById(R.id.isdelay);
         submit = view.findViewById(R.id.next_btn);
-
+            setStation();
         gallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +117,36 @@ public class Cyber_crime extends Fragment {
         });
        return view;
     }
+
+    private void setStation() {
+        DAO dao = new DAO(getContext());
+        dao.getData(new HashMap<>(), "https://rj.ltr-soft.com/public/police_api/police_station/read_police_station.php", new NewCallBack() {
+            @Override
+            public void onError(String error) {
+
+            }
+
+            @Override
+            public void onSuccess(Object object) {
+                ArrayList<String>list=new ArrayList<>();
+                    try {
+                        JSONArray jsonArray = new JSONArray(String.valueOf(object));
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            list.add(jsonArray.getJSONObject(i).getString("police_station_name"));
+                        }
+                        ArrayAdapter <String>adapter=new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,list);
+                        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+                        states.setAdapter(adapter);
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+            }
+
+            @Override
+            public void onEmpty() {}
+        });
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

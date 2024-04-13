@@ -158,16 +158,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="2dp"
-            android:text="Any Unidentified Mark:"
-            android:layout_marginLeft="5dp"
-            android:paddingLeft="2dp"
-
-            />
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="2dp"
             android:gravity="center"
             android:text=" Select The Image : "
             android:layout_marginLeft="5dp"

@@ -30,9 +30,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-
-
             <TextView
                 android:id="@+id/date"
                 android:layout_width="0dp"
@@ -75,6 +72,7 @@
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
+                android:id="@+id/mik1"
                 android:paddingLeft="4dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -157,6 +155,7 @@
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
+                android:id="@+id/mik2"
                 android:paddingLeft="4dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -190,6 +189,7 @@
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
+                android:id="@+id/mik3"
                 android:paddingLeft="4dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -223,6 +223,7 @@
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
+                android:id="@+id/mik4"
                 android:paddingLeft="4dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -256,6 +257,7 @@
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
+                android:id="@+id/mik5"
                 android:paddingLeft="4dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -289,6 +291,7 @@
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
+                android:id="@+id/mik6"
                 android:paddingLeft="4dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -322,6 +325,7 @@
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
+                android:id="@+id/mik7"
                 android:paddingLeft="4dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -355,6 +359,7 @@
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
+                android:id="@+id/mik8"
                 android:paddingLeft="4dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -388,6 +393,7 @@
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
+                android:id="@+id/mik9"
                 android:paddingLeft="4dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -421,6 +427,7 @@
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
+                android:id="@+id/mik10"
                 android:paddingLeft="4dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -454,6 +461,7 @@
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
+                android:id="@+id/mik11"
                 android:paddingLeft="4dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"

@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="2dp"
-            android:text="Enter User First Name :"
+            android:text="Complaint Subject :"
             android:layout_marginLeft="5dp"
             android:paddingLeft="2dp"
 
@@ -32,13 +32,14 @@
             >
 
             <EditText
-                android:id="@+id/userfname"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="8"
+                android:id="@+id/subject"
                 android:background="@drawable/formborder"
-                android:padding="4dp" />
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="40dp"
+                android:padding="4dp"
+                android:layout_marginLeft="5dp"
+                />
             <ImageView
                 android:id="@+id/mike_img1"
                 android:paddingLeft="4dp"
@@ -53,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="2dp"
-            android:text="Enter User Last Name :"
+            android:text="Complaint Description :"
             android:layout_marginLeft="5dp"
             android:paddingLeft="2dp"
 
@@ -70,9 +71,9 @@
                 android:layout_weight="8"
                 android:layout_height="40dp"
                 android:padding="4dp"
-                android:id="@+id/unsermname"
+                android:id="@+id/desc"
                 android:layout_marginLeft="5dp"
-                 />
+                />
             <ImageView
                 android:id="@+id/mike_img2"
                 android:paddingLeft="4dp"
@@ -87,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="2dp"
-            android:text="Enter User Middle Name :"
+            android:text="Complaint Against :"
             android:layout_marginLeft="5dp"
             android:paddingLeft="2dp"
 
@@ -104,7 +105,7 @@
                 android:layout_weight="8"
                 android:layout_height="40dp"
                 android:padding="4dp"
-                android:id="@+id/userlname"
+                android:id="@+id/against"
                 android:layout_marginLeft="5dp"
                 />
             <ImageView
@@ -125,79 +126,13 @@
             android:layout_marginLeft="5dp"
             android:paddingLeft="2dp"
             />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-        <RadioGroup
-            android:layout_width="0dp"
-            android:layout_weight="8"
-            android:layout_height="40dp"
-            android:background="@drawable/formborder"
-             android:id="@+id/gendergroup"
-            android:orientation="horizontal"
 
-            >
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Male"
-                android:id="@+id/male"
-                android:layout_marginLeft="2dp"
-                android:padding="2dp"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Female"
-                android:id="@+id/female"
-                android:layout_marginLeft="2dp"
-                android:padding="2dp"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Other"
-                android:id="@+id/other"
-                android:layout_marginLeft="2dp"
-                android:padding="2dp"/>
-        </RadioGroup>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-        </LinearLayout>
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="2dp"
-            android:text="Select Country : "
-            android:layout_marginLeft="5dp"
-            android:paddingLeft="2dp"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-        <Spinner
-            android:id="@+id/country"
-            android:layout_width="0dp"
-            android:layout_weight="8"
-            android:layout_height="40dp"
-            android:layout_marginLeft="5dp"
-
-
-            android:background="@drawable/formborder"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-        </LinearLayout>
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="2dp"
-            android:text="Select State : "
+            android:text="Select ComplaintType : "
             android:layout_marginLeft="5dp"
             android:paddingLeft="2dp"
             />
@@ -206,7 +141,32 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Spinner
-                android:id="@+id/states"
+                android:id="@+id/cmp_type"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/formborder"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Select Complaint Sub-Type : "
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="2dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Spinner
+                android:id="@+id/cmpSubt"
                 android:layout_width="0dp"
                 android:layout_weight="8"
                 android:layout_height="40dp"
@@ -223,7 +183,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="2dp"
-            android:text=" Date Of Birth : "
+            android:text="Incident Location : "
             android:layout_marginLeft="5dp"
             android:paddingLeft="2dp"
             />
@@ -233,18 +193,17 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/dob_date"
-                 android:layout_width="0dp"
+                android:id="@+id/complaint_date"
+                android:layout_width="0dp"
                 android:layout_weight="9"
                 android:layout_height="40dp"
                 android:gravity="center"
                 android:layout_marginLeft="5dp"
-
                 android:text="choose the date"
-                 android:textSize="18dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
-                   android:background="@drawable/datepicker"/>
+                android:background="@drawable/datepicker"/>
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -256,38 +215,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="2dp"
-            android:text=" Choose The Location: "
+            android:text="Incident Location Through GPS: "
             android:layout_marginLeft="5dp"
             android:paddingLeft="2dp"
             />
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal">-->
-<!--            <TextView-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_weight="9"-->
-<!--                android:layout_height="40dp"-->
-<!--                android:gravity="center"-->
-<!--                android:text="Location"-->
-<!--                android:textSize="18dp"-->
-<!--                android:layout_marginLeft="5dp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:background="@drawable/datepicker"/>-->
-<!--            <View-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"/>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-<!--        </LinearLayout>-->
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:id="@+id/location"
+                android:text="Location"
+                android:textSize="18dp"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:background="@drawable/datepicker"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="2dp"
-             android:gravity="center"
-             android:text=" Select The Image : "
+            android:gravity="center"
+            android:text=" Select The Image : "
             android:layout_marginLeft="5dp"
             android:paddingLeft="2dp"
             />
@@ -315,7 +278,7 @@
                     android:text="CAMERA"
                     android:gravity="center"
                     android:layout_gravity="center"
-                     android:background="@drawable/datepicker"/>
+                    android:background="@drawable/datepicker"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_margin="4dp"
@@ -346,13 +309,13 @@
             android:gravity="center"
             android:layout_height="wrap_content">
             <Button
-                android:id="@+id/next_btn"
+                android:id="@+id/submit"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:text="Next"
+                android:text="Submit"
                 android:gravity="center"
                 android:layout_gravity="center"
-              />
+                />
         </LinearLayout>
     </LinearLayout>
 

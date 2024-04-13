@@ -1,12 +1,14 @@
 package com.ltrsoft.police_mannagement_system.fragments;
 import static android.app.Activity.RESULT_OK;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
@@ -15,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
@@ -26,12 +29,14 @@ import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.Users;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
+import com.ltrsoft.police_mannagement_system.utils.Mic;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class AddComplaint extends Fragment {
@@ -41,7 +46,8 @@ public class AddComplaint extends Fragment {
     private View view;
     private EditText fname,mname,lname;
     private RadioGroup gender;
-    private Spinner country;
+    private ImageView m1,m2,m3;
+    private Spinner country,states;
     private TextView dob,camera,galery;
     private Button next;
     private ImageView dispimg;
@@ -61,8 +67,39 @@ public class AddComplaint extends Fragment {
         galery=view.findViewById(R.id.gallery_tv);
         next = view.findViewById(R.id.next_btn);
         dispimg = view.findViewById(R.id.camera_img);
+        states = view.findViewById(R.id.states);
+        m1 = view.findViewById(R.id.mike_img1);
+        m2 = view.findViewById(R.id.mike_img2);
+        m3 = view.findViewById(R.id.mike_img3);
         dao = new DAO(getContext());
 
+        Mic mic = new Mic(getContext());
+        mic.startListening(fname,m1);
+        mic.startListening(mname,m2);
+        mic.startListening(lname,m3);
+
+
+
+
+        dob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(),
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                                dob.setText(selectedDate);
+                            }
+                        }, year, month, dayOfMonth);
+                datePickerDialog.show();
+
+            }
+        });
         loaCountry();
         country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {            @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -106,6 +143,15 @@ public class AddComplaint extends Fragment {
             @Override
             public void onSuccess(Object object) {
                 Toast.makeText(getContext(), "result "+object, Toast.LENGTH_SHORT).show();
+                AddComplaint2 fragment = new AddComplaint2();
+                Bundle bundle = new Bundle();
+                bundle.putString("user_id","1");
+                fragment.setArguments(bundle);
+                FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
+                fragmentManager
+                        .beginTransaction()
+                        .replace(R.id.fraglayot,fragment)
+                        .commit();
             }
 
             @Override
@@ -128,17 +174,18 @@ public class AddComplaint extends Fragment {
             @Override
             public void onSuccess(Object object) {
                 String response = (String) object;
+                ArrayList<String>list1=new ArrayList<>();
                 if (!response.isEmpty()) {
                     try {
                         JSONArray jsonArray = new JSONArray(response);
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             String name = jsonObject.getString("state_name");
-                            list.add(name);
+                            list1.add(name);
                         }
-                        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, list);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, list1);
                         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-                        country.setAdapter(adapter);
+                        states.setAdapter(adapter);
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
