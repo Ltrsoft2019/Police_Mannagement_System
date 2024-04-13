@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.location.Location;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -20,10 +21,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ltrsoft.police_mannagement_system.Interfaces.LocationCallBack;
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.Unidentified_Bodies;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
+import com.ltrsoft.police_mannagement_system.utils.LocationProvider;
+import com.ltrsoft.police_mannagement_system.utils.Mic;
 
 import java.util.Calendar;
 
@@ -60,6 +64,31 @@ public class UnidentifiedBody extends Fragment {
             descriptionOfClothing = view.findViewById(R.id.descriptionofclothing); // replace R.id.descriptionofclothing with your actual ID
             bodyCondition = view.findViewById(R.id.body_condition); // replace R.id.body_condition with your actual ID
             submit = view.findViewById(R.id.submit);
+
+            ImageView mik1 = view.findViewById(R.id.mik1);
+            ImageView mik2 = view.findViewById(R.id.mik2);
+            ImageView mik3 = view.findViewById(R.id.mik3);
+            ImageView mik4 = view.findViewById(R.id.mik4);
+            ImageView mik5 = view.findViewById(R.id.mik5);
+            ImageView mik6 = view.findViewById(R.id.mik6);
+            ImageView mik7 = view.findViewById(R.id.mik7);
+            ImageView mik8 = view.findViewById(R.id.mik8);
+            ImageView mik9 = view.findViewById(R.id.mik9);
+            ImageView mik10 = view.findViewById(R.id.mik10);
+            ImageView mik11 = view.findViewById(R.id.mik11);
+
+            Mic mic = new Mic(getContext());
+            mic.startListening(currentLocation,mik1);
+            mic.startListening(estimatedAge,mik2);
+            mic.startListening(estimatedHeight,mik3);
+            mic.startListening(estimatedWeight,mik4);
+            mic.startListening(estimatedBuild,mik5);
+            mic.startListening(ethnicity,mik6);
+            mic.startListening(hairColor,mik7);
+            mic.startListening(eyeColor,mik8);
+            mic.startListening(distinguishFeature,mik9);
+            mic.startListening(descriptionOfClothing,mik10);
+            mic.startListening(bodyCondition,mik11);
             camera.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -86,6 +115,22 @@ public class UnidentifiedBody extends Fragment {
                 }
             });
 
+            location.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    LocationProvider.getCurrentLocation(getContext(), new LocationCallBack() {
+                        @Override
+                        public void onLocationGet(Location latLng) {
+                            location.setText(String.valueOf(latLng.getLatitude()));
+                        }
+
+                        @Override
+                        public void onError(String error) {
+
+                        }
+                    });
+                }
+            });
 
             gallery.setOnClickListener(new View.OnClickListener() {
                 @Override
