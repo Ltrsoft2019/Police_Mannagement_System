@@ -1,15 +1,15 @@
 package com.ltrsoft.police_mannagement_system.Model;
 
-
 public class District {
-    String district_id, District_Name, totalcase, totalpolice;
-    public District(String id, String name, String totalcase, String totalpolice) {
-        this.district_id = id;
-        this.District_Name = name;
-        this.totalcase = totalcase;
-        this.totalpolice = totalpolice;
-    }
+    public static final String GETSISTRICT ="";
 
+    private String district_id,district_name,state_id;
+
+    public District(String district_id, String district_name, String state_id) {
+        this.district_id = district_id;
+        this.district_name = district_name;
+        this.state_id = state_id;
+    }
 
     public String getDistrict_id() {
         return district_id;
@@ -19,28 +19,19 @@ public class District {
         this.district_id = district_id;
     }
 
-    public String getDistrict_Name() {
-        return District_Name;
+    public String getDistrict_name() {
+        return district_name;
     }
 
-    public void setDistrict_Name(String district_Name) {
-        District_Name = district_Name;
+    public void setDistrict_name(String district_name) {
+        this.district_name = district_name;
     }
 
-    public String getTotalcase() {
-        return totalcase;
+    public String getState_id() {
+        return state_id;
     }
 
-    public void setTotalcase(String totalcase) {
-        this.totalcase = totalcase;
+    public void setState_id(String state_id) {
+        this.state_id = state_id;
     }
-
-    public String getTotalpolice() {
-        return totalpolice;
-    }
-
-    public void setTotalpolice(String totalpolice) {
-        this.totalpolice = totalpolice;
-    }
-
 }

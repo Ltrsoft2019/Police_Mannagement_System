@@ -14,7 +14,7 @@ public class UnidentifiedObject {
             station_id,
             user_id;
 
-    public UnidentifiedObject(String unidentified_object_id, String date_and_time_of_discovery, String location_found, String object_condition, String identifying_marks_or_features, String object_description, String photo_path, String latitude, String longitude, String station_id, String user_id) {
+    public UnidentifiedObject(String unidentified_object_id, String date_and_time_of_discovery, String location_found, String object_condition, String identifying_marks_or_features, String object_description, String photo_path, String latitude, String longitude, String station_id,String user_id) {
         this.unidentified_object_id = unidentified_object_id;
         this.date_and_time_of_discovery = date_and_time_of_discovery;
         this.location_found = location_found;

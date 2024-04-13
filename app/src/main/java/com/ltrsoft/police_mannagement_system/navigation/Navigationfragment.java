@@ -1,10 +1,7 @@
 package com.ltrsoft.police_mannagement_system.navigation;
 
-import static android.content.Context.MODE_PRIVATE;
-
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,15 +31,12 @@ import com.ltrsoft.police_mannagement_system.AnalysisFragment.Login;
 import com.ltrsoft.police_mannagement_system.MainActivity;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.fragments.AboutPage;
-import com.ltrsoft.police_mannagement_system.fragments.AddComplaint;
 import com.ltrsoft.police_mannagement_system.fragments.AllotedTask;
 import com.ltrsoft.police_mannagement_system.fragments.Analysis;
-import com.ltrsoft.police_mannagement_system.fragments.FeedBack;
+import com.ltrsoft.police_mannagement_system.fragments.FeedBacks;
 import com.ltrsoft.police_mannagement_system.fragments.MyListings;
 import com.ltrsoft.police_mannagement_system.fragments.PoliceAdd;
-import com.ltrsoft.police_mannagement_system.fragments.PoliceLogin;
 import com.ltrsoft.police_mannagement_system.fragments.Profile;
-import com.ltrsoft.police_mannagement_system.fragments.UnidentifiedBody;
 import com.ltrsoft.police_mannagement_system.utils.SessionManager;
 
 public class Navigationfragment extends Fragment {
@@ -97,7 +91,7 @@ public class Navigationfragment extends Fragment {
                     loadFragment(new AboutPage());
                 }
                 else if (id==R.id.nav_feedback) {
-                    loadFragment(new FeedBack());
+                    loadFragment(new FeedBacks());
                 }else if (id==R.id.nav_logout) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     builder.setTitle("Logout Dailoge");
