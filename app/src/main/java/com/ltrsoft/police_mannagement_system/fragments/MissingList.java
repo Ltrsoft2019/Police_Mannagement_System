@@ -46,7 +46,7 @@ public class MissingList extends Fragment {
                     map.put("map1", "Complaint Id :"+model.getComplaint_id());
                     map.put("map2","Complaint Subject :"+ model.getComplaint_subject());
                     map.put("map3", "Complaint Description :"+model.getComplaint_description());
-                    map.put("map4", "Incident Date :"+model.getIncident_date());
+                  //  map.put("map4", "Incident Date :"+model.getIncident_date());
                     maps.add(map);
                 }
                 CommonAdapter adapter = new CommonAdapter(maps,R.drawable.complaint);

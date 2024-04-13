@@ -69,7 +69,7 @@ public class PoliceAdd extends Fragment implements View.OnClickListener {
         } else if (v.getId() == R.id.self_proclaimed) {
             loadFragment(new Self_Proclaimed());
         } else if (v.getId() == R.id.investigations) {
-            loadFragment(new AddComplaint());
+            loadFragment(new Add_Investigation());
         } else if (v.getId() == R.id.apply_leave) {
             loadFragment(new AddComplaint());
         }

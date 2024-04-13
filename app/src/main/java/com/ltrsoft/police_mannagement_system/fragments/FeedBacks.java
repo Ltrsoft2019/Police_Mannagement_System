@@ -12,12 +12,12 @@ import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
-import com.ltrsoft.police_mannagement_system.Model.Feedback;
+import com.ltrsoft.police_mannagement_system.Model.FeedBack;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
 
-public class FeedBack extends Fragment {
-    public FeedBack() {}
+public class FeedBacks extends Fragment {
+    public FeedBacks() {}
     private RatingBar satisfaction, trustConfidence, qualityOfService, fairness, timeTaken,training_support,usability_navigation;
     private Button submit;
     private EditText bribeDescription;
@@ -46,8 +46,8 @@ public class FeedBack extends Fragment {
                String quality = String.valueOf(qualityOfService.getRating());
                String fairnes = String.valueOf(fairness.getRating());
                String time = String.valueOf(timeTaken.getRating());
-                Feedback feedback = new Feedback(satisfact,usability,support,fairnes,time,
-                        quality,trust,"1");
+                FeedBack feedback = new FeedBack(satisfact,usability,support,fairnes,time,
+                        quality,trust,"1","ss");
                dao.insertOrUpdate(feedback, new NewCallBack() {
                    @Override
                    public void onError(String error) {

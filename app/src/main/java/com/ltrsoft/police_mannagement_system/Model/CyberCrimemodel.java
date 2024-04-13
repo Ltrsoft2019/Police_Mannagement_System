@@ -1,10 +1,11 @@
 package com.ltrsoft.police_mannagement_system.Model;
 
 public class CyberCrimemodel {
-    public CyberCrimemodel(String cyber_crime_id, String cyber_crime_category_id,
-                           String lost_money, String date_time, String is_delay, String where_accure,
-                           String evidance_photo,String description, String user_id, String station_id,
-                           String status_id) {
+
+    private String cyber_crime_id, cyber_crime_category_id,lost_money, date_time, is_delay,
+    where_accure, evidance_photo, description, user_id,station_id,status_id;
+
+    public CyberCrimemodel(String cyber_crime_id, String cyber_crime_category_id, String lost_money, String date_time, String is_delay, String where_accure, String evidance_photo, String description, String user_id, String station_id, String status_id) {
         this.cyber_crime_id = cyber_crime_id;
         this.cyber_crime_category_id = cyber_crime_category_id;
         this.lost_money = lost_money;
@@ -17,9 +18,6 @@ public class CyberCrimemodel {
         this.station_id = station_id;
         this.status_id = status_id;
     }
-
-    private String cyber_crime_id, cyber_crime_category_id,lost_money, date_time, is_delay,
-    where_accure, evidance_photo, description, user_id,station_id,status_id;
 
     public String getCyber_crime_id() {
         return cyber_crime_id;
