@@ -3,6 +3,7 @@ package com.ltrsoft.police_mannagement_system.fragments;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -15,20 +16,20 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.adapters.AnalysisPageAdapter;
+import com.ltrsoft.police_mannagement_system.utils.ActionBarTitle;
 
 public class Analysis extends Fragment {
-    public Analysis() {
-    }
+    public Analysis() {}
     private ViewPager2 analysis;
     private TabLayout layout;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.analysis, container, false);
-        Toast.makeText(getContext(), "this is DahsBoard Analaysis", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getContext(), "this is DahsBoard Analaysis", Toast.LENGTH_SHORT).show();
         analysis = view.findViewById(R.id.analysis_viewpager);
         layout = view.findViewById(R.id.tablayout);
-
+        ActionBarTitle.setTiltle("Police DashBoard", (AppCompatActivity) getActivity());
         AnalysisPageAdapter adapter = new AnalysisPageAdapter(getParentFragmentManager(),getLifecycle());
         analysis.setAdapter(adapter);
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,9 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.5"
-        android:orientation="vertical"
-        >
-
+        android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,44 +21,36 @@
             android:textStyle="bold"
             android:textSize="20dp"
             android:gravity="center"/>
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/barchart"
+        <org.eazegraph.lib.charts.PieChart
+            android:id="@+id/barcharts"
             android:layout_width="match_parent"
             android:layout_below="@+id/yearspinner"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            />
+            android:layout_marginBottom="10dp" />
     </LinearLayout>
-
     <LinearLayout
         android:layout_marginTop="20dp"
         android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
             <RelativeLayout
                 android:layout_margin="6dp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/btn_border"
-                >
+                android:background="@drawable/btn_border">
                 <View
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="#FFF424"
                     android:layout_margin="4dp"
-                    android:id="@+id/color"
-
-
-                    />
+                    android:id="@+id/color" />
                 <TextView
                     android:gravity="center"
                     android:layout_width="match_parent"
@@ -77,28 +68,22 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/total_applied"
                     android:textSize="20dp"
-                    android:text="5"
+                    android:text="100"
                     android:layout_centerInParent="true"
                     android:layout_below="@+id/applied"/>
-
-
             </RelativeLayout>
             <RelativeLayout
                 android:layout_margin="6dp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/btn_border"
-                >
+                android:background="@drawable/btn_border">
                 <View
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="#00B2E2"
                     android:layout_margin="4dp"
-                    android:id="@+id/color2"
-
-
-                    />
+                    android:id="@+id/color2" />
                 <TextView
                     android:gravity="center"
                     android:layout_width="match_parent"
@@ -109,18 +94,15 @@
                     android:text="Granted Services"
                     android:textSize="16dp"
                     android:textStyle="bold"
-                    android:id="@+id/granted_sevices"
-                    />
+                    android:id="@+id/granted_sevices" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/total_granted_number"
                     android:textSize="20dp"
-                    android:text="2"
+                    android:text="55"
                     android:layout_centerInParent="true"
                     android:layout_below="@+id/granted_sevices"/>
-
-
             </RelativeLayout>
         </LinearLayout>
         <LinearLayout
@@ -132,17 +114,13 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/btn_border"
-                >
+                android:background="@drawable/btn_border">
                 <View
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="#B3DD31"
                     android:layout_margin="4dp"
-                    android:id="@+id/color3"
-
-
-                    />
+                    android:id="@+id/color3" />
                 <TextView
                     android:gravity="center"
                     android:layout_width="match_parent"
@@ -153,18 +131,15 @@
                     android:layout_toRightOf="@+id/color3"
                     android:textSize="16dp"
                     android:textStyle="bold"
-                    android:id="@+id/total_rejected"
-                    />
+                    android:id="@+id/total_rejected" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/total_number"
                     android:textSize="20dp"
-                    android:text="2"
+                    android:text="20"
                     android:layout_centerInParent="true"
                     android:layout_below="@+id/total_rejected"/>
-
-
             </RelativeLayout>
             <RelativeLayout
                 android:layout_margin="6dp"
@@ -178,10 +153,7 @@
                     android:layout_height="20dp"
                     android:background="#EA0075"
                     android:layout_margin="4dp"
-                    android:id="@+id/color4"
-
-
-                    />
+                    android:id="@+id/color4" />
                 <TextView
                     android:gravity="center"
                     android:layout_width="match_parent"
@@ -192,23 +164,16 @@
                     android:text="Pending Services"
                     android:textSize="16dp"
                     android:textStyle="bold"
-                    android:id="@+id/total_pending"
-                    />
+                    android:id="@+id/total_pending" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/total_solved_number"
                     android:textSize="20dp"
-                    android:text="1"
+                    android:text="25"
                     android:layout_centerInParent="true"
                     android:layout_below="@+id/total_pending"/>
-
-
             </RelativeLayout>
         </LinearLayout>
-
-
     </LinearLayout>
-
-
 </LinearLayout>

@@ -1,5 +1,7 @@
 package com.ltrsoft.police_mannagement_system.fragments;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -9,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import com.ltrsoft.police_mannagement_system.R;
+import com.ltrsoft.police_mannagement_system.utils.ActionBarTitle;
 
 public class PoliceAdd extends Fragment implements View.OnClickListener {
     private RelativeLayout addcmp, unidobj, unibody, cybercrime, criminal, missing, self, investigation, leave;
@@ -17,6 +20,7 @@ public class PoliceAdd extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.police_add, container, false);
+        ActionBarTitle.setTiltle("Add Police", (AppCompatActivity) getActivity());
         intiView();
         return view;
     }

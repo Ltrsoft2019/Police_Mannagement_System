@@ -2,6 +2,7 @@ package com.ltrsoft.police_mannagement_system.fragments;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,7 @@ import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.adapters.GridAdapter;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
+import com.ltrsoft.police_mannagement_system.utils.ActionBarTitle;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,6 +33,7 @@ public class AllotedTask extends Fragment {
         View view = inflater.inflate(R.layout.alloted_tasks, container, false);
         ArrayList<String>list=new ArrayList<>();
         alloted_task=view.findViewById(R.id.alloted_task);
+        ActionBarTitle.setTiltle("Alloted Task", (AppCompatActivity) getActivity());
         DAO dao = new DAO(getContext());
         HashMap<String,String>hashMap=new HashMap<>();
         hashMap.put("police_id","1");

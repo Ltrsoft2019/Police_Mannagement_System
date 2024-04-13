@@ -45,6 +45,7 @@ import com.ltrsoft.police_mannagement_system.fragments.PoliceAdd;
 import com.ltrsoft.police_mannagement_system.fragments.PoliceLogin;
 import com.ltrsoft.police_mannagement_system.fragments.Profile;
 import com.ltrsoft.police_mannagement_system.fragments.UnidentifiedBody;
+import com.ltrsoft.police_mannagement_system.utils.ActionBarTitle;
 import com.ltrsoft.police_mannagement_system.utils.SessionManager;
 
 public class Navigationfragment extends Fragment {
@@ -63,10 +64,7 @@ public class Navigationfragment extends Fragment {
     private boolean flag = true;
     Fragment fragment;
     TextView textView;
-
-    public Navigationfragment() {
-    }
-
+    public Navigationfragment() {}
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -79,6 +77,7 @@ public class Navigationfragment extends Fragment {
         navigationView = view.findViewById(R.id.ubotnav);
         nav = view.findViewById(R.id.naviga);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+        ActionBarTitle.setTiltle("Police DashBoard", (AppCompatActivity) getActivity());
         drawerLayout = view.findViewById(R.id.drawer);
         drawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolbar, R.string.nav_open, R.string.nav_close);
         drawerLayout.addDrawerListener(drawerToggle);

@@ -80,7 +80,7 @@
                     android:layout_below="@+id/total_Alloted_complaints"
                     android:layout_centerInParent="true"
                     android:layout_marginTop="15dp"
-                    android:text="10"
+                    android:text="24"
                     android:textSize="20dp" />
 
 

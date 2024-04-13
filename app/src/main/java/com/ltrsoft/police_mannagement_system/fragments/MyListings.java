@@ -1,5 +1,7 @@
 package com.ltrsoft.police_mannagement_system.fragments;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -9,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import com.ltrsoft.police_mannagement_system.R;
+import com.ltrsoft.police_mannagement_system.utils.ActionBarTitle;
 
 public class MyListings extends Fragment {
     private View view;
@@ -27,6 +30,7 @@ public class MyListings extends Fragment {
         cyber = view.findViewById(R.id.cyber);
         preow = view.findViewById(R.id.self_proclaimed);
         assignedTask = view.findViewById(R.id.AssignedTask);
+        ActionBarTitle.setTiltle("MyListings", (AppCompatActivity) getActivity());
 
         assignedComplaint.setOnClickListener(new View.OnClickListener() {
             @Override

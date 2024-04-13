@@ -81,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/total_criminal"
                     android:textSize="20dp"
-                    android:text="10"
+                    android:text=""
                     android:layout_centerInParent="true"
                     android:layout_below="@+id/applied"/>
 
@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/total_warrant"
                     android:textSize="20dp"
-                    android:text="10"
+                    android:text=""
                     android:layout_centerInParent="true"
                     android:layout_below="@+id/granted_sevices"/>
 
@@ -164,7 +164,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/total_suspect"
                     android:textSize="20dp"
-                    android:text="10"
+                    android:text=""
                     android:layout_centerInParent="true"
                     android:layout_below="@+id/total_rejected"/>
 
@@ -203,7 +203,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/total_victim"
                     android:textSize="20dp"
-                    android:text="10"
+                    android:text=""
                     android:layout_centerInParent="true"
                     android:layout_below="@+id/total_pending"/>
 
@@ -247,7 +247,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/total_witness"
                     android:textSize="20dp"
-                    android:text="10"
+                    android:text=""
                     android:layout_centerInParent="true"
                     android:layout_below="@+id/total_witne"/>
 
@@ -286,7 +286,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/total_evidance"
                     android:textSize="20dp"
-                    android:text="10"
+                    android:text=""
                     android:layout_centerInParent="true"
                     android:layout_below="@+id/evidance_collection"/>
 

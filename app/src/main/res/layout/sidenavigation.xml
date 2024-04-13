@@ -18,7 +18,7 @@
             android:transitionGroup="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            app:title="Abuhurera" >
+            app:title="Karnataka Police Management" >
 
             <ImageView
                 android:id="@+id/missing"
@@ -40,6 +40,7 @@
                 android:id="@+id/news"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:visibility="gone"
                 android:layout_marginLeft="10dp"
                 android:layout_gravity="center|end"
                 android:src="@drawable/news"/>
@@ -69,6 +70,7 @@
                 android:layout_marginBottom="400dp"
                 android:backgroundTint="#F8DE75"
                 app:cardCornerRadius="15dp"
+                android:visibility="gone"
                 app:cardElevation="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -78,6 +80,7 @@
                 <ImageView
                     android:id="@+id/float_drawer"
                     android:layout_width="70dp"
+
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:src="@drawable/down_arrow" />
