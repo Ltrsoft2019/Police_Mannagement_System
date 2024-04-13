@@ -4,7 +4,6 @@ import static android.app.Activity.RESULT_OK;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.location.Location;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -26,14 +25,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ltrsoft.police_mannagement_system.Interfaces.LocationCallBack;
 import com.ltrsoft.police_mannagement_system.Interfaces.NewCallBack;
 import com.ltrsoft.police_mannagement_system.Model.Users;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
-import com.ltrsoft.police_mannagement_system.utils.LocationProvider;
-import com.ltrsoft.police_mannagement_system.utils.Mick;
-import com.ltrsoft.police_mannagement_system.utils.SpeechListener;
+import com.ltrsoft.police_mannagement_system.utils.Mic;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -77,10 +73,10 @@ public class AddComplaint extends Fragment {
         m3 = view.findViewById(R.id.mike_img3);
         dao = new DAO(getContext());
 
-        Mick mick = new Mick(getContext());
-        mick.startListening(fname,m1);
-        mick.startListening(mname,m2);
-        mick.startListening(lname,m3);
+        Mic mic = new Mic(getContext());
+        mic.startListening(fname,m1);
+        mic.startListening(mname,m2);
+        mic.startListening(lname,m3);
 
 
 

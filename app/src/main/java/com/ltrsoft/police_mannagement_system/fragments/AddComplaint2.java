@@ -31,7 +31,7 @@ import com.ltrsoft.police_mannagement_system.Model.Complaint;
 import com.ltrsoft.police_mannagement_system.R;
 import com.ltrsoft.police_mannagement_system.deo.DAO;
 import com.ltrsoft.police_mannagement_system.utils.LocationProvider;
-import com.ltrsoft.police_mannagement_system.utils.Mick;
+import com.ltrsoft.police_mannagement_system.utils.Mic;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -71,10 +71,10 @@ public class AddComplaint2 extends Fragment {
         m2 = view.findViewById(R.id.mike_img2);
         m3 = view.findViewById(R.id.mike_img3);
         dao = new DAO(getContext());
-        Mick mick = new Mick(getContext());
-        mick.startListening(subject,m1);
-        mick.startListening(desc,m2);
-        mick.startListening(aginst,m3);
+        Mic mic = new Mic(getContext());
+        mic.startListening(subject,m1);
+        mic.startListening(desc,m2);
+        mic.startListening(aginst,m3);
 
 
         setComplaintType();

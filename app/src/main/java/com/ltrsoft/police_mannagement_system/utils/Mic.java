@@ -11,12 +11,12 @@ import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-public class Mick {
+public class Mic {
     private EditText editText;
     private ImageView imageView;
     private Context context;
 
-    public Mick( Context context) {
+    public Mic(Context context) {
         this.context=context;
     }
     int REQUEST_RECORD_AUDIO_PERMISSION = 1000;
