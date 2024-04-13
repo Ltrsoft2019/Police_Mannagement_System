@@ -34,9 +34,7 @@ public class CyberList extends Fragment {
         DAO dao = new DAO(getContext());
         dao.select(CyberCrimemodel.class, "police_id", "1", new NewCallBack() {
             @Override
-            public void onError(String error) {
-                Toast.makeText(getContext(), "Error "+error, Toast.LENGTH_SHORT).show();
-            }
+            public void onError(String error) {Toast.makeText(getContext(), "Error "+error, Toast.LENGTH_SHORT).show();}
             @Override
             public void onSuccess(Object object) {
                 ArrayList<HashMap<String,String>> maps = new ArrayList<>();
@@ -57,7 +55,7 @@ public class CyberList extends Fragment {
             }
             @Override
             public void onEmpty() {
-                Toast.makeText(getContext(), "You dont have any Levaes in History", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "There is No Cyber Crime", Toast.LENGTH_SHORT).show();
             }
         },"https://rj.ltr-soft.com/public/police_api/assign_cyber_crime/cyber_crime_by_police.php");
     }

@@ -42,10 +42,10 @@ public class DutyList extends Fragment {
                 ArrayList<Duty> models = (ArrayList<Duty>) object;
                 for (Duty model : models) {
                     HashMap<String, String> map = new HashMap<>();
-                    map.put("map1","Duty id"+ model.getDutyId());
-                    map.put("map2", "Area Name"+model.getAreaName());
-                    map.put("map3", "Date"+model.getStartDate());
-                    map.put("map4","Start Date"+ model.getStartTime());
+                    map.put("map1","Duty id :"+ model.getDutyId());
+                    map.put("map2", "Area Name :"+model.getAreaName());
+                    map.put("map3", "Date :"+model.getStartDate());
+                    map.put("map4","Start Date :"+ model.getStartTime());
                     maps.add(map);
                 }
                 CommonAdapter adapter = new CommonAdapter(maps, R.drawable.complaint);

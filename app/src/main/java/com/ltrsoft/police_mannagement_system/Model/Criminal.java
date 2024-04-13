@@ -1,45 +1,60 @@
 package com.ltrsoft.police_mannagement_system.Model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Criminal {
+    @SerializedName("criminal_id")
     private String id;
+
+    @SerializedName("full_name")
     private String fullName;
+
+    @SerializedName("date_of_birth")
     private String dateOfBirth;
+
+    @SerializedName("gender")
     private String gender;
+
+    @SerializedName("race_ethnicity")
     private String raceEthnicity;
+
+    @SerializedName("social_security_number")
     private String socialSecurityNumber;
+
+    @SerializedName("height")
     private String height;
+
+    @SerializedName("weight")
     private String weight;
+
+    @SerializedName("eye_color")
     private String eyeColor;
+
+    @SerializedName("hair_color")
     private String hairColor;
+
+    @SerializedName("identifying_features")
     private String identifyingFeatures;
+
+    @SerializedName("home_address")
     private String homeAddress;
+
+    @SerializedName("phone_numbers")
     private String phoneNumbers;
+
+    @SerializedName("email_address")
     private String emailAddress;
+
+    @SerializedName("occupation")
     private String occupation;
+
+    @SerializedName("education_level")
     private String educationLevel;
+
+    @SerializedName("station_id")
     private String stationId;
 
     public Criminal() {
-    }
-
-    public Criminal(String id, String fullName, String dateOfBirth, String gender, String raceEthnicity, String socialSecurityNumber, String height, String weight, String eyeColor, String hairColor, String identifyingFeatures, String homeAddress, String phoneNumbers, String emailAddress, String occupation, String educationLevel, String stationId) {
-        this.id = id;
-        this.fullName = fullName;
-        this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
-        this.raceEthnicity = raceEthnicity;
-        this.socialSecurityNumber = socialSecurityNumber;
-        this.height = height;
-        this.weight = weight;
-        this.eyeColor = eyeColor;
-        this.hairColor = hairColor;
-        this.identifyingFeatures = identifyingFeatures;
-        this.homeAddress = homeAddress;
-        this.phoneNumbers = phoneNumbers;
-        this.emailAddress = emailAddress;
-        this.occupation = occupation;
-        this.educationLevel = educationLevel;
-        this.stationId = stationId;
     }
 
     public String getId() {
@@ -178,4 +193,23 @@ public class Criminal {
         this.stationId = stationId;
     }
 
+    public Criminal(String id, String fullName, String dateOfBirth, String gender, String raceEthnicity, String socialSecurityNumber, String height, String weight, String eyeColor, String hairColor, String identifyingFeatures, String homeAddress, String phoneNumbers, String emailAddress, String occupation, String educationLevel, String stationId) {
+        this.id = id;
+        this.fullName = fullName;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.raceEthnicity = raceEthnicity;
+        this.socialSecurityNumber = socialSecurityNumber;
+        this.height = height;
+        this.weight = weight;
+        this.eyeColor = eyeColor;
+        this.hairColor = hairColor;
+        this.identifyingFeatures = identifyingFeatures;
+        this.homeAddress = homeAddress;
+        this.phoneNumbers = phoneNumbers;
+        this.emailAddress = emailAddress;
+        this.occupation = occupation;
+        this.educationLevel = educationLevel;
+        this.stationId = stationId;
+    }
 }

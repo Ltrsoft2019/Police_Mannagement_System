@@ -1,15 +1,34 @@
 package com.ltrsoft.police_mannagement_system.Model;
-public class Leave {
-    private String leaveId;
-    private String date;
-    private String typeOfLeave;
-    private String duration;
-    private String reason;
-    private String remark;
-    private String attachmentPhoto;
-    private String policeId;
-    private String stationId;
 
+import com.google.gson.annotations.SerializedName;
+
+public class Leave {
+    @SerializedName("leave_id")
+    private String leaveId;
+
+    @SerializedName("date")
+    private String date;
+
+    @SerializedName("type_of_leave")
+    private String typeOfLeave;
+
+    @SerializedName("duration")
+    private String duration;
+
+    @SerializedName("reason")
+    private String reason;
+
+    @SerializedName("remark")
+    private String remark;
+
+    @SerializedName("attachment_photo")
+    private String attachmentPhoto;
+
+    @SerializedName("police_id")
+    private String policeId;
+
+    @SerializedName("station_id")
+    private String stationId;
 
     public Leave(String leaveId, String date, String typeOfLeave, String duration, String reason, String remark, String attachmentPhoto, String policeId, String stationId) {
         this.leaveId = leaveId;

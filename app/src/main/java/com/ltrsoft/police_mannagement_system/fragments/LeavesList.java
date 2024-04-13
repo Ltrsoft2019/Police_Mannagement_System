@@ -37,7 +37,6 @@ public class LeavesList extends Fragment {
             public void onError(String error) {
                 Toast.makeText(getContext(), "Error "+error, Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onSuccess(Object object) {
                 ArrayList<HashMap<String,String>>maps = new ArrayList<>();
@@ -45,10 +44,10 @@ public class LeavesList extends Fragment {
                 Toast.makeText(getContext(), "Response "+object, Toast.LENGTH_SHORT).show();
                 for(Leave model:models){
                     HashMap<String,String>map=new HashMap<>();
-                    map.put("map1", "Complaint Id :"+model.getLeaveId());
-                    map.put("map2","Complaint Subject :"+ model.getReason());
-                    map.put("map3", "Complaint Description :"+model.getDuration());
-                    map.put("map4", "Incident Date :"+model.getTypeOfLeave());
+                    map.put("map1", "Leave Id :"+model.getLeaveId());
+                    map.put("map2","Reason :"+ model.getReason());
+                    map.put("map3", "Duration :"+model.getDuration());
+                    map.put("map4", "Leave Type :"+model.getTypeOfLeave());
                     maps.add(map);
                 }
                 CommonAdapter adapter = new CommonAdapter(maps,R.drawable.complaint);
@@ -60,6 +59,6 @@ public class LeavesList extends Fragment {
             public void onEmpty() {
                 Toast.makeText(getContext(), "You dont have any Levaes in History", Toast.LENGTH_SHORT).show();
             }
-        },"https://rj.ltr-soft.com/public/police_api/complaint/missing_complaint.php");
+        },"https://rj.ltr-soft.com/public/police_api/leaves/police_leaves.php");
     }
 }

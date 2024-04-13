@@ -45,10 +45,10 @@ public class WarrentList extends Fragment {
                 ArrayList<Warrant> models = (ArrayList<Warrant>) object;
                 for (Warrant model : models) {
                     HashMap<String, String> map = new HashMap<>();
-                    map.put("map1", model.getWarrantId());
-                    map.put("map2", model.getWarrantNumber());
-                    map.put("map3", model.getTypeOfWarrant());
-                    map.put("map4", model.getPreviousWarrantsHistory());
+                    map.put("map1", "Warrent Id :"+model.getWarrantId());
+                    map.put("map2",  "Warrent Number :"+model.getWarrantNumber());
+                    map.put("map3",  "Type Warrent :"+model.getTypeOfWarrant());
+                    map.put("map4",  "Previous Warrent History :"+model.getPreviousWarrantsHistory());
                     maps.add(map);
                 }
                 CommonAdapter adapter = new CommonAdapter(maps, R.drawable.complaint);
