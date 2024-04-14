@@ -1,10 +1,11 @@
-# Police Management System
+# Crime Watch Pro
 
 ## Overview of Project
 The Police Management System is a comprehensive Android application designed to streamline and enhance various aspects of law enforcement operations.
 
 ## Vision and Mission
-Our vision is to create a secure and efficient platform for police departments to manage their resources, handle cases, and communicate effectively. Our mission is to empower law enforcement agencies with modern technology to improve public safety and community relations.
+- vision: Revolutionizing law enforcement
+- mission: Empowering law enforcement with a cutting-edge Android app, fostering seamless communication, advanced incident management, and community collaboration for enhanced public safety
 
 ## Prerequisites
 Before running this Android project on your system, ensure you have the following:
@@ -50,6 +51,8 @@ Before running this Android project on your system, ensure you have the followin
 ![Screenshot 3](screenshots/screenshot3.png)
 
 ## Conclusion
-The Police Management System offers a robust solution for law enforcement agencies to improve their operational efficiency and effectiveness. With its comprehensive features and user-friendly interface, it is a valuable tool for modern policing.
+The Crime Watch Pro Android app and Web App is a comprehensive tool designed to streamline and enhance the operational efficiency of Police force. It enables police personnel to efficiently manage incidents, allocate resources, and monitor performance metrics, all from the convenience of their mobile devices. 
+
+By providing access to critical information and tools in real-time, the app empowers officers to make informed decisions, respond effectively to incidents, and maintain public safety while fostering transparency and accountability within the department.
 
 Feel free to contribute or provide feedback by [opening an issue](https://github.com/yourusername/police-management-system/issues).
