@@ -39,8 +39,8 @@ Before running this Android project on your system, ensure you have the followin
    - Select the target device and click "OK" to run the project.
 
 ## credentials:
-   - UserName: 1635859(KGID)
-   - Password: 137400051(Internal_IO)
+   - UserName: 1635859 (KGID)
+   - Password: 137400051 (Internal_IO)
 
 ## Features
 - User authentication and authorization.
