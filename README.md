@@ -1,7 +1,7 @@
 # Crime Watch Pro
 
 ## Overview of Project
-The Police Management System is a comprehensive Android application designed to streamline and enhance various aspects of law enforcement operations.
+Crime Watch Pro is a comprehensive Android application designed to streamline and enhance various aspects of law enforcement operations.
 
 ## Vision and Mission
 - vision: Revolutionizing law enforcement
