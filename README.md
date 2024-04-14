@@ -47,7 +47,7 @@ Before running this Android project on your system, ensure you have the followin
 
 ## Screenshots
 ![Screenshot 1](https://github.com/Ltrsoft2019/Police_Mannagement_System/blob/master/app/src/main/res/drawable/dash.jpg)
-![Screenshot 2](https://github.com/Ltrsoft2019/Police_Mannagement_System/blob/master/app/src/main/res/drawable/dash.jpg)
+![Screenshot 2](https://github.com/Ltrsoft2019/Police_Mannagement_System/blob/master/app/src/main/res/drawable/login.jpg)
 
 ## Conclusion
 The Crime Watch Pro Android app and Web App is a comprehensive tool designed to streamline and enhance the operational efficiency of Police force. It enables police personnel to efficiently manage incidents, allocate resources, and monitor performance metrics, all from the convenience of their mobile devices. 
