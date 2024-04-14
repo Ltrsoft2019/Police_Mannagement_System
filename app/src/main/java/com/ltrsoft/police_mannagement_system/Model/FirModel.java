@@ -410,7 +410,7 @@ public class FirModel {
     }
 
     public void setConviction_Count(String conviction_Count) {
-        Conviction_Count = conviction_Count;
+        this.Conviction_Count = conviction_Count;
     }
 
     public String getFIR_ID() {

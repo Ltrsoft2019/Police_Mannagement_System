@@ -172,17 +172,17 @@ public class FirDetail extends Fragment {
         ArrayList<BargraphModelclass>list=new ArrayList<>();
         Float VICTIM_COUNT,Accused_Count,Arrested_Count,Conviction_Count,Accused_ChargeSheeted_Count;
 
-          Accused_Count = (float)Integer.valueOf(model.getAccused_Count());
-        Conviction_Count= Float.valueOf(model.getConviction_Count());
+        Accused_Count = (float)Integer.valueOf(model.getAccused_Count());
+        Conviction_Count= Float.parseFloat(model.getConviction_Count());
         Arrested_Count= Float.valueOf(model.getArrested_Count());
         VICTIM_COUNT= Float.valueOf(model.getVICTIM_COUNT());
 
-      list.add(new BargraphModelclass("VICTIM", VICTIM_COUNT,"#66BB6A"));
-    list.add(new BargraphModelclass("Accused", Accused_Count,"#EF5350"));
-      list.add(new BargraphModelclass("Arrested", Arrested_Count,"#FFA726"));
-      list.add(new BargraphModelclass("Convicted", Conviction_Count,"#00B2E2 "));
+        list.add(new BargraphModelclass("VICTIM", VICTIM_COUNT,"#66BB6A"));
+        list.add(new BargraphModelclass("Accused", Accused_Count,"#EF5350"));
+        list.add(new BargraphModelclass("Arrested", Arrested_Count,"#FFA726"));
+        list.add(new BargraphModelclass("Convicted", Conviction_Count,"#FF0000"));
         Bargraphchart bargraphchart=new Bargraphchart(list);
-      // bargraphchart.setbargraph(barChart);
+        bargraphchart.setbargraph(barChart);
 
     }
     public void setPieChart(FirModel model){

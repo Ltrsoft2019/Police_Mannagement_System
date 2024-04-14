@@ -28,7 +28,7 @@ public class GettingFirRecycler {
     public GettingFirRecycler(RecyclerView recyclerView, String KGID) {
         this.recyclerView = recyclerView;
         this.KGID = KGID;
-       context=recyclerView.getContext();
+       this.context=recyclerView.getContext();
     }
      public void setrecyclerview(){
          DAO dao=new DAO( context);
