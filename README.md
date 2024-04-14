@@ -46,7 +46,7 @@ Before running this Android project on your system, ensure you have the followin
 - Integration with external databases and APIs.
 
 ## Screenshots
-![Screenshot 1]([screenshots/screenshot1.png](https://github.com/Ltrsoft2019/Police_Mannagement_System/blob/master/app/src/main/res/drawable/dash.jpg)
+![Screenshot 1](https://github.com/Ltrsoft2019/Police_Mannagement_System/blob/master/app/src/main/res/drawable/dash.jpg)
 ![Screenshot 2](screenshots/screenshot2.png)
 ![Screenshot 3](screenshots/screenshot3.png)
 
